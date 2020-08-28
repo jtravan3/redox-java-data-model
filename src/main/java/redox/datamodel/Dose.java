@@ -1,28 +1,57 @@
+
 package redox.datamodel;
 
+import java.util.HashMap;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-public class Dose{
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+    "Quantity",
+    "Units"
+})
+public class Dose {
 
-	@JsonProperty("Quantity")
-	private String quantity;
+    @JsonProperty("Quantity")
+    private String quantity;
+    @JsonProperty("Units")
+    private String units;
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-	@JsonProperty("Units")
-	private String units;
+    @JsonProperty("Quantity")
+    public String getQuantity() {
+        return quantity;
+    }
 
-	public void setQuantity(String quantity){
-		this.quantity = quantity;
-	}
+    @JsonProperty("Quantity")
+    public void setQuantity(String quantity) {
+        this.quantity = quantity;
+    }
 
-	public String getQuantity(){
-		return quantity;
-	}
+    @JsonProperty("Units")
+    public String getUnits() {
+        return units;
+    }
 
-	public void setUnits(String units){
-		this.units = units;
-	}
+    @JsonProperty("Units")
+    public void setUnits(String units) {
+        this.units = units;
+    }
 
-	public String getUnits(){
-		return units;
-	}
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
+
 }

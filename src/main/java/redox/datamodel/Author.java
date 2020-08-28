@@ -1,117 +1,162 @@
+
 package redox.datamodel;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-public class Author{
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+    "ID",
+    "IDType",
+    "Type",
+    "FirstName",
+    "LastName",
+    "Credentials",
+    "Address",
+    "EmailAddresses",
+    "PhoneNumber",
+    "Location"
+})
+public class Author {
 
-	@JsonProperty("Type")
-	private Object type;
+    @JsonProperty("ID")
+    private String iD;
+    @JsonProperty("IDType")
+    private String iDType;
+    @JsonProperty("Type")
+    private Object type;
+    @JsonProperty("FirstName")
+    private String firstName;
+    @JsonProperty("LastName")
+    private String lastName;
+    @JsonProperty("Credentials")
+    private List<String> credentials = null;
+    @JsonProperty("Address")
+    private Address address;
+    @JsonProperty("EmailAddresses")
+    private List<Object> emailAddresses = null;
+    @JsonProperty("PhoneNumber")
+    private PhoneNumber phoneNumber;
+    @JsonProperty("Location")
+    private Location location;
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-	@JsonProperty("Address")
-	private Address address;
+    @JsonProperty("ID")
+    public String getID() {
+        return iD;
+    }
 
-	@JsonProperty("FirstName")
-	private String firstName;
+    @JsonProperty("ID")
+    public void setID(String iD) {
+        this.iD = iD;
+    }
 
-	@JsonProperty("PhoneNumber")
-	private PhoneNumber phoneNumber;
+    @JsonProperty("IDType")
+    public String getIDType() {
+        return iDType;
+    }
 
-	@JsonProperty("EmailAddresses")
-	private List<Object> emailAddresses;
+    @JsonProperty("IDType")
+    public void setIDType(String iDType) {
+        this.iDType = iDType;
+    }
 
-	@JsonProperty("ID")
-	private String iD;
+    @JsonProperty("Type")
+    public Object getType() {
+        return type;
+    }
 
-	@JsonProperty("LastName")
-	private String lastName;
+    @JsonProperty("Type")
+    public void setType(Object type) {
+        this.type = type;
+    }
 
-	@JsonProperty("IDType")
-	private String iDType;
+    @JsonProperty("FirstName")
+    public String getFirstName() {
+        return firstName;
+    }
 
-	@JsonProperty("Credentials")
-	private List<String> credentials;
+    @JsonProperty("FirstName")
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-	@JsonProperty("Location")
-	private Location location;
+    @JsonProperty("LastName")
+    public String getLastName() {
+        return lastName;
+    }
 
-	public void setType(Object type){
-		this.type = type;
-	}
+    @JsonProperty("LastName")
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
-	public Object getType(){
-		return type;
-	}
+    @JsonProperty("Credentials")
+    public List<String> getCredentials() {
+        return credentials;
+    }
 
-	public void setAddress(Address address){
-		this.address = address;
-	}
+    @JsonProperty("Credentials")
+    public void setCredentials(List<String> credentials) {
+        this.credentials = credentials;
+    }
 
-	public Address getAddress(){
-		return address;
-	}
+    @JsonProperty("Address")
+    public Address getAddress() {
+        return address;
+    }
 
-	public void setFirstName(String firstName){
-		this.firstName = firstName;
-	}
+    @JsonProperty("Address")
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 
-	public String getFirstName(){
-		return firstName;
-	}
+    @JsonProperty("EmailAddresses")
+    public List<Object> getEmailAddresses() {
+        return emailAddresses;
+    }
 
-	public void setPhoneNumber(PhoneNumber phoneNumber){
-		this.phoneNumber = phoneNumber;
-	}
+    @JsonProperty("EmailAddresses")
+    public void setEmailAddresses(List<Object> emailAddresses) {
+        this.emailAddresses = emailAddresses;
+    }
 
-	public PhoneNumber getPhoneNumber(){
-		return phoneNumber;
-	}
+    @JsonProperty("PhoneNumber")
+    public PhoneNumber getPhoneNumber() {
+        return phoneNumber;
+    }
 
-	public void setEmailAddresses(List<Object> emailAddresses){
-		this.emailAddresses = emailAddresses;
-	}
+    @JsonProperty("PhoneNumber")
+    public void setPhoneNumber(PhoneNumber phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 
-	public List<Object> getEmailAddresses(){
-		return emailAddresses;
-	}
+    @JsonProperty("Location")
+    public Location getLocation() {
+        return location;
+    }
 
-	public void setID(String iD){
-		this.iD = iD;
-	}
+    @JsonProperty("Location")
+    public void setLocation(Location location) {
+        this.location = location;
+    }
 
-	public String getID(){
-		return iD;
-	}
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
 
-	public void setLastName(String lastName){
-		this.lastName = lastName;
-	}
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
 
-	public String getLastName(){
-		return lastName;
-	}
-
-	public void setIDType(String iDType){
-		this.iDType = iDType;
-	}
-
-	public String getIDType(){
-		return iDType;
-	}
-
-	public void setCredentials(List<String> credentials){
-		this.credentials = credentials;
-	}
-
-	public List<String> getCredentials(){
-		return credentials;
-	}
-
-	public void setLocation(Location location){
-		this.location = location;
-	}
-
-	public Location getLocation(){
-		return location;
-	}
 }

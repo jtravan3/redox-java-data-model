@@ -1,72 +1,109 @@
+
 package redox.datamodel;
 
+import java.util.HashMap;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-public class Relation{
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+    "Code",
+    "CodeSystem",
+    "CodeSystemName",
+    "Name",
+    "Demographics",
+    "IsDeceased"
+})
+public class Relation {
 
-	@JsonProperty("Demographics")
-	private Demographics demographics;
+    @JsonProperty("Code")
+    private String code;
+    @JsonProperty("CodeSystem")
+    private String codeSystem;
+    @JsonProperty("CodeSystemName")
+    private String codeSystemName;
+    @JsonProperty("Name")
+    private String name;
+    @JsonProperty("Demographics")
+    private Demographics_ demographics;
+    @JsonProperty("IsDeceased")
+    private Boolean isDeceased;
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-	@JsonProperty("CodeSystemName")
-	private String codeSystemName;
+    @JsonProperty("Code")
+    public String getCode() {
+        return code;
+    }
 
-	@JsonProperty("Code")
-	private String code;
+    @JsonProperty("Code")
+    public void setCode(String code) {
+        this.code = code;
+    }
 
-	@JsonProperty("CodeSystem")
-	private String codeSystem;
+    @JsonProperty("CodeSystem")
+    public String getCodeSystem() {
+        return codeSystem;
+    }
 
-	@JsonProperty("Name")
-	private String name;
+    @JsonProperty("CodeSystem")
+    public void setCodeSystem(String codeSystem) {
+        this.codeSystem = codeSystem;
+    }
 
-	@JsonProperty("IsDeceased")
-	private Boolean isDeceased;
+    @JsonProperty("CodeSystemName")
+    public String getCodeSystemName() {
+        return codeSystemName;
+    }
 
-	public void setDemographics(Demographics demographics){
-		this.demographics = demographics;
-	}
+    @JsonProperty("CodeSystemName")
+    public void setCodeSystemName(String codeSystemName) {
+        this.codeSystemName = codeSystemName;
+    }
 
-	public Demographics getDemographics(){
-		return demographics;
-	}
+    @JsonProperty("Name")
+    public String getName() {
+        return name;
+    }
 
-	public void setCodeSystemName(String codeSystemName){
-		this.codeSystemName = codeSystemName;
-	}
+    @JsonProperty("Name")
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getCodeSystemName(){
-		return codeSystemName;
-	}
+    @JsonProperty("Demographics")
+    public Demographics_ getDemographics() {
+        return demographics;
+    }
 
-	public void setCode(String code){
-		this.code = code;
-	}
+    @JsonProperty("Demographics")
+    public void setDemographics(Demographics_ demographics) {
+        this.demographics = demographics;
+    }
 
-	public String getCode(){
-		return code;
-	}
+    @JsonProperty("IsDeceased")
+    public Boolean getIsDeceased() {
+        return isDeceased;
+    }
 
-	public void setCodeSystem(String codeSystem){
-		this.codeSystem = codeSystem;
-	}
+    @JsonProperty("IsDeceased")
+    public void setIsDeceased(Boolean isDeceased) {
+        this.isDeceased = isDeceased;
+    }
 
-	public String getCodeSystem(){
-		return codeSystem;
-	}
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
 
-	public void setName(String name){
-		this.name = name;
-	}
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
 
-	public String getName(){
-		return name;
-	}
-
-	public void setIsDeceased(Boolean isDeceased){
-		this.isDeceased = isDeceased;
-	}
-
-	public boolean isIsDeceased(){
-		return isDeceased;
-	}
 }

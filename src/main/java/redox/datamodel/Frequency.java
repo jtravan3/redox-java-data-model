@@ -1,28 +1,57 @@
+
 package redox.datamodel;
 
+import java.util.HashMap;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-public class Frequency{
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+    "Period",
+    "Unit"
+})
+public class Frequency {
 
-	@JsonProperty("Period")
-	private Object period;
+    @JsonProperty("Period")
+    private String period;
+    @JsonProperty("Unit")
+    private String unit;
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-	@JsonProperty("Unit")
-	private Object unit;
+    @JsonProperty("Period")
+    public String getPeriod() {
+        return period;
+    }
 
-	public void setPeriod(Object period){
-		this.period = period;
-	}
+    @JsonProperty("Period")
+    public void setPeriod(String period) {
+        this.period = period;
+    }
 
-	public Object getPeriod(){
-		return period;
-	}
+    @JsonProperty("Unit")
+    public String getUnit() {
+        return unit;
+    }
 
-	public void setUnit(Object unit){
-		this.unit = unit;
-	}
+    @JsonProperty("Unit")
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
 
-	public Object getUnit(){
-		return unit;
-	}
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
+
 }

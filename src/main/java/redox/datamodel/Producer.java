@@ -1,50 +1,83 @@
+
 package redox.datamodel;
 
+import java.util.HashMap;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-public class Producer{
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+    "ID",
+    "Name",
+    "IDType",
+    "Address"
+})
+public class Producer {
 
-	@JsonProperty("Address")
-	private Address address;
+    @JsonProperty("ID")
+    private String iD;
+    @JsonProperty("Name")
+    private String name;
+    @JsonProperty("IDType")
+    private Object iDType;
+    @JsonProperty("Address")
+    private Address________ address;
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-	@JsonProperty("ID")
-	private String iD;
+    @JsonProperty("ID")
+    public String getID() {
+        return iD;
+    }
 
-	@JsonProperty("IDType")
-	private Object iDType;
+    @JsonProperty("ID")
+    public void setID(String iD) {
+        this.iD = iD;
+    }
 
-	@JsonProperty("Name")
-	private String name;
+    @JsonProperty("Name")
+    public String getName() {
+        return name;
+    }
 
-	public void setAddress(Address address){
-		this.address = address;
-	}
+    @JsonProperty("Name")
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public Address getAddress(){
-		return address;
-	}
+    @JsonProperty("IDType")
+    public Object getIDType() {
+        return iDType;
+    }
 
-	public void setID(String iD){
-		this.iD = iD;
-	}
+    @JsonProperty("IDType")
+    public void setIDType(Object iDType) {
+        this.iDType = iDType;
+    }
 
-	public String getID(){
-		return iD;
-	}
+    @JsonProperty("Address")
+    public Address________ getAddress() {
+        return address;
+    }
 
-	public void setIDType(Object iDType){
-		this.iDType = iDType;
-	}
+    @JsonProperty("Address")
+    public void setAddress(Address________ address) {
+        this.address = address;
+    }
 
-	public Object getIDType(){
-		return iDType;
-	}
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
 
-	public void setName(String name){
-		this.name = name;
-	}
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
 
-	public String getName(){
-		return name;
-	}
 }

@@ -1,150 +1,201 @@
+
 package redox.datamodel;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-public class Demographics{
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+    "FirstName",
+    "LastName",
+    "DOB",
+    "SSN",
+    "Sex",
+    "Address",
+    "PhoneNumber",
+    "EmailAddresses",
+    "Language",
+    "Race",
+    "Ethnicity",
+    "Religion",
+    "MaritalStatus"
+})
+public class Demographics {
 
-	@JsonProperty("Address")
-	private Address address;
+    @JsonProperty("FirstName")
+    private String firstName;
+    @JsonProperty("LastName")
+    private String lastName;
+    @JsonProperty("DOB")
+    private String dOB;
+    @JsonProperty("SSN")
+    private String sSN;
+    @JsonProperty("Sex")
+    private String sex;
+    @JsonProperty("Address")
+    private Address_ address;
+    @JsonProperty("PhoneNumber")
+    private PhoneNumber_ phoneNumber;
+    @JsonProperty("EmailAddresses")
+    private List<EmailAddress> emailAddresses = null;
+    @JsonProperty("Language")
+    private Object language;
+    @JsonProperty("Race")
+    private String race;
+    @JsonProperty("Ethnicity")
+    private String ethnicity;
+    @JsonProperty("Religion")
+    private String religion;
+    @JsonProperty("MaritalStatus")
+    private String maritalStatus;
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-	@JsonProperty("FirstName")
-	private String firstName;
+    @JsonProperty("FirstName")
+    public String getFirstName() {
+        return firstName;
+    }
 
-	@JsonProperty("Sex")
-	private String sex;
+    @JsonProperty("FirstName")
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-	@JsonProperty("Religion")
-	private String religion;
+    @JsonProperty("LastName")
+    public String getLastName() {
+        return lastName;
+    }
 
-	@JsonProperty("SSN")
-	private String sSN;
+    @JsonProperty("LastName")
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
-	@JsonProperty("MaritalStatus")
-	private String maritalStatus;
+    @JsonProperty("DOB")
+    public String getDOB() {
+        return dOB;
+    }
 
-	@JsonProperty("Ethnicity")
-	private String ethnicity;
+    @JsonProperty("DOB")
+    public void setDOB(String dOB) {
+        this.dOB = dOB;
+    }
 
-	@JsonProperty("Language")
-	private Object language;
+    @JsonProperty("SSN")
+    public String getSSN() {
+        return sSN;
+    }
 
-	@JsonProperty("DOB")
-	private String dOB;
+    @JsonProperty("SSN")
+    public void setSSN(String sSN) {
+        this.sSN = sSN;
+    }
 
-	@JsonProperty("Race")
-	private String race;
+    @JsonProperty("Sex")
+    public String getSex() {
+        return sex;
+    }
 
-	@JsonProperty("PhoneNumber")
-	private PhoneNumber phoneNumber;
+    @JsonProperty("Sex")
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
 
-	@JsonProperty("EmailAddresses")
-	private List<EmailAddressesItem> emailAddresses;
+    @JsonProperty("Address")
+    public Address_ getAddress() {
+        return address;
+    }
 
-	@JsonProperty("LastName")
-	private String lastName;
+    @JsonProperty("Address")
+    public void setAddress(Address_ address) {
+        this.address = address;
+    }
 
-	public void setAddress(Address address){
-		this.address = address;
-	}
+    @JsonProperty("PhoneNumber")
+    public PhoneNumber_ getPhoneNumber() {
+        return phoneNumber;
+    }
 
-	public Address getAddress(){
-		return address;
-	}
+    @JsonProperty("PhoneNumber")
+    public void setPhoneNumber(PhoneNumber_ phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 
-	public void setFirstName(String firstName){
-		this.firstName = firstName;
-	}
+    @JsonProperty("EmailAddresses")
+    public List<EmailAddress> getEmailAddresses() {
+        return emailAddresses;
+    }
 
-	public String getFirstName(){
-		return firstName;
-	}
+    @JsonProperty("EmailAddresses")
+    public void setEmailAddresses(List<EmailAddress> emailAddresses) {
+        this.emailAddresses = emailAddresses;
+    }
 
-	public void setSex(String sex){
-		this.sex = sex;
-	}
+    @JsonProperty("Language")
+    public Object getLanguage() {
+        return language;
+    }
 
-	public String getSex(){
-		return sex;
-	}
+    @JsonProperty("Language")
+    public void setLanguage(Object language) {
+        this.language = language;
+    }
 
-	public void setReligion(String religion){
-		this.religion = religion;
-	}
+    @JsonProperty("Race")
+    public String getRace() {
+        return race;
+    }
 
-	public String getReligion(){
-		return religion;
-	}
+    @JsonProperty("Race")
+    public void setRace(String race) {
+        this.race = race;
+    }
 
-	public void setSSN(String sSN){
-		this.sSN = sSN;
-	}
+    @JsonProperty("Ethnicity")
+    public String getEthnicity() {
+        return ethnicity;
+    }
 
-	public String getSSN(){
-		return sSN;
-	}
+    @JsonProperty("Ethnicity")
+    public void setEthnicity(String ethnicity) {
+        this.ethnicity = ethnicity;
+    }
 
-	public void setMaritalStatus(String maritalStatus){
-		this.maritalStatus = maritalStatus;
-	}
+    @JsonProperty("Religion")
+    public String getReligion() {
+        return religion;
+    }
 
-	public String getMaritalStatus(){
-		return maritalStatus;
-	}
+    @JsonProperty("Religion")
+    public void setReligion(String religion) {
+        this.religion = religion;
+    }
 
-	public void setEthnicity(String ethnicity){
-		this.ethnicity = ethnicity;
-	}
+    @JsonProperty("MaritalStatus")
+    public String getMaritalStatus() {
+        return maritalStatus;
+    }
 
-	public String getEthnicity(){
-		return ethnicity;
-	}
+    @JsonProperty("MaritalStatus")
+    public void setMaritalStatus(String maritalStatus) {
+        this.maritalStatus = maritalStatus;
+    }
 
-	public void setLanguage(Object language){
-		this.language = language;
-	}
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
 
-	public Object getLanguage(){
-		return language;
-	}
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
 
-	public void setDOB(String dOB){
-		this.dOB = dOB;
-	}
-
-	public String getDOB(){
-		return dOB;
-	}
-
-	public void setRace(String race){
-		this.race = race;
-	}
-
-	public String getRace(){
-		return race;
-	}
-
-	public void setPhoneNumber(PhoneNumber phoneNumber){
-		this.phoneNumber = phoneNumber;
-	}
-
-	public PhoneNumber getPhoneNumber(){
-		return phoneNumber;
-	}
-
-	public void setEmailAddresses(List<EmailAddressesItem> emailAddresses){
-		this.emailAddresses = emailAddresses;
-	}
-
-	public List<EmailAddressesItem> getEmailAddresses(){
-		return emailAddresses;
-	}
-
-	public void setLastName(String lastName){
-		this.lastName = lastName;
-	}
-
-	public String getLastName(){
-		return lastName;
-	}
 }

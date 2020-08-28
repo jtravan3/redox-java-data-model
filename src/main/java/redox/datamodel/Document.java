@@ -1,94 +1,135 @@
+
 package redox.datamodel;
 
+import java.util.HashMap;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-public class Document{
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+    "Author",
+    "ID",
+    "Locale",
+    "Title",
+    "DateTime",
+    "Type",
+    "TypeCode",
+    "Visit"
+})
+public class Document {
 
-	@JsonProperty("Locale")
-	private String locale;
+    @JsonProperty("Author")
+    private Author author;
+    @JsonProperty("ID")
+    private String iD;
+    @JsonProperty("Locale")
+    private String locale;
+    @JsonProperty("Title")
+    private String title;
+    @JsonProperty("DateTime")
+    private String dateTime;
+    @JsonProperty("Type")
+    private String type;
+    @JsonProperty("TypeCode")
+    private TypeCode typeCode;
+    @JsonProperty("Visit")
+    private Visit visit;
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-	@JsonProperty("Type")
-	private String type;
+    @JsonProperty("Author")
+    public Author getAuthor() {
+        return author;
+    }
 
-	@JsonProperty("TypeCode")
-	private TypeCode typeCode;
+    @JsonProperty("Author")
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
 
-	@JsonProperty("Visit")
-	private Visit visit;
+    @JsonProperty("ID")
+    public String getID() {
+        return iD;
+    }
 
-	@JsonProperty("Author")
-	private Author author;
+    @JsonProperty("ID")
+    public void setID(String iD) {
+        this.iD = iD;
+    }
 
-	@JsonProperty("Title")
-	private String title;
+    @JsonProperty("Locale")
+    public String getLocale() {
+        return locale;
+    }
 
-	@JsonProperty("ID")
-	private String iD;
+    @JsonProperty("Locale")
+    public void setLocale(String locale) {
+        this.locale = locale;
+    }
 
-	@JsonProperty("DateTime")
-	private String dateTime;
+    @JsonProperty("Title")
+    public String getTitle() {
+        return title;
+    }
 
-	public void setLocale(String locale){
-		this.locale = locale;
-	}
+    @JsonProperty("Title")
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-	public String getLocale(){
-		return locale;
-	}
+    @JsonProperty("DateTime")
+    public String getDateTime() {
+        return dateTime;
+    }
 
-	public void setType(String type){
-		this.type = type;
-	}
+    @JsonProperty("DateTime")
+    public void setDateTime(String dateTime) {
+        this.dateTime = dateTime;
+    }
 
-	public String getType(){
-		return type;
-	}
+    @JsonProperty("Type")
+    public String getType() {
+        return type;
+    }
 
-	public void setTypeCode(TypeCode typeCode){
-		this.typeCode = typeCode;
-	}
+    @JsonProperty("Type")
+    public void setType(String type) {
+        this.type = type;
+    }
 
-	public TypeCode getTypeCode(){
-		return typeCode;
-	}
+    @JsonProperty("TypeCode")
+    public TypeCode getTypeCode() {
+        return typeCode;
+    }
 
-	public void setVisit(Visit visit){
-		this.visit = visit;
-	}
+    @JsonProperty("TypeCode")
+    public void setTypeCode(TypeCode typeCode) {
+        this.typeCode = typeCode;
+    }
 
-	public Visit getVisit(){
-		return visit;
-	}
+    @JsonProperty("Visit")
+    public Visit getVisit() {
+        return visit;
+    }
 
-	public void setAuthor(Author author){
-		this.author = author;
-	}
+    @JsonProperty("Visit")
+    public void setVisit(Visit visit) {
+        this.visit = visit;
+    }
 
-	public Author getAuthor(){
-		return author;
-	}
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
 
-	public void setTitle(String title){
-		this.title = title;
-	}
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
 
-	public String getTitle(){
-		return title;
-	}
-
-	public void setID(String iD){
-		this.iD = iD;
-	}
-
-	public String getID(){
-		return iD;
-	}
-
-	public void setDateTime(String dateTime){
-		this.dateTime = dateTime;
-	}
-
-	public String getDateTime(){
-		return dateTime;
-	}
 }

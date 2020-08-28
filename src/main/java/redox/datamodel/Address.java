@@ -1,72 +1,109 @@
+
 package redox.datamodel;
 
+import java.util.HashMap;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-public class Address{
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+    "StreetAddress",
+    "City",
+    "State",
+    "ZIP",
+    "County",
+    "Country"
+})
+public class Address {
 
-	@JsonProperty("ZIP")
-	private String zIP;
+    @JsonProperty("StreetAddress")
+    private String streetAddress;
+    @JsonProperty("City")
+    private String city;
+    @JsonProperty("State")
+    private String state;
+    @JsonProperty("ZIP")
+    private String zIP;
+    @JsonProperty("County")
+    private String county;
+    @JsonProperty("Country")
+    private String country;
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-	@JsonProperty("StreetAddress")
-	private String streetAddress;
+    @JsonProperty("StreetAddress")
+    public String getStreetAddress() {
+        return streetAddress;
+    }
 
-	@JsonProperty("State")
-	private String state;
+    @JsonProperty("StreetAddress")
+    public void setStreetAddress(String streetAddress) {
+        this.streetAddress = streetAddress;
+    }
 
-	@JsonProperty("Country")
-	private String country;
+    @JsonProperty("City")
+    public String getCity() {
+        return city;
+    }
 
-	@JsonProperty("City")
-	private String city;
+    @JsonProperty("City")
+    public void setCity(String city) {
+        this.city = city;
+    }
 
-	@JsonProperty("County")
-	private String county;
+    @JsonProperty("State")
+    public String getState() {
+        return state;
+    }
 
-	public void setZIP(String zIP){
-		this.zIP = zIP;
-	}
+    @JsonProperty("State")
+    public void setState(String state) {
+        this.state = state;
+    }
 
-	public String getZIP(){
-		return zIP;
-	}
+    @JsonProperty("ZIP")
+    public String getZIP() {
+        return zIP;
+    }
 
-	public void setStreetAddress(String streetAddress){
-		this.streetAddress = streetAddress;
-	}
+    @JsonProperty("ZIP")
+    public void setZIP(String zIP) {
+        this.zIP = zIP;
+    }
 
-	public String getStreetAddress(){
-		return streetAddress;
-	}
+    @JsonProperty("County")
+    public String getCounty() {
+        return county;
+    }
 
-	public void setState(String state){
-		this.state = state;
-	}
+    @JsonProperty("County")
+    public void setCounty(String county) {
+        this.county = county;
+    }
 
-	public String getState(){
-		return state;
-	}
+    @JsonProperty("Country")
+    public String getCountry() {
+        return country;
+    }
 
-	public void setCountry(String country){
-		this.country = country;
-	}
+    @JsonProperty("Country")
+    public void setCountry(String country) {
+        this.country = country;
+    }
 
-	public String getCountry(){
-		return country;
-	}
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
 
-	public void setCity(String city){
-		this.city = city;
-	}
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
 
-	public String getCity(){
-		return city;
-	}
-
-	public void setCounty(String county){
-		this.county = county;
-	}
-
-	public String getCounty(){
-		return county;
-	}
 }

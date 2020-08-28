@@ -1,29 +1,58 @@
+
 package redox.datamodel;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-public class Patient{
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+    "Identifiers",
+    "Demographics"
+})
+public class Patient {
 
-	@JsonProperty("Demographics")
-	private Demographics demographics;
+    @JsonProperty("Identifiers")
+    private List<Identifier> identifiers = null;
+    @JsonProperty("Demographics")
+    private Demographics demographics;
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-	@JsonProperty("Identifiers")
-	private List<IdentifiersItem> identifiers;
+    @JsonProperty("Identifiers")
+    public List<Identifier> getIdentifiers() {
+        return identifiers;
+    }
 
-	public void setDemographics(Demographics demographics){
-		this.demographics = demographics;
-	}
+    @JsonProperty("Identifiers")
+    public void setIdentifiers(List<Identifier> identifiers) {
+        this.identifiers = identifiers;
+    }
 
-	public Demographics getDemographics(){
-		return demographics;
-	}
+    @JsonProperty("Demographics")
+    public Demographics getDemographics() {
+        return demographics;
+    }
 
-	public void setIdentifiers(List<IdentifiersItem> identifiers){
-		this.identifiers = identifiers;
-	}
+    @JsonProperty("Demographics")
+    public void setDemographics(Demographics demographics) {
+        this.demographics = demographics;
+    }
 
-	public List<IdentifiersItem> getIdentifiers(){
-		return identifiers;
-	}
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
+
 }

@@ -1,106 +1,149 @@
+
 package redox.datamodel;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-public class Meta{
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+    "DataModel",
+    "EventType",
+    "EventDateTime",
+    "Test",
+    "Source",
+    "Destinations",
+    "Message",
+    "Transmission",
+    "FacilityCode"
+})
+public class Meta {
 
-	@JsonProperty("Message")
-	private Message message;
+    @JsonProperty("DataModel")
+    private String dataModel;
+    @JsonProperty("EventType")
+    private String eventType;
+    @JsonProperty("EventDateTime")
+    private String eventDateTime;
+    @JsonProperty("Test")
+    private Boolean test;
+    @JsonProperty("Source")
+    private Source source;
+    @JsonProperty("Destinations")
+    private List<Destination> destinations = null;
+    @JsonProperty("Message")
+    private Message message;
+    @JsonProperty("Transmission")
+    private Transmission transmission;
+    @JsonProperty("FacilityCode")
+    private Object facilityCode;
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-	@JsonProperty("EventType")
-	private String eventType;
+    @JsonProperty("DataModel")
+    public String getDataModel() {
+        return dataModel;
+    }
 
-	@JsonProperty("Test")
-	private Boolean test;
+    @JsonProperty("DataModel")
+    public void setDataModel(String dataModel) {
+        this.dataModel = dataModel;
+    }
 
-	@JsonProperty("DataModel")
-	private String dataModel;
+    @JsonProperty("EventType")
+    public String getEventType() {
+        return eventType;
+    }
 
-	@JsonProperty("EventDateTime")
-	private String eventDateTime;
+    @JsonProperty("EventType")
+    public void setEventType(String eventType) {
+        this.eventType = eventType;
+    }
 
-	@JsonProperty("Transmission")
-	private Transmission transmission;
+    @JsonProperty("EventDateTime")
+    public String getEventDateTime() {
+        return eventDateTime;
+    }
 
-	@JsonProperty("Destinations")
-	private List<DestinationsItem> destinations;
+    @JsonProperty("EventDateTime")
+    public void setEventDateTime(String eventDateTime) {
+        this.eventDateTime = eventDateTime;
+    }
 
-	@JsonProperty("FacilityCode")
-	private Object facilityCode;
+    @JsonProperty("Test")
+    public Boolean getTest() {
+        return test;
+    }
 
-	@JsonProperty("Source")
-	private Source source;
+    @JsonProperty("Test")
+    public void setTest(Boolean test) {
+        this.test = test;
+    }
 
-	public void setMessage(Message message){
-		this.message = message;
-	}
+    @JsonProperty("Source")
+    public Source getSource() {
+        return source;
+    }
 
-	public Message getMessage(){
-		return message;
-	}
+    @JsonProperty("Source")
+    public void setSource(Source source) {
+        this.source = source;
+    }
 
-	public void setEventType(String eventType){
-		this.eventType = eventType;
-	}
+    @JsonProperty("Destinations")
+    public List<Destination> getDestinations() {
+        return destinations;
+    }
 
-	public String getEventType(){
-		return eventType;
-	}
+    @JsonProperty("Destinations")
+    public void setDestinations(List<Destination> destinations) {
+        this.destinations = destinations;
+    }
 
-	public void setTest(Boolean test){
-		this.test = test;
-	}
+    @JsonProperty("Message")
+    public Message getMessage() {
+        return message;
+    }
 
-	public boolean isTest(){
-		return test;
-	}
+    @JsonProperty("Message")
+    public void setMessage(Message message) {
+        this.message = message;
+    }
 
-	public void setDataModel(String dataModel){
-		this.dataModel = dataModel;
-	}
+    @JsonProperty("Transmission")
+    public Transmission getTransmission() {
+        return transmission;
+    }
 
-	public String getDataModel(){
-		return dataModel;
-	}
+    @JsonProperty("Transmission")
+    public void setTransmission(Transmission transmission) {
+        this.transmission = transmission;
+    }
 
-	public void setEventDateTime(String eventDateTime){
-		this.eventDateTime = eventDateTime;
-	}
+    @JsonProperty("FacilityCode")
+    public Object getFacilityCode() {
+        return facilityCode;
+    }
 
-	public String getEventDateTime(){
-		return eventDateTime;
-	}
+    @JsonProperty("FacilityCode")
+    public void setFacilityCode(Object facilityCode) {
+        this.facilityCode = facilityCode;
+    }
 
-	public void setTransmission(Transmission transmission){
-		this.transmission = transmission;
-	}
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
 
-	public Transmission getTransmission(){
-		return transmission;
-	}
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
 
-	public void setDestinations(List<DestinationsItem> destinations){
-		this.destinations = destinations;
-	}
-
-	public List<DestinationsItem> getDestinations(){
-		return destinations;
-	}
-
-	public void setFacilityCode(Object facilityCode){
-		this.facilityCode = facilityCode;
-	}
-
-	public Object getFacilityCode(){
-		return facilityCode;
-	}
-
-	public void setSource(Source source){
-		this.source = source;
-	}
-
-	public Source getSource(){
-		return source;
-	}
 }

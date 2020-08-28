@@ -1,39 +1,44 @@
+
 package redox.datamodel;
 
+import java.util.HashMap;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-public class PhoneNumber{
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+    "Office"
+})
+public class PhoneNumber {
 
-	@JsonProperty("Office")
-	private Object office;
+    @JsonProperty("Office")
+    private String office;
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-	@JsonProperty("Home")
-	private String home;
+    @JsonProperty("Office")
+    public String getOffice() {
+        return office;
+    }
 
-	@JsonProperty("Mobile")
-	private Object mobile;
+    @JsonProperty("Office")
+    public void setOffice(String office) {
+        this.office = office;
+    }
 
-	public void setOffice(Object office){
-		this.office = office;
-	}
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
 
-	public Object getOffice(){
-		return office;
-	}
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
 
-	public void setHome(String home){
-		this.home = home;
-	}
-
-	public String getHome(){
-		return home;
-	}
-
-	public void setMobile(Object mobile){
-		this.mobile = mobile;
-	}
-
-	public Object getMobile(){
-		return mobile;
-	}
 }

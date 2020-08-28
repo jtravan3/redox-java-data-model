@@ -1,50 +1,83 @@
+
 package redox.datamodel;
 
+import java.util.HashMap;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-public class TypeCode{
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+    "Code",
+    "CodeSystem",
+    "CodeSystemName",
+    "Name"
+})
+public class TypeCode {
 
-	@JsonProperty("CodeSystemName")
-	private String codeSystemName;
+    @JsonProperty("Code")
+    private String code;
+    @JsonProperty("CodeSystem")
+    private String codeSystem;
+    @JsonProperty("CodeSystemName")
+    private String codeSystemName;
+    @JsonProperty("Name")
+    private String name;
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-	@JsonProperty("Code")
-	private String code;
+    @JsonProperty("Code")
+    public String getCode() {
+        return code;
+    }
 
-	@JsonProperty("CodeSystem")
-	private String codeSystem;
+    @JsonProperty("Code")
+    public void setCode(String code) {
+        this.code = code;
+    }
 
-	@JsonProperty("Name")
-	private String name;
+    @JsonProperty("CodeSystem")
+    public String getCodeSystem() {
+        return codeSystem;
+    }
 
-	public void setCodeSystemName(String codeSystemName){
-		this.codeSystemName = codeSystemName;
-	}
+    @JsonProperty("CodeSystem")
+    public void setCodeSystem(String codeSystem) {
+        this.codeSystem = codeSystem;
+    }
 
-	public String getCodeSystemName(){
-		return codeSystemName;
-	}
+    @JsonProperty("CodeSystemName")
+    public String getCodeSystemName() {
+        return codeSystemName;
+    }
 
-	public void setCode(String code){
-		this.code = code;
-	}
+    @JsonProperty("CodeSystemName")
+    public void setCodeSystemName(String codeSystemName) {
+        this.codeSystemName = codeSystemName;
+    }
 
-	public String getCode(){
-		return code;
-	}
+    @JsonProperty("Name")
+    public String getName() {
+        return name;
+    }
 
-	public void setCodeSystem(String codeSystem){
-		this.codeSystem = codeSystem;
-	}
+    @JsonProperty("Name")
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getCodeSystem(){
-		return codeSystem;
-	}
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
 
-	public void setName(String name){
-		this.name = name;
-	}
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
 
-	public String getName(){
-		return name;
-	}
 }

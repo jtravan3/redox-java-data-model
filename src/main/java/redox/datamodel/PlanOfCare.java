@@ -1,73 +1,110 @@
+
 package redox.datamodel;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-public class PlanOfCare{
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+    "Orders",
+    "Procedures",
+    "Encounters",
+    "MedicationAdministration",
+    "Supplies",
+    "Services"
+})
+public class PlanOfCare {
 
-	@JsonProperty("Orders")
-	private List<OrdersItem> orders;
+    @JsonProperty("Orders")
+    private List<Order> orders = null;
+    @JsonProperty("Procedures")
+    private List<Procedure> procedures = null;
+    @JsonProperty("Encounters")
+    private List<Encounter_> encounters = null;
+    @JsonProperty("MedicationAdministration")
+    private List<MedicationAdministration> medicationAdministration = null;
+    @JsonProperty("Supplies")
+    private List<Object> supplies = null;
+    @JsonProperty("Services")
+    private List<Service> services = null;
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-	@JsonProperty("Services")
-	private List<ServicesItem> services;
+    @JsonProperty("Orders")
+    public List<Order> getOrders() {
+        return orders;
+    }
 
-	@JsonProperty("Encounters")
-	private List<EncountersItem> encounters;
+    @JsonProperty("Orders")
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
+    }
 
-	@JsonProperty("Procedures")
-	private List<ProceduresItem> procedures;
+    @JsonProperty("Procedures")
+    public List<Procedure> getProcedures() {
+        return procedures;
+    }
 
-	@JsonProperty("MedicationAdministration")
-	private List<MedicationAdministrationItem> medicationAdministration;
+    @JsonProperty("Procedures")
+    public void setProcedures(List<Procedure> procedures) {
+        this.procedures = procedures;
+    }
 
-	@JsonProperty("Supplies")
-	private List<Object> supplies;
+    @JsonProperty("Encounters")
+    public List<Encounter_> getEncounters() {
+        return encounters;
+    }
 
-	public void setOrders(List<OrdersItem> orders){
-		this.orders = orders;
-	}
+    @JsonProperty("Encounters")
+    public void setEncounters(List<Encounter_> encounters) {
+        this.encounters = encounters;
+    }
 
-	public List<OrdersItem> getOrders(){
-		return orders;
-	}
+    @JsonProperty("MedicationAdministration")
+    public List<MedicationAdministration> getMedicationAdministration() {
+        return medicationAdministration;
+    }
 
-	public void setServices(List<ServicesItem> services){
-		this.services = services;
-	}
+    @JsonProperty("MedicationAdministration")
+    public void setMedicationAdministration(List<MedicationAdministration> medicationAdministration) {
+        this.medicationAdministration = medicationAdministration;
+    }
 
-	public List<ServicesItem> getServices(){
-		return services;
-	}
+    @JsonProperty("Supplies")
+    public List<Object> getSupplies() {
+        return supplies;
+    }
 
-	public void setEncounters(List<EncountersItem> encounters){
-		this.encounters = encounters;
-	}
+    @JsonProperty("Supplies")
+    public void setSupplies(List<Object> supplies) {
+        this.supplies = supplies;
+    }
 
-	public List<EncountersItem> getEncounters(){
-		return encounters;
-	}
+    @JsonProperty("Services")
+    public List<Service> getServices() {
+        return services;
+    }
 
-	public void setProcedures(List<ProceduresItem> procedures){
-		this.procedures = procedures;
-	}
+    @JsonProperty("Services")
+    public void setServices(List<Service> services) {
+        this.services = services;
+    }
 
-	public List<ProceduresItem> getProcedures(){
-		return procedures;
-	}
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
 
-	public void setMedicationAdministration(List<MedicationAdministrationItem> medicationAdministration){
-		this.medicationAdministration = medicationAdministration;
-	}
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
 
-	public List<MedicationAdministrationItem> getMedicationAdministration(){
-		return medicationAdministration;
-	}
-
-	public void setSupplies(List<Object> supplies){
-		this.supplies = supplies;
-	}
-
-	public List<Object> getSupplies(){
-		return supplies;
-	}
 }

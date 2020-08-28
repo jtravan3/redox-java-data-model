@@ -1,61 +1,96 @@
+
 package redox.datamodel;
 
+import java.util.HashMap;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-public class Company{
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+    "ID",
+    "IDType",
+    "Name",
+    "Address",
+    "PhoneNumber"
+})
+public class Company {
 
-	@JsonProperty("Address")
-	private Address address;
+    @JsonProperty("ID")
+    private String iD;
+    @JsonProperty("IDType")
+    private Object iDType;
+    @JsonProperty("Name")
+    private String name;
+    @JsonProperty("Address")
+    private Address______ address;
+    @JsonProperty("PhoneNumber")
+    private String phoneNumber;
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-	@JsonProperty("PhoneNumber")
-	private String phoneNumber;
+    @JsonProperty("ID")
+    public String getID() {
+        return iD;
+    }
 
-	@JsonProperty("ID")
-	private String iD;
+    @JsonProperty("ID")
+    public void setID(String iD) {
+        this.iD = iD;
+    }
 
-	@JsonProperty("IDType")
-	private Object iDType;
+    @JsonProperty("IDType")
+    public Object getIDType() {
+        return iDType;
+    }
 
-	@JsonProperty("Name")
-	private String name;
+    @JsonProperty("IDType")
+    public void setIDType(Object iDType) {
+        this.iDType = iDType;
+    }
 
-	public void setAddress(Address address){
-		this.address = address;
-	}
+    @JsonProperty("Name")
+    public String getName() {
+        return name;
+    }
 
-	public Address getAddress(){
-		return address;
-	}
+    @JsonProperty("Name")
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setPhoneNumber(String phoneNumber){
-		this.phoneNumber = phoneNumber;
-	}
+    @JsonProperty("Address")
+    public Address______ getAddress() {
+        return address;
+    }
 
-	public String getPhoneNumber(){
-		return phoneNumber;
-	}
+    @JsonProperty("Address")
+    public void setAddress(Address______ address) {
+        this.address = address;
+    }
 
-	public void setID(String iD){
-		this.iD = iD;
-	}
+    @JsonProperty("PhoneNumber")
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
 
-	public String getID(){
-		return iD;
-	}
+    @JsonProperty("PhoneNumber")
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 
-	public void setIDType(Object iDType){
-		this.iDType = iDType;
-	}
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
 
-	public Object getIDType(){
-		return iDType;
-	}
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
 
-	public void setName(String name){
-		this.name = name;
-	}
-
-	public String getName(){
-		return name;
-	}
 }

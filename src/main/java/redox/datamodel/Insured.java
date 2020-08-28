@@ -1,106 +1,149 @@
+
 package redox.datamodel;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-public class Insured{
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+    "Identifiers",
+    "LastName",
+    "MiddleName",
+    "FirstName",
+    "SSN",
+    "Relationship",
+    "DOB",
+    "Sex",
+    "Address"
+})
+public class Insured {
 
-	@JsonProperty("Address")
-	private Address address;
+    @JsonProperty("Identifiers")
+    private List<Object> identifiers = null;
+    @JsonProperty("LastName")
+    private Object lastName;
+    @JsonProperty("MiddleName")
+    private Object middleName;
+    @JsonProperty("FirstName")
+    private Object firstName;
+    @JsonProperty("SSN")
+    private Object sSN;
+    @JsonProperty("Relationship")
+    private Object relationship;
+    @JsonProperty("DOB")
+    private Object dOB;
+    @JsonProperty("Sex")
+    private Object sex;
+    @JsonProperty("Address")
+    private Address_______ address;
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-	@JsonProperty("FirstName")
-	private Object firstName;
+    @JsonProperty("Identifiers")
+    public List<Object> getIdentifiers() {
+        return identifiers;
+    }
 
-	@JsonProperty("DOB")
-	private Object dOB;
+    @JsonProperty("Identifiers")
+    public void setIdentifiers(List<Object> identifiers) {
+        this.identifiers = identifiers;
+    }
 
-	@JsonProperty("Relationship")
-	private Object relationship;
+    @JsonProperty("LastName")
+    public Object getLastName() {
+        return lastName;
+    }
 
-	@JsonProperty("Sex")
-	private Object sex;
+    @JsonProperty("LastName")
+    public void setLastName(Object lastName) {
+        this.lastName = lastName;
+    }
 
-	@JsonProperty("LastName")
-	private Object lastName;
+    @JsonProperty("MiddleName")
+    public Object getMiddleName() {
+        return middleName;
+    }
 
-	@JsonProperty("Identifiers")
-	private List<Object> identifiers;
+    @JsonProperty("MiddleName")
+    public void setMiddleName(Object middleName) {
+        this.middleName = middleName;
+    }
 
-	@JsonProperty("MiddleName")
-	private Object middleName;
+    @JsonProperty("FirstName")
+    public Object getFirstName() {
+        return firstName;
+    }
 
-	@JsonProperty("SSN")
-	private Object sSN;
+    @JsonProperty("FirstName")
+    public void setFirstName(Object firstName) {
+        this.firstName = firstName;
+    }
 
-	public void setAddress(Address address){
-		this.address = address;
-	}
+    @JsonProperty("SSN")
+    public Object getSSN() {
+        return sSN;
+    }
 
-	public Address getAddress(){
-		return address;
-	}
+    @JsonProperty("SSN")
+    public void setSSN(Object sSN) {
+        this.sSN = sSN;
+    }
 
-	public void setFirstName(Object firstName){
-		this.firstName = firstName;
-	}
+    @JsonProperty("Relationship")
+    public Object getRelationship() {
+        return relationship;
+    }
 
-	public Object getFirstName(){
-		return firstName;
-	}
+    @JsonProperty("Relationship")
+    public void setRelationship(Object relationship) {
+        this.relationship = relationship;
+    }
 
-	public void setDOB(Object dOB){
-		this.dOB = dOB;
-	}
+    @JsonProperty("DOB")
+    public Object getDOB() {
+        return dOB;
+    }
 
-	public Object getDOB(){
-		return dOB;
-	}
+    @JsonProperty("DOB")
+    public void setDOB(Object dOB) {
+        this.dOB = dOB;
+    }
 
-	public void setRelationship(Object relationship){
-		this.relationship = relationship;
-	}
+    @JsonProperty("Sex")
+    public Object getSex() {
+        return sex;
+    }
 
-	public Object getRelationship(){
-		return relationship;
-	}
+    @JsonProperty("Sex")
+    public void setSex(Object sex) {
+        this.sex = sex;
+    }
 
-	public void setSex(Object sex){
-		this.sex = sex;
-	}
+    @JsonProperty("Address")
+    public Address_______ getAddress() {
+        return address;
+    }
 
-	public Object getSex(){
-		return sex;
-	}
+    @JsonProperty("Address")
+    public void setAddress(Address_______ address) {
+        this.address = address;
+    }
 
-	public void setLastName(Object lastName){
-		this.lastName = lastName;
-	}
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
 
-	public Object getLastName(){
-		return lastName;
-	}
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
 
-	public void setIdentifiers(List<Object> identifiers){
-		this.identifiers = identifiers;
-	}
-
-	public List<Object> getIdentifiers(){
-		return identifiers;
-	}
-
-	public void setMiddleName(Object middleName){
-		this.middleName = middleName;
-	}
-
-	public Object getMiddleName(){
-		return middleName;
-	}
-
-	public void setSSN(Object sSN){
-		this.sSN = sSN;
-	}
-
-	public Object getSSN(){
-		return sSN;
-	}
 }

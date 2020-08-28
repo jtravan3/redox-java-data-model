@@ -1,40 +1,71 @@
+
 package redox.datamodel;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-public class SocialHistory{
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+    "Observations",
+    "Pregnancy",
+    "TobaccoUse"
+})
+public class SocialHistory {
 
-	@JsonProperty("Pregnancy")
-	private List<Object> pregnancy;
+    @JsonProperty("Observations")
+    private List<Observation__> observations = null;
+    @JsonProperty("Pregnancy")
+    private List<Object> pregnancy = null;
+    @JsonProperty("TobaccoUse")
+    private List<TobaccoUse> tobaccoUse = null;
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-	@JsonProperty("TobaccoUse")
-	private List<TobaccoUseItem> tobaccoUse;
+    @JsonProperty("Observations")
+    public List<Observation__> getObservations() {
+        return observations;
+    }
 
-	@JsonProperty("Observations")
-	private List<ObservationsItem> observations;
+    @JsonProperty("Observations")
+    public void setObservations(List<Observation__> observations) {
+        this.observations = observations;
+    }
 
-	public void setPregnancy(List<Object> pregnancy){
-		this.pregnancy = pregnancy;
-	}
+    @JsonProperty("Pregnancy")
+    public List<Object> getPregnancy() {
+        return pregnancy;
+    }
 
-	public List<Object> getPregnancy(){
-		return pregnancy;
-	}
+    @JsonProperty("Pregnancy")
+    public void setPregnancy(List<Object> pregnancy) {
+        this.pregnancy = pregnancy;
+    }
 
-	public void setTobaccoUse(List<TobaccoUseItem> tobaccoUse){
-		this.tobaccoUse = tobaccoUse;
-	}
+    @JsonProperty("TobaccoUse")
+    public List<TobaccoUse> getTobaccoUse() {
+        return tobaccoUse;
+    }
 
-	public List<TobaccoUseItem> getTobaccoUse(){
-		return tobaccoUse;
-	}
+    @JsonProperty("TobaccoUse")
+    public void setTobaccoUse(List<TobaccoUse> tobaccoUse) {
+        this.tobaccoUse = tobaccoUse;
+    }
 
-	public void setObservations(List<ObservationsItem> observations){
-		this.observations = observations;
-	}
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
 
-	public List<ObservationsItem> getObservations(){
-		return observations;
-	}
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
+
 }

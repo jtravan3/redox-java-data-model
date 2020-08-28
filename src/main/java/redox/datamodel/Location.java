@@ -1,50 +1,83 @@
+
 package redox.datamodel;
 
+import java.util.HashMap;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-public class Location{
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+    "Type",
+    "Facility",
+    "Department",
+    "Room"
+})
+public class Location {
 
-	@JsonProperty("Type")
-	private Object type;
+    @JsonProperty("Type")
+    private Object type;
+    @JsonProperty("Facility")
+    private Object facility;
+    @JsonProperty("Department")
+    private Object department;
+    @JsonProperty("Room")
+    private Object room;
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-	@JsonProperty("Department")
-	private Object department;
+    @JsonProperty("Type")
+    public Object getType() {
+        return type;
+    }
 
-	@JsonProperty("Facility")
-	private Object facility;
+    @JsonProperty("Type")
+    public void setType(Object type) {
+        this.type = type;
+    }
 
-	@JsonProperty("Room")
-	private Object room;
+    @JsonProperty("Facility")
+    public Object getFacility() {
+        return facility;
+    }
 
-	public void setType(Object type){
-		this.type = type;
-	}
+    @JsonProperty("Facility")
+    public void setFacility(Object facility) {
+        this.facility = facility;
+    }
 
-	public Object getType(){
-		return type;
-	}
+    @JsonProperty("Department")
+    public Object getDepartment() {
+        return department;
+    }
 
-	public void setDepartment(Object department){
-		this.department = department;
-	}
+    @JsonProperty("Department")
+    public void setDepartment(Object department) {
+        this.department = department;
+    }
 
-	public Object getDepartment(){
-		return department;
-	}
+    @JsonProperty("Room")
+    public Object getRoom() {
+        return room;
+    }
 
-	public void setFacility(Object facility){
-		this.facility = facility;
-	}
+    @JsonProperty("Room")
+    public void setRoom(Object room) {
+        this.room = room;
+    }
 
-	public Object getFacility(){
-		return facility;
-	}
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
 
-	public void setRoom(Object room){
-		this.room = room;
-	}
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
 
-	public Object getRoom(){
-		return room;
-	}
 }

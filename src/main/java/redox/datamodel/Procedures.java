@@ -1,40 +1,71 @@
+
 package redox.datamodel;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-public class Procedures{
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+    "Observations",
+    "Procedures",
+    "Services"
+})
+public class Procedures {
 
-	@JsonProperty("Services")
-	private List<ServicesItem> services;
+    @JsonProperty("Observations")
+    private List<Observation> observations = null;
+    @JsonProperty("Procedures")
+    private List<Procedure_> procedures = null;
+    @JsonProperty("Services")
+    private List<Service_> services = null;
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-	@JsonProperty("Procedures")
-	private List<ProceduresItem> procedures;
+    @JsonProperty("Observations")
+    public List<Observation> getObservations() {
+        return observations;
+    }
 
-	@JsonProperty("Observations")
-	private List<ObservationsItem> observations;
+    @JsonProperty("Observations")
+    public void setObservations(List<Observation> observations) {
+        this.observations = observations;
+    }
 
-	public void setServices(List<ServicesItem> services){
-		this.services = services;
-	}
+    @JsonProperty("Procedures")
+    public List<Procedure_> getProcedures() {
+        return procedures;
+    }
 
-	public List<ServicesItem> getServices(){
-		return services;
-	}
+    @JsonProperty("Procedures")
+    public void setProcedures(List<Procedure_> procedures) {
+        this.procedures = procedures;
+    }
 
-	public void setProcedures(List<ProceduresItem> procedures){
-		this.procedures = procedures;
-	}
+    @JsonProperty("Services")
+    public List<Service_> getServices() {
+        return services;
+    }
 
-	public List<ProceduresItem> getProcedures(){
-		return procedures;
-	}
+    @JsonProperty("Services")
+    public void setServices(List<Service_> services) {
+        this.services = services;
+    }
 
-	public void setObservations(List<ObservationsItem> observations){
-		this.observations = observations;
-	}
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
 
-	public List<ObservationsItem> getObservations(){
-		return observations;
-	}
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
+
 }

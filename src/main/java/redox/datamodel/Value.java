@@ -1,62 +1,97 @@
+
 package redox.datamodel;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-public class Value{
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+    "Code",
+    "CodeSystem",
+    "CodeSystemName",
+    "Name",
+    "AltCodes"
+})
+public class Value {
 
-	@JsonProperty("CodeSystemName")
-	private Object codeSystemName;
+    @JsonProperty("Code")
+    private Object code;
+    @JsonProperty("CodeSystem")
+    private Object codeSystem;
+    @JsonProperty("CodeSystemName")
+    private Object codeSystemName;
+    @JsonProperty("Name")
+    private Object name;
+    @JsonProperty("AltCodes")
+    private List<Object> altCodes = null;
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-	@JsonProperty("Code")
-	private Object code;
+    @JsonProperty("Code")
+    public Object getCode() {
+        return code;
+    }
 
-	@JsonProperty("CodeSystem")
-	private Object codeSystem;
+    @JsonProperty("Code")
+    public void setCode(Object code) {
+        this.code = code;
+    }
 
-	@JsonProperty("AltCodes")
-	private List<Object> altCodes;
+    @JsonProperty("CodeSystem")
+    public Object getCodeSystem() {
+        return codeSystem;
+    }
 
-	@JsonProperty("Name")
-	private Object name;
+    @JsonProperty("CodeSystem")
+    public void setCodeSystem(Object codeSystem) {
+        this.codeSystem = codeSystem;
+    }
 
-	public void setCodeSystemName(Object codeSystemName){
-		this.codeSystemName = codeSystemName;
-	}
+    @JsonProperty("CodeSystemName")
+    public Object getCodeSystemName() {
+        return codeSystemName;
+    }
 
-	public Object getCodeSystemName(){
-		return codeSystemName;
-	}
+    @JsonProperty("CodeSystemName")
+    public void setCodeSystemName(Object codeSystemName) {
+        this.codeSystemName = codeSystemName;
+    }
 
-	public void setCode(Object code){
-		this.code = code;
-	}
+    @JsonProperty("Name")
+    public Object getName() {
+        return name;
+    }
 
-	public Object getCode(){
-		return code;
-	}
+    @JsonProperty("Name")
+    public void setName(Object name) {
+        this.name = name;
+    }
 
-	public void setCodeSystem(Object codeSystem){
-		this.codeSystem = codeSystem;
-	}
+    @JsonProperty("AltCodes")
+    public List<Object> getAltCodes() {
+        return altCodes;
+    }
 
-	public Object getCodeSystem(){
-		return codeSystem;
-	}
+    @JsonProperty("AltCodes")
+    public void setAltCodes(List<Object> altCodes) {
+        this.altCodes = altCodes;
+    }
 
-	public void setAltCodes(List<Object> altCodes){
-		this.altCodes = altCodes;
-	}
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
 
-	public List<Object> getAltCodes(){
-		return altCodes;
-	}
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
 
-	public void setName(Object name){
-		this.name = name;
-	}
-
-	public Object getName(){
-		return name;
-	}
 }
