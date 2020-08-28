@@ -1,5 +1,5 @@
 
-package redox.datamodel.patientquery;
+package redox.datamodel.common;
 
 import java.util.HashMap;
 import java.util.List;
@@ -11,6 +11,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import redox.datamodel.common.Destination;
+import redox.datamodel.patientpush.Message;
+import redox.datamodel.patientpush.Source;
+import redox.datamodel.patientpush.Transmission;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -18,7 +21,13 @@ import redox.datamodel.common.Destination;
     "EventType",
     "EventDateTime",
     "Test",
+        //patientpush, not patientquery
+    "Source",
     "Destinations",
+        //patientpush, not patientquery
+    "Message",
+        //patientpush, not patientquery
+    "Transmission",
     "FacilityCode"
 })
 public class Meta {
@@ -31,8 +40,17 @@ public class Meta {
     private String eventDateTime;
     @JsonProperty("Test")
     private Boolean test;
+    //patientpush, not patientquery
+    @JsonProperty("Source")
+    private Source source;
     @JsonProperty("Destinations")
     private List<Destination> destinations = null;
+    //patientpush, not patientquery
+    @JsonProperty("Message")
+    private Message message;
+    //patientpush, not patientquery
+    @JsonProperty("Transmission")
+    private Transmission transmission;
     @JsonProperty("FacilityCode")
     private Object facilityCode;
     @JsonIgnore
@@ -78,6 +96,17 @@ public class Meta {
         this.test = test;
     }
 
+    //patientpush, not patientquery
+    @JsonProperty("Source")
+    public Source getSource() {
+        return source;
+    }
+
+    @JsonProperty("Source")
+    public void setSource(Source source) {
+        this.source = source;
+    }
+
     @JsonProperty("Destinations")
     public List<Destination> getDestinations() {
         return destinations;
@@ -86,6 +115,28 @@ public class Meta {
     @JsonProperty("Destinations")
     public void setDestinations(List<Destination> destinations) {
         this.destinations = destinations;
+    }
+
+    //patientpush, not patientquery
+    @JsonProperty("Message")
+    public Message getMessage() {
+        return message;
+    }
+
+    @JsonProperty("Message")
+    public void setMessage(Message message) {
+        this.message = message;
+    }
+
+    //patientpush, not patientquery
+    @JsonProperty("Transmission")
+    public Transmission getTransmission() {
+        return transmission;
+    }
+
+    @JsonProperty("Transmission")
+    public void setTransmission(Transmission transmission) {
+        this.transmission = transmission;
     }
 
     @JsonProperty("FacilityCode")

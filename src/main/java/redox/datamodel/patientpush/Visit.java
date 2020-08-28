@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import redox.datamodel.common.Location;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -21,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class Visit {
 
     @JsonProperty("Location")
-    private Location_ location;
+    private Location location;
     @JsonProperty("StartDateTime")
     private Object startDateTime;
     @JsonProperty("EndDateTime")
@@ -34,12 +35,12 @@ public class Visit {
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("Location")
-    public Location_ getLocation() {
+    public Location getLocation() {
         return location;
     }
 
     @JsonProperty("Location")
-    public void setLocation(Location_ location) {
+    public void setLocation(Location location) {
         this.location = location;
     }
 

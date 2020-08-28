@@ -1,5 +1,5 @@
 
-package redox.datamodel.patientpush;
+package redox.datamodel.common;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "Department",
     "Room"
 })
-public class Location___ {
+public class Location {
 
     @JsonProperty("Type")
     private Object type;

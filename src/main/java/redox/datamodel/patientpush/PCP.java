@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import redox.datamodel.common.Location;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -45,7 +46,7 @@ public class PCP {
     @JsonProperty("PhoneNumber")
     private PhoneNumber__ phoneNumber;
     @JsonProperty("Location")
-    private Location__ location;
+    private Location location;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -140,12 +141,12 @@ public class PCP {
     }
 
     @JsonProperty("Location")
-    public Location__ getLocation() {
+    public Location getLocation() {
         return location;
     }
 
     @JsonProperty("Location")
-    public void setLocation(Location__ location) {
+    public void setLocation(Location location) {
         this.location = location;
     }
 

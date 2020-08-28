@@ -1,5 +1,5 @@
 
-package redox.datamodel.patientquery;
+package redox.datamodel.common;
 
 import java.util.HashMap;
 import java.util.List;
@@ -10,15 +10,21 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import redox.datamodel.patientpush.Demographics;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "Identifiers"
+    "Identifiers",
+        //patientpush, not patientquery
+    "Demographics"
 })
 public class Patient {
 
     @JsonProperty("Identifiers")
     private List<Identifier> identifiers = null;
+    //patientpush, not patientquery
+    @JsonProperty("Demographics")
+    private Demographics demographics;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -30,6 +36,16 @@ public class Patient {
     @JsonProperty("Identifiers")
     public void setIdentifiers(List<Identifier> identifiers) {
         this.identifiers = identifiers;
+    }
+    //patientpush, not patientquery
+    @JsonProperty("Demographics")
+    public Demographics getDemographics() {
+        return demographics;
+    }
+
+    @JsonProperty("Demographics")
+    public void setDemographics(Demographics demographics) {
+        this.demographics = demographics;
     }
 
     @JsonAnyGetter

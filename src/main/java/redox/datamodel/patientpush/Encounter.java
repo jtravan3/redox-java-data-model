@@ -1,6 +1,7 @@
 
 package redox.datamodel.patientpush;
 
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import redox.datamodel.common.Identifier;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -25,7 +27,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class Encounter {
 
     @JsonProperty("Identifiers")
-    private List<Identifier_> identifiers = null;
+    private List<Identifier> identifiers = null;
     @JsonProperty("Type")
     private Type__ type;
     @JsonProperty("DateTime")
@@ -44,12 +46,12 @@ public class Encounter {
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("Identifiers")
-    public List<Identifier_> getIdentifiers() {
+    public List<Identifier> getIdentifiers() {
         return identifiers;
     }
 
     @JsonProperty("Identifiers")
-    public void setIdentifiers(List<Identifier_> identifiers) {
+    public void setIdentifiers(List<Identifier> identifiers) {
         this.identifiers = identifiers;
     }
 

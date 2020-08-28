@@ -1,5 +1,5 @@
 
-package redox.datamodel.patientquery;
+package redox.datamodel.common;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,7 +13,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "ID",
-    "IDType"
+    "IDType",
+        //type is optional for patientpush, never present for patientquery
+        "Type"
 })
 public class Identifier {
 
@@ -21,6 +23,9 @@ public class Identifier {
     private String iD;
     @JsonProperty("IDType")
     private String iDType;
+    // type is optional
+    @JsonProperty("Type")
+    private Object type;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -42,6 +47,17 @@ public class Identifier {
     @JsonProperty("IDType")
     public void setIDType(String iDType) {
         this.iDType = iDType;
+    }
+
+    //optional
+    @JsonProperty("Type")
+    public Object getType() {
+        return type;
+    }
+    //optional
+    @JsonProperty("Type")
+    public void setType(Object type) {
+        this.type = type;
     }
 
     @JsonAnyGetter
