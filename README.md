@@ -1,4 +1,4 @@
-![Redox Banner](images/redox.jpg)
+![Redox Banner](images/redox.png)
 
 # Redox Java Data Model
 
@@ -9,6 +9,9 @@
 [![codecov](https://codecov.io/gh/jtravan3/redox-java-data-model/branch/develop/graph/badge.svg)](https://codecov.io/gh/jtravan3/redox-java-data-model)
 
 This project serves as a repository for Java POJOs that represent the Redox API Data Model.
+
+> DISCLAIMER: This is an open source project providing additional development capabilities on the existing [Redox](https://www.redoxengine.com/)
+> API. It is not an affiliate of [Redox](https://www.redoxengine.com/) and does not represent the company in any way.
 
 ## Usage
 
