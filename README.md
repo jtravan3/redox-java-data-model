@@ -15,7 +15,7 @@ This project serves as a repository for Java POJOs that represent the Redox API 
 
 ## Usage
 
-Install the dependency using Mavne
+Install the dependency using [Maven](https://maven.apache.org/guides/getting-started/)
 
 ```xml
 <dependency>
