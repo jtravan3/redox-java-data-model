@@ -1,5 +1,5 @@
 
-package redox.datamodel.patientpush;
+package redox.datamodel.patientqueryresponse;
 
 import java.util.HashMap;
 import java.util.List;
@@ -10,7 +10,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import redox.datamodel.common.CodedValue;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -19,16 +18,12 @@ import redox.datamodel.common.CodedValue;
     "CodeSystemName",
     "Name",
     "AltCodes",
-    "Status",
-    "Interpretation",
-    "DateTime",
-    "CodedValue",
     "Value",
-    "ValueType",
-    "Units",
-    "ReferenceRange"
+    "ValueText",
+    "StartDate",
+    "EndDate"
 })
-public class Observation_ {
+public class Observation__ {
 
     @JsonProperty("Code")
     private String code;
@@ -40,22 +35,14 @@ public class Observation_ {
     private String name;
     @JsonProperty("AltCodes")
     private List<Object> altCodes = null;
-    @JsonProperty("Status")
-    private String status;
-    @JsonProperty("Interpretation")
-    private Object interpretation;
-    @JsonProperty("DateTime")
-    private String dateTime;
-    @JsonProperty("CodedValue")
-    private CodedValue codedValue;
     @JsonProperty("Value")
-    private String value;
-    @JsonProperty("ValueType")
-    private String valueType;
-    @JsonProperty("Units")
-    private Object units;
-    @JsonProperty("ReferenceRange")
-    private ReferenceRange referenceRange;
+    private Value value;
+    @JsonProperty("ValueText")
+    private String valueText;
+    @JsonProperty("StartDate")
+    private String startDate;
+    @JsonProperty("EndDate")
+    private Object endDate;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -109,84 +96,44 @@ public class Observation_ {
         this.altCodes = altCodes;
     }
 
-    @JsonProperty("Status")
-    public String getStatus() {
-        return status;
-    }
-
-    @JsonProperty("Status")
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    @JsonProperty("Interpretation")
-    public Object getInterpretation() {
-        return interpretation;
-    }
-
-    @JsonProperty("Interpretation")
-    public void setInterpretation(Object interpretation) {
-        this.interpretation = interpretation;
-    }
-
-    @JsonProperty("DateTime")
-    public String getDateTime() {
-        return dateTime;
-    }
-
-    @JsonProperty("DateTime")
-    public void setDateTime(String dateTime) {
-        this.dateTime = dateTime;
-    }
-
-    @JsonProperty("CodedValue")
-    public CodedValue getCodedValue() {
-        return codedValue;
-    }
-
-    @JsonProperty("CodedValue")
-    public void setCodedValue(CodedValue codedValue) {
-        this.codedValue = codedValue;
-    }
-
     @JsonProperty("Value")
-    public String getValue() {
+    public Value getValue() {
         return value;
     }
 
     @JsonProperty("Value")
-    public void setValue(String value) {
+    public void setValue(Value value) {
         this.value = value;
     }
 
-    @JsonProperty("ValueType")
-    public String getValueType() {
-        return valueType;
+    @JsonProperty("ValueText")
+    public String getValueText() {
+        return valueText;
     }
 
-    @JsonProperty("ValueType")
-    public void setValueType(String valueType) {
-        this.valueType = valueType;
+    @JsonProperty("ValueText")
+    public void setValueText(String valueText) {
+        this.valueText = valueText;
     }
 
-    @JsonProperty("Units")
-    public Object getUnits() {
-        return units;
+    @JsonProperty("StartDate")
+    public String getStartDate() {
+        return startDate;
     }
 
-    @JsonProperty("Units")
-    public void setUnits(Object units) {
-        this.units = units;
+    @JsonProperty("StartDate")
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
     }
 
-    @JsonProperty("ReferenceRange")
-    public ReferenceRange getReferenceRange() {
-        return referenceRange;
+    @JsonProperty("EndDate")
+    public Object getEndDate() {
+        return endDate;
     }
 
-    @JsonProperty("ReferenceRange")
-    public void setReferenceRange(ReferenceRange referenceRange) {
-        this.referenceRange = referenceRange;
+    @JsonProperty("EndDate")
+    public void setEndDate(Object endDate) {
+        this.endDate = endDate;
     }
 
     @JsonAnyGetter

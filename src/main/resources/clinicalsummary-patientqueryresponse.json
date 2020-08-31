@@ -1,7 +1,7 @@
 {
   "Meta": {
     "DataModel": "Clinical Summary",
-    "EventType": "PatientPush",
+    "EventType": "PatientQueryResponse",
     "EventDateTime": "2020-08-13T16:45:41.217Z",
     "Test": true,
     "Source": {
@@ -11,7 +11,7 @@
     "Destinations": [
       {
         "ID": "ef9e7448-7f65-4432-aa96-059647e9b358",
-        "Name": "Patient Push Endpoint"
+        "Name": "Patient Query Endpoint"
       }
     ],
     "Message": {
@@ -23,8 +23,6 @@
     "FacilityCode": null
   },
   "Header": {
-    "DirectAddressFrom": "pat.granite@direct.redoxengine.com",
-    "DirectAddressTo": "john.slate@direct.redoxengine.com",
     "Document": {
       "Author": {
         "ID": "4356789876",
@@ -64,18 +62,6 @@
         "CodeSystem": "2.16.840.1.113883.6.1",
         "CodeSystemName": "LOINC",
         "Name": "Summarization of Episode Note"
-      },
-      "Visit": {
-        "Location": {
-          "Type": null,
-          "Facility": null,
-          "Department": null,
-          "Room": null
-        },
-        "StartDateTime": null,
-        "EndDateTime": null,
-        "Reason": null,
-        "VisitNumber": null
       }
     },
     "Patient": {
@@ -562,7 +548,7 @@
       }
     }
   ],
-  "InsurancesText": "<table width=\"100%\"><thead><tr><th>Insurances</th><th>Date</th><th>Status</th></tr></thead><tbody><tr><td ID=\"immun2\">Influenza virus vaccine, IM</td><td>May 2012</td><td>Completed</td></tr><tr><td ID=\"immun4\">Tetanus and diphtheria toxoids, IM</td><td>Apr 2012</td><td>Completed</td></tr></tbody></table>",
+  "InsurancesText": "foo",
   "Insurances": [
     {
       "Plan": {

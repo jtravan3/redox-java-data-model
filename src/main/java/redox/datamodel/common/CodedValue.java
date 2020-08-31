@@ -1,5 +1,5 @@
 
-package redox.datamodel.patientpush;
+package redox.datamodel.common;
 
 import java.util.HashMap;
 import java.util.List;
@@ -10,29 +10,17 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import redox.datamodel.common.Category;
-import redox.datamodel.common.HealthStatus;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "StartDate",
-    "EndDate",
     "Code",
     "CodeSystem",
     "CodeSystemName",
     "Name",
-    "AltCodes",
-    "Category",
-    "HealthStatus",
-    "Status",
-    "Comment"
+    "AltCodes"
 })
-public class Problem_ {
+public class CodedValue {
 
-    @JsonProperty("StartDate")
-    private String startDate;
-    @JsonProperty("EndDate")
-    private String endDate;
     @JsonProperty("Code")
     private String code;
     @JsonProperty("CodeSystem")
@@ -42,37 +30,9 @@ public class Problem_ {
     @JsonProperty("Name")
     private String name;
     @JsonProperty("AltCodes")
-    private List<AltCode__> altCodes = null;
-    @JsonProperty("Category")
-    private Category category;
-    @JsonProperty("HealthStatus")
-    private HealthStatus healthStatus;
-    @JsonProperty("Status")
-    private Status_ status;
-    @JsonProperty("Comment")
-    private Object comment;
+    private List<Object> altCodes = null;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-
-    @JsonProperty("StartDate")
-    public String getStartDate() {
-        return startDate;
-    }
-
-    @JsonProperty("StartDate")
-    public void setStartDate(String startDate) {
-        this.startDate = startDate;
-    }
-
-    @JsonProperty("EndDate")
-    public String getEndDate() {
-        return endDate;
-    }
-
-    @JsonProperty("EndDate")
-    public void setEndDate(String endDate) {
-        this.endDate = endDate;
-    }
 
     @JsonProperty("Code")
     public String getCode() {
@@ -115,53 +75,13 @@ public class Problem_ {
     }
 
     @JsonProperty("AltCodes")
-    public List<AltCode__> getAltCodes() {
+    public List<Object> getAltCodes() {
         return altCodes;
     }
 
     @JsonProperty("AltCodes")
-    public void setAltCodes(List<AltCode__> altCodes) {
+    public void setAltCodes(List<Object> altCodes) {
         this.altCodes = altCodes;
-    }
-
-    @JsonProperty("Category")
-    public Category getCategory() {
-        return category;
-    }
-
-    @JsonProperty("Category")
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
-    @JsonProperty("HealthStatus")
-    public HealthStatus getHealthStatus() {
-        return healthStatus;
-    }
-
-    @JsonProperty("HealthStatus")
-    public void setHealthStatus(HealthStatus healthStatus) {
-        this.healthStatus = healthStatus;
-    }
-
-    @JsonProperty("Status")
-    public Status_ getStatus() {
-        return status;
-    }
-
-    @JsonProperty("Status")
-    public void setStatus(Status_ status) {
-        this.status = status;
-    }
-
-    @JsonProperty("Comment")
-    public Object getComment() {
-        return comment;
-    }
-
-    @JsonProperty("Comment")
-    public void setComment(Object comment) {
-        this.comment = comment;
     }
 
     @JsonAnyGetter

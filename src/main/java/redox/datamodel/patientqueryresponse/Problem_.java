@@ -1,5 +1,5 @@
 
-package redox.datamodel.patientpush;
+package redox.datamodel.patientqueryresponse;
 
 import java.util.HashMap;
 import java.util.List;
@@ -42,7 +42,7 @@ public class Problem_ {
     @JsonProperty("Name")
     private String name;
     @JsonProperty("AltCodes")
-    private List<AltCode__> altCodes = null;
+    private List<AltCode> altCodes = null;
     @JsonProperty("Category")
     private Category category;
     @JsonProperty("HealthStatus")
@@ -115,12 +115,12 @@ public class Problem_ {
     }
 
     @JsonProperty("AltCodes")
-    public List<AltCode__> getAltCodes() {
+    public List<AltCode> getAltCodes() {
         return altCodes;
     }
 
     @JsonProperty("AltCodes")
-    public void setAltCodes(List<AltCode__> altCodes) {
+    public void setAltCodes(List<AltCode> altCodes) {
         this.altCodes = altCodes;
     }
 

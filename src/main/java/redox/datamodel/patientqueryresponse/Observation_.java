@@ -1,5 +1,5 @@
 
-package redox.datamodel.patientpush;
+package redox.datamodel.patientqueryresponse;
 
 import java.util.HashMap;
 import java.util.List;

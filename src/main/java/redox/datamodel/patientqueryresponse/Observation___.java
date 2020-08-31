@@ -1,5 +1,5 @@
 
-package redox.datamodel.patientpush;
+package redox.datamodel.patientqueryresponse;
 
 import java.util.HashMap;
 import java.util.List;
@@ -10,7 +10,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import redox.datamodel.common.CodedValue;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -22,13 +21,10 @@ import redox.datamodel.common.CodedValue;
     "Status",
     "Interpretation",
     "DateTime",
-    "CodedValue",
     "Value",
-    "ValueType",
-    "Units",
-    "ReferenceRange"
+    "Units"
 })
-public class Observation_ {
+public class Observation___ {
 
     @JsonProperty("Code")
     private String code;
@@ -43,19 +39,13 @@ public class Observation_ {
     @JsonProperty("Status")
     private String status;
     @JsonProperty("Interpretation")
-    private Object interpretation;
+    private String interpretation;
     @JsonProperty("DateTime")
     private String dateTime;
-    @JsonProperty("CodedValue")
-    private CodedValue codedValue;
     @JsonProperty("Value")
     private String value;
-    @JsonProperty("ValueType")
-    private String valueType;
     @JsonProperty("Units")
-    private Object units;
-    @JsonProperty("ReferenceRange")
-    private ReferenceRange referenceRange;
+    private String units;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -120,12 +110,12 @@ public class Observation_ {
     }
 
     @JsonProperty("Interpretation")
-    public Object getInterpretation() {
+    public String getInterpretation() {
         return interpretation;
     }
 
     @JsonProperty("Interpretation")
-    public void setInterpretation(Object interpretation) {
+    public void setInterpretation(String interpretation) {
         this.interpretation = interpretation;
     }
 
@@ -139,16 +129,6 @@ public class Observation_ {
         this.dateTime = dateTime;
     }
 
-    @JsonProperty("CodedValue")
-    public CodedValue getCodedValue() {
-        return codedValue;
-    }
-
-    @JsonProperty("CodedValue")
-    public void setCodedValue(CodedValue codedValue) {
-        this.codedValue = codedValue;
-    }
-
     @JsonProperty("Value")
     public String getValue() {
         return value;
@@ -159,34 +139,14 @@ public class Observation_ {
         this.value = value;
     }
 
-    @JsonProperty("ValueType")
-    public String getValueType() {
-        return valueType;
-    }
-
-    @JsonProperty("ValueType")
-    public void setValueType(String valueType) {
-        this.valueType = valueType;
-    }
-
     @JsonProperty("Units")
-    public Object getUnits() {
+    public String getUnits() {
         return units;
     }
 
     @JsonProperty("Units")
-    public void setUnits(Object units) {
+    public void setUnits(String units) {
         this.units = units;
-    }
-
-    @JsonProperty("ReferenceRange")
-    public ReferenceRange getReferenceRange() {
-        return referenceRange;
-    }
-
-    @JsonProperty("ReferenceRange")
-    public void setReferenceRange(ReferenceRange referenceRange) {
-        this.referenceRange = referenceRange;
     }
 
     @JsonAnyGetter

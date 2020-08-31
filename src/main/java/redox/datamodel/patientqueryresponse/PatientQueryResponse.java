@@ -1,5 +1,5 @@
 
-package redox.datamodel.patientpush;
+package redox.datamodel.patientqueryresponse;
 
 import java.util.HashMap;
 import java.util.List;
@@ -10,7 +10,10 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import redox.datamodel.common.*;
+import redox.datamodel.common.Allergy;
+import redox.datamodel.common.AdvanceDirective;
+import redox.datamodel.common.FamilyHistory;
+import redox.datamodel.common.Header;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -45,7 +48,7 @@ import redox.datamodel.common.*;
     "VitalSignsText",
     "VitalSigns"
 })
-public class PatientPush {
+public class PatientQueryResponse {
 
     @JsonProperty("Meta")
     private Meta meta;
@@ -231,7 +234,9 @@ public class PatientPush {
     }
 
     @JsonProperty("InsurancesText")
-    public Object getInsurancesText() { return insurancesText; }
+    public Object getInsurancesText() {
+        return insurancesText;
+    }
 
     @JsonProperty("InsurancesText")
     public void setInsurancesText(Object insurancesText) {

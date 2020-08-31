@@ -1,6 +1,5 @@
 
-package redox.datamodel.patientpush;
-
+package redox.datamodel.patientqueryresponse;
 
 import java.util.HashMap;
 import java.util.List;
@@ -12,7 +11,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import redox.datamodel.common.Diagnosi;
-import redox.datamodel.common.Identifier;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -28,7 +26,7 @@ import redox.datamodel.common.Identifier;
 public class Encounter {
 
     @JsonProperty("Identifiers")
-    private List<Identifier> identifiers = null;
+    private List<Identifier_> identifiers = null;
     @JsonProperty("Type")
     private Type__ type;
     @JsonProperty("DateTime")
@@ -38,7 +36,7 @@ public class Encounter {
     @JsonProperty("Providers")
     private List<Provider> providers = null;
     @JsonProperty("Locations")
-    private List<Location____> locations = null;
+    private List<Location___> locations = null;
     @JsonProperty("Diagnosis")
     private List<Diagnosi> diagnosis = null;
     @JsonProperty("ReasonForVisit")
@@ -47,12 +45,12 @@ public class Encounter {
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("Identifiers")
-    public List<Identifier> getIdentifiers() {
+    public List<Identifier_> getIdentifiers() {
         return identifiers;
     }
 
     @JsonProperty("Identifiers")
-    public void setIdentifiers(List<Identifier> identifiers) {
+    public void setIdentifiers(List<Identifier_> identifiers) {
         this.identifiers = identifiers;
     }
 
@@ -97,12 +95,12 @@ public class Encounter {
     }
 
     @JsonProperty("Locations")
-    public List<Location____> getLocations() {
+    public List<Location___> getLocations() {
         return locations;
     }
 
     @JsonProperty("Locations")
-    public void setLocations(List<Location____> locations) {
+    public void setLocations(List<Location___> locations) {
         this.locations = locations;
     }
 
