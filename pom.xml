@@ -10,7 +10,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
-	<groupId>com.jtravan</groupId>
+	<groupId>com.jtravan3</groupId>
 	<artifactId>redox-java-data-model</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
