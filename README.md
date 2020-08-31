@@ -15,6 +15,16 @@ This project serves as a repository for Java POJOs that represent the Redox API 
 
 ## Usage
 
+Install the dependency using Mavne
+
+```xml
+<dependency>
+  <groupId>com.jtravan3</groupId>
+  <artifactId>redox-java-data-model</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
+
 Using [Jackson](https://github.com/FasterXML/jackson) or other JSON parsing libraries you can map your raw JSON payload
 received by [Redox](https://www.redoxengine.com/) to a strongly typed Java POJO.
 
