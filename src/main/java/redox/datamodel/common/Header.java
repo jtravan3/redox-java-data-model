@@ -1,5 +1,5 @@
 
-package redox.datamodel.patientpush;
+package redox.datamodel.common;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,11 +9,15 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import redox.datamodel.common.Document;
 import redox.datamodel.common.Patient;
+import redox.datamodel.patientpush.PCP;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
+        //patientpush, not patientqueryresponse
     "DirectAddressFrom",
+        //patientpush, not patientqueryresponse
     "DirectAddressTo",
     "Document",
     "Patient",
@@ -33,7 +37,7 @@ public class Header {
     private PCP pCP;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-
+    //patientpush, not patientqueryresponse
     @JsonProperty("DirectAddressFrom")
     public String getDirectAddressFrom() {
         return directAddressFrom;
@@ -43,7 +47,7 @@ public class Header {
     public void setDirectAddressFrom(String directAddressFrom) {
         this.directAddressFrom = directAddressFrom;
     }
-
+    //patientpush, not patientqueryresponse
     @JsonProperty("DirectAddressTo")
     public String getDirectAddressTo() {
         return directAddressTo;

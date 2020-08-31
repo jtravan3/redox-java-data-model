@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import redox.datamodel.common.Meta;
+import redox.datamodel.common.*;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -231,9 +231,7 @@ public class PatientPush {
     }
 
     @JsonProperty("InsurancesText")
-    public Object getInsurancesText() {
-        return insurancesText;
-    }
+    public Object getInsurancesText() { return insurancesText; }
 
     @JsonProperty("InsurancesText")
     public void setInsurancesText(Object insurancesText) {

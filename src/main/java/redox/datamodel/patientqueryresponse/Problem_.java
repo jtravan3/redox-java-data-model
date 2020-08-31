@@ -10,6 +10,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import redox.datamodel.common.Category;
+import redox.datamodel.common.HealthStatus;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -40,7 +42,7 @@ public class Problem_ {
     @JsonProperty("Name")
     private String name;
     @JsonProperty("AltCodes")
-    private List<AltCode__> altCodes = null;
+    private List<AltCode> altCodes = null;
     @JsonProperty("Category")
     private Category category;
     @JsonProperty("HealthStatus")
@@ -113,12 +115,12 @@ public class Problem_ {
     }
 
     @JsonProperty("AltCodes")
-    public List<AltCode__> getAltCodes() {
+    public List<AltCode> getAltCodes() {
         return altCodes;
     }
 
     @JsonProperty("AltCodes")
-    public void setAltCodes(List<AltCode__> altCodes) {
+    public void setAltCodes(List<AltCode> altCodes) {
         this.altCodes = altCodes;
     }
 

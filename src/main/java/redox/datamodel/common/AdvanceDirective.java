@@ -1,5 +1,5 @@
 
-package redox.datamodel.patientpush;
+package redox.datamodel.common;
 
 import java.util.HashMap;
 import java.util.List;
@@ -10,17 +10,28 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import redox.datamodel.patientpush.Type;
+import redox.datamodel.patientpush.VerifiedBy;
+
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
+    "Type",
     "Code",
     "CodeSystem",
     "CodeSystemName",
     "Name",
-    "AltCodes"
+    "AltCodes",
+    "StartDate",
+    "EndDate",
+    "ExternalReference",
+    "VerifiedBy",
+    "Custodians"
 })
-public class Category {
+public class AdvanceDirective {
 
+    @JsonProperty("Type")
+    private Type type;
     @JsonProperty("Code")
     private String code;
     @JsonProperty("CodeSystem")
@@ -31,8 +42,28 @@ public class Category {
     private String name;
     @JsonProperty("AltCodes")
     private List<Object> altCodes = null;
+    @JsonProperty("StartDate")
+    private String startDate;
+    @JsonProperty("EndDate")
+    private Object endDate;
+    @JsonProperty("ExternalReference")
+    private String externalReference;
+    @JsonProperty("VerifiedBy")
+    private List<VerifiedBy> verifiedBy = null;
+    @JsonProperty("Custodians")
+    private List<Custodian> custodians = null;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
+    @JsonProperty("Type")
+    public Type getType() {
+        return type;
+    }
+
+    @JsonProperty("Type")
+    public void setType(Type type) {
+        this.type = type;
+    }
 
     @JsonProperty("Code")
     public String getCode() {
@@ -82,6 +113,56 @@ public class Category {
     @JsonProperty("AltCodes")
     public void setAltCodes(List<Object> altCodes) {
         this.altCodes = altCodes;
+    }
+
+    @JsonProperty("StartDate")
+    public String getStartDate() {
+        return startDate;
+    }
+
+    @JsonProperty("StartDate")
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    @JsonProperty("EndDate")
+    public Object getEndDate() {
+        return endDate;
+    }
+
+    @JsonProperty("EndDate")
+    public void setEndDate(Object endDate) {
+        this.endDate = endDate;
+    }
+
+    @JsonProperty("ExternalReference")
+    public String getExternalReference() {
+        return externalReference;
+    }
+
+    @JsonProperty("ExternalReference")
+    public void setExternalReference(String externalReference) {
+        this.externalReference = externalReference;
+    }
+
+    @JsonProperty("VerifiedBy")
+    public List<VerifiedBy> getVerifiedBy() {
+        return verifiedBy;
+    }
+
+    @JsonProperty("VerifiedBy")
+    public void setVerifiedBy(List<VerifiedBy> verifiedBy) {
+        this.verifiedBy = verifiedBy;
+    }
+
+    @JsonProperty("Custodians")
+    public List<Custodian> getCustodians() {
+        return custodians;
+    }
+
+    @JsonProperty("Custodians")
+    public void setCustodians(List<Custodian> custodians) {
+        this.custodians = custodians;
     }
 
     @JsonAnyGetter

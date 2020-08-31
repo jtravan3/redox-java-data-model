@@ -30,7 +30,7 @@ public class Relation {
     @JsonProperty("Name")
     private String name;
     @JsonProperty("Demographics")
-    private Demographics_ demographics;
+    private Demographics demographics;
     @JsonProperty("IsDeceased")
     private Boolean isDeceased;
     @JsonIgnore
@@ -77,12 +77,12 @@ public class Relation {
     }
 
     @JsonProperty("Demographics")
-    public Demographics_ getDemographics() {
+    public Demographics getDemographics() {
         return demographics;
     }
 
     @JsonProperty("Demographics")
-    public void setDemographics(Demographics_ demographics) {
+    public void setDemographics(Demographics demographics) {
         this.demographics = demographics;
     }
 

@@ -1,5 +1,5 @@
 
-package redox.datamodel.patientqueryresponse;
+package redox.datamodel.common;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,6 +9,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import redox.datamodel.common.Author;
+import redox.datamodel.patientpush.TypeCode;
+import redox.datamodel.patientpush.Visit;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -18,7 +21,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "Title",
     "DateTime",
     "Type",
-    "TypeCode"
+    "TypeCode",
+        // required for patientpush, not patientqueryresponse
+    "Visit"
 })
 public class Document {
 
@@ -36,6 +41,9 @@ public class Document {
     private String type;
     @JsonProperty("TypeCode")
     private TypeCode typeCode;
+    // required for patientpush, not patientqueryresponse
+    @JsonProperty("Visit")
+    private Visit visit;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -107,6 +115,16 @@ public class Document {
     @JsonProperty("TypeCode")
     public void setTypeCode(TypeCode typeCode) {
         this.typeCode = typeCode;
+    }
+    // required for patientpush, not patientqueryresponse
+    @JsonProperty("Visit")
+    public Visit getVisit() {
+        return visit;
+    }
+
+    @JsonProperty("Visit")
+    public void setVisit(Visit visit) {
+        this.visit = visit;
     }
 
     @JsonAnyGetter

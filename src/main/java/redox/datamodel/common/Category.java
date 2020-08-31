@@ -1,5 +1,5 @@
 
-package redox.datamodel.patientpush;
+package redox.datamodel.common;
 
 import java.util.HashMap;
 import java.util.List;
@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "Name",
     "AltCodes"
 })
-public class HealthStatus {
+public class Category {
 
     @JsonProperty("Code")
     private String code;
