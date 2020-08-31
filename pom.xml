@@ -55,6 +55,7 @@
 		<maven.gpg.plugin.version>1.6</maven.gpg.plugin.version>
 		<maven.release.plugin.version>2.5.3</maven.release.plugin.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spring-boot.repackage.skip>true</spring-boot.repackage.skip>
 	</properties>
 
 	<dependencies>
