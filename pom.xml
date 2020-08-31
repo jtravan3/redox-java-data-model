@@ -10,12 +10,38 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
-	<groupId>jtravan3</groupId>
+	<groupId>com.jtravan</groupId>
 	<artifactId>redox-java-data-model</artifactId>
 	<version>1.0.0</version>
+	<packaging>jar</packaging>
 
 	<name>redox-java-data-model</name>
 	<description>This project contains Java POJOs representing the data model of Redox API</description>
+	<url>https://github.com/jtravan3/redox-java-data-model</url>
+
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<name>John Ravan</name>
+			<email>john@jtravan.com</email>
+		</developer>
+		<developer>
+			<name>Tyler Dillon</name>
+			<email>harrell_t@icloud.com</email>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:git://github.com/jtravan3/redox-java-data-model.git</connection>
+		<developerConnection>scm:git:ssh://github.com:jtravan3/redox-java-data-model.git</developerConnection>
+		<url>http://github.com/jtravan3/redox-java-data-model/tree/master</url>
+	</scm>
 
 	<properties>
 		<java.version>11</java.version>
