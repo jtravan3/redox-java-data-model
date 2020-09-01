@@ -90,7 +90,7 @@ public class PatientPush {
     @JsonProperty("ProblemsText")
     private String problemsText;
     @JsonProperty("Problems")
-    private List<Problem_> problems = null;
+    private List<Problem> problems = null;
     @JsonProperty("ProceduresText")
     private String proceduresText;
     @JsonProperty("Procedures")
@@ -319,12 +319,12 @@ public class PatientPush {
     }
 
     @JsonProperty("Problems")
-    public List<Problem_> getProblems() {
+    public List<Problem> getProblems() {
         return problems;
     }
 
     @JsonProperty("Problems")
-    public void setProblems(List<Problem_> problems) {
+    public void setProblems(List<Problem> problems) {
         this.problems = problems;
     }
 

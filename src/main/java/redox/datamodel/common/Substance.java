@@ -1,5 +1,5 @@
 
-package redox.datamodel.patientpush;
+package redox.datamodel.common;
 
 import java.util.HashMap;
 import java.util.List;
@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import redox.datamodel.common.Value;
+import redox.datamodel.common.AltCode;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -18,13 +18,9 @@ import redox.datamodel.common.Value;
     "CodeSystem",
     "CodeSystemName",
     "Name",
-    "AltCodes",
-    "Value",
-    "ValueText",
-    "StartDate",
-    "EndDate"
+    "AltCodes"
 })
-public class Observation__ {
+public class Substance {
 
     @JsonProperty("Code")
     private String code;
@@ -35,15 +31,7 @@ public class Observation__ {
     @JsonProperty("Name")
     private String name;
     @JsonProperty("AltCodes")
-    private List<Object> altCodes = null;
-    @JsonProperty("Value")
-    private Value value;
-    @JsonProperty("ValueText")
-    private String valueText;
-    @JsonProperty("StartDate")
-    private String startDate;
-    @JsonProperty("EndDate")
-    private Object endDate;
+    private List<AltCode> altCodes = null;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -88,53 +76,13 @@ public class Observation__ {
     }
 
     @JsonProperty("AltCodes")
-    public List<Object> getAltCodes() {
+    public List<AltCode> getAltCodes() {
         return altCodes;
     }
 
     @JsonProperty("AltCodes")
-    public void setAltCodes(List<Object> altCodes) {
+    public void setAltCodes(List<AltCode> altCodes) {
         this.altCodes = altCodes;
-    }
-
-    @JsonProperty("Value")
-    public Value getValue() {
-        return value;
-    }
-
-    @JsonProperty("Value")
-    public void setValue(Value value) {
-        this.value = value;
-    }
-
-    @JsonProperty("ValueText")
-    public String getValueText() {
-        return valueText;
-    }
-
-    @JsonProperty("ValueText")
-    public void setValueText(String valueText) {
-        this.valueText = valueText;
-    }
-
-    @JsonProperty("StartDate")
-    public String getStartDate() {
-        return startDate;
-    }
-
-    @JsonProperty("StartDate")
-    public void setStartDate(String startDate) {
-        this.startDate = startDate;
-    }
-
-    @JsonProperty("EndDate")
-    public Object getEndDate() {
-        return endDate;
-    }
-
-    @JsonProperty("EndDate")
-    public void setEndDate(Object endDate) {
-        this.endDate = endDate;
     }
 
     @JsonAnyGetter

@@ -1,8 +1,7 @@
 
-package redox.datamodel.patientpush;
+package redox.datamodel.common;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
@@ -10,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import redox.datamodel.common.Value;
+import redox.datamodel.common.Demographics;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -18,13 +17,10 @@ import redox.datamodel.common.Value;
     "CodeSystem",
     "CodeSystemName",
     "Name",
-    "AltCodes",
-    "Value",
-    "ValueText",
-    "StartDate",
-    "EndDate"
+    "Demographics",
+    "IsDeceased"
 })
-public class Observation__ {
+public class Relation {
 
     @JsonProperty("Code")
     private String code;
@@ -34,16 +30,10 @@ public class Observation__ {
     private String codeSystemName;
     @JsonProperty("Name")
     private String name;
-    @JsonProperty("AltCodes")
-    private List<Object> altCodes = null;
-    @JsonProperty("Value")
-    private Value value;
-    @JsonProperty("ValueText")
-    private String valueText;
-    @JsonProperty("StartDate")
-    private String startDate;
-    @JsonProperty("EndDate")
-    private Object endDate;
+    @JsonProperty("Demographics")
+    private Demographics demographics;
+    @JsonProperty("IsDeceased")
+    private Boolean isDeceased;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -87,54 +77,24 @@ public class Observation__ {
         this.name = name;
     }
 
-    @JsonProperty("AltCodes")
-    public List<Object> getAltCodes() {
-        return altCodes;
+    @JsonProperty("Demographics")
+    public Demographics getDemographics() {
+        return demographics;
     }
 
-    @JsonProperty("AltCodes")
-    public void setAltCodes(List<Object> altCodes) {
-        this.altCodes = altCodes;
+    @JsonProperty("Demographics")
+    public void setDemographics(Demographics demographics) {
+        this.demographics = demographics;
     }
 
-    @JsonProperty("Value")
-    public Value getValue() {
-        return value;
+    @JsonProperty("IsDeceased")
+    public Boolean getIsDeceased() {
+        return isDeceased;
     }
 
-    @JsonProperty("Value")
-    public void setValue(Value value) {
-        this.value = value;
-    }
-
-    @JsonProperty("ValueText")
-    public String getValueText() {
-        return valueText;
-    }
-
-    @JsonProperty("ValueText")
-    public void setValueText(String valueText) {
-        this.valueText = valueText;
-    }
-
-    @JsonProperty("StartDate")
-    public String getStartDate() {
-        return startDate;
-    }
-
-    @JsonProperty("StartDate")
-    public void setStartDate(String startDate) {
-        this.startDate = startDate;
-    }
-
-    @JsonProperty("EndDate")
-    public Object getEndDate() {
-        return endDate;
-    }
-
-    @JsonProperty("EndDate")
-    public void setEndDate(Object endDate) {
-        this.endDate = endDate;
+    @JsonProperty("IsDeceased")
+    public void setIsDeceased(Boolean isDeceased) {
+        this.isDeceased = isDeceased;
     }
 
     @JsonAnyGetter

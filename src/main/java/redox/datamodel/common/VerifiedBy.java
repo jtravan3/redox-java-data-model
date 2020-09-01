@@ -15,9 +15,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "FirstName",
     "LastName",
     "Credentials",
-    "Address"
+    "DateTime"
 })
-public class Custodian {
+public class VerifiedBy {
 
     @JsonProperty("FirstName")
     private String firstName;
@@ -25,8 +25,8 @@ public class Custodian {
     private String lastName;
     @JsonProperty("Credentials")
     private String credentials;
-    @JsonProperty("Address")
-    private Address address;
+    @JsonProperty("DateTime")
+    private Object dateTime;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -60,14 +60,14 @@ public class Custodian {
         this.credentials = credentials;
     }
 
-    @JsonProperty("Address")
-    public Address getAddress() {
-        return address;
+    @JsonProperty("DateTime")
+    public Object getDateTime() {
+        return dateTime;
     }
 
-    @JsonProperty("Address")
-    public void setAddress(Address address) {
-        this.address = address;
+    @JsonProperty("DateTime")
+    public void setDateTime(Object dateTime) {
+        this.dateTime = dateTime;
     }
 
     @JsonAnyGetter

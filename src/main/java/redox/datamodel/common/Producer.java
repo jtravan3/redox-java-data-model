@@ -9,55 +9,56 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import redox.datamodel.common.Address;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "FirstName",
-    "LastName",
-    "Credentials",
+    "ID",
+    "Name",
+    "IDType",
     "Address"
 })
-public class Custodian {
+public class Producer {
 
-    @JsonProperty("FirstName")
-    private String firstName;
-    @JsonProperty("LastName")
-    private String lastName;
-    @JsonProperty("Credentials")
-    private String credentials;
+    @JsonProperty("ID")
+    private String iD;
+    @JsonProperty("Name")
+    private String name;
+    @JsonProperty("IDType")
+    private Object iDType;
     @JsonProperty("Address")
     private Address address;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("FirstName")
-    public String getFirstName() {
-        return firstName;
+    @JsonProperty("ID")
+    public String getID() {
+        return iD;
     }
 
-    @JsonProperty("FirstName")
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    @JsonProperty("ID")
+    public void setID(String iD) {
+        this.iD = iD;
     }
 
-    @JsonProperty("LastName")
-    public String getLastName() {
-        return lastName;
+    @JsonProperty("Name")
+    public String getName() {
+        return name;
     }
 
-    @JsonProperty("LastName")
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    @JsonProperty("Name")
+    public void setName(String name) {
+        this.name = name;
     }
 
-    @JsonProperty("Credentials")
-    public String getCredentials() {
-        return credentials;
+    @JsonProperty("IDType")
+    public Object getIDType() {
+        return iDType;
     }
 
-    @JsonProperty("Credentials")
-    public void setCredentials(String credentials) {
-        this.credentials = credentials;
+    @JsonProperty("IDType")
+    public void setIDType(Object iDType) {
+        this.iDType = iDType;
     }
 
     @JsonProperty("Address")

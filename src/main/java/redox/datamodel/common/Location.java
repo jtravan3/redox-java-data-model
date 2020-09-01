@@ -27,6 +27,10 @@ public class Location {
     private Object department;
     @JsonProperty("Room")
     private Object room;
+    @JsonProperty("Address")
+    private Address address;
+    @JsonProperty("Name")
+    private String name;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -68,6 +72,26 @@ public class Location {
     @JsonProperty("Room")
     public void setRoom(Object room) {
         this.room = room;
+    }
+
+    @JsonProperty("Address")
+    public Address getAddress() {
+        return address;
+    }
+
+    @JsonProperty("Address")
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    @JsonProperty("Name")
+    public String getName() {
+        return name;
+    }
+
+    @JsonProperty("Name")
+    public void setName(String name) {
+        this.name = name;
     }
 
     @JsonAnyGetter

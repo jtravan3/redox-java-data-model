@@ -10,7 +10,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import redox.datamodel.patientpush.*;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -27,13 +26,13 @@ import redox.datamodel.patientpush.*;
 public class Allergy {
 
     @JsonProperty("Type")
-    private Type_ type;
+    private Type type;
     @JsonProperty("Substance")
     private Substance substance;
     @JsonProperty("Reaction")
     private List<Reaction> reaction = null;
     @JsonProperty("Severity")
-    private Severity_ severity;
+    private Severity severity;
     @JsonProperty("Criticality")
     private Criticality criticality;
     @JsonProperty("Status")
@@ -48,12 +47,12 @@ public class Allergy {
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("Type")
-    public Type_ getType() {
+    public Type getType() {
         return type;
     }
 
     @JsonProperty("Type")
-    public void setType(Type_ type) {
+    public void setType(Type type) {
         this.type = type;
     }
 
@@ -78,12 +77,12 @@ public class Allergy {
     }
 
     @JsonProperty("Severity")
-    public Severity_ getSeverity() {
+    public Severity getSeverity() {
         return severity;
     }
 
     @JsonProperty("Severity")
-    public void setSeverity(Severity_ severity) {
+    public void setSeverity(Severity severity) {
         this.severity = severity;
     }
 

@@ -10,8 +10,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import redox.datamodel.patientpush.Type;
-import redox.datamodel.patientpush.VerifiedBy;
 
 
 @JsonInclude(JsonInclude.Include.NON_NULL)

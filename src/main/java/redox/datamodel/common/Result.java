@@ -1,5 +1,5 @@
 
-package redox.datamodel.patientpush;
+package redox.datamodel.common;
 
 import java.util.HashMap;
 import java.util.List;
@@ -10,7 +10,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import redox.datamodel.common.Value;
+import redox.datamodel.common.Producer;
+import redox.datamodel.patientpush.Observation;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -19,12 +20,11 @@ import redox.datamodel.common.Value;
     "CodeSystemName",
     "Name",
     "AltCodes",
-    "Value",
-    "ValueText",
-    "StartDate",
-    "EndDate"
+    "Status",
+    "Producer",
+    "Observations"
 })
-public class Observation__ {
+public class Result {
 
     @JsonProperty("Code")
     private String code;
@@ -36,14 +36,12 @@ public class Observation__ {
     private String name;
     @JsonProperty("AltCodes")
     private List<Object> altCodes = null;
-    @JsonProperty("Value")
-    private Value value;
-    @JsonProperty("ValueText")
-    private String valueText;
-    @JsonProperty("StartDate")
-    private String startDate;
-    @JsonProperty("EndDate")
-    private Object endDate;
+    @JsonProperty("Status")
+    private Object status;
+    @JsonProperty("Producer")
+    private Producer producer;
+    @JsonProperty("Observations")
+    private List<Observation> observations = null;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -97,44 +95,34 @@ public class Observation__ {
         this.altCodes = altCodes;
     }
 
-    @JsonProperty("Value")
-    public Value getValue() {
-        return value;
+    @JsonProperty("Status")
+    public Object getStatus() {
+        return status;
     }
 
-    @JsonProperty("Value")
-    public void setValue(Value value) {
-        this.value = value;
+    @JsonProperty("Status")
+    public void setStatus(Object status) {
+        this.status = status;
     }
 
-    @JsonProperty("ValueText")
-    public String getValueText() {
-        return valueText;
+    @JsonProperty("Producer")
+    public Producer getProducer() {
+        return producer;
     }
 
-    @JsonProperty("ValueText")
-    public void setValueText(String valueText) {
-        this.valueText = valueText;
+    @JsonProperty("Producer")
+    public void setProducer(Producer producer) {
+        this.producer = producer;
     }
 
-    @JsonProperty("StartDate")
-    public String getStartDate() {
-        return startDate;
+    @JsonProperty("Observations")
+    public List<Observation> getObservations() {
+        return observations;
     }
 
-    @JsonProperty("StartDate")
-    public void setStartDate(String startDate) {
-        this.startDate = startDate;
-    }
-
-    @JsonProperty("EndDate")
-    public Object getEndDate() {
-        return endDate;
-    }
-
-    @JsonProperty("EndDate")
-    public void setEndDate(Object endDate) {
-        this.endDate = endDate;
+    @JsonProperty("Observations")
+    public void setObservations(List<Observation> observations) {
+        this.observations = observations;
     }
 
     @JsonAnyGetter
