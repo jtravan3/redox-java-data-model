@@ -10,10 +10,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import redox.datamodel.common.Allergy;
-import redox.datamodel.common.AdvanceDirective;
-import redox.datamodel.common.FamilyHistory;
-import redox.datamodel.common.Header;
+import redox.datamodel.common.*;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -93,7 +90,7 @@ public class PatientQueryResponse {
     @JsonProperty("ProblemsText")
     private String problemsText;
     @JsonProperty("Problems")
-    private List<Problem_> problems = null;
+    private List<Problem> problems = null;
     @JsonProperty("ProceduresText")
     private String proceduresText;
     @JsonProperty("Procedures")
@@ -324,12 +321,12 @@ public class PatientQueryResponse {
     }
 
     @JsonProperty("Problems")
-    public List<Problem_> getProblems() {
+    public List<Problem> getProblems() {
         return problems;
     }
 
     @JsonProperty("Problems")
-    public void setProblems(List<Problem_> problems) {
+    public void setProblems(List<Problem> problems) {
         this.problems = problems;
     }
 
