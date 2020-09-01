@@ -37,6 +37,31 @@ patientPush.getAllergies().stream().forEach(allergy -> {
 });
 ```
 
+or use the provided `RedoxDataModelFactory` to create the data models for you by providing the class types
+
+```java
+@Component
+public class RedoxDataParser {
+    
+    @Autowired
+    public RedoxDataModelFactory redoxDataModelFactory;
+    
+    public PatientPush getPatientPush() throws IOException {
+        
+        Path filePath = Path.of("clinicalsummary-patientpush.json");
+        PatientPush patientPush = redoxDataModelFactory.parseRedoxJson(filePath, PatientPush.class);
+        
+        patientPush.getFamilyHistory().forEach(familyHistory -> {
+            familyHistory.getProblems().forEach(problem -> {
+                System.out.println(problem);
+            });
+        });
+        
+        return patientPush;
+    }
+}
+```
+
 ## Philosophy
 Our project vision is to make available a Java data model representing the [Redox](https://www.redoxengine.com/) API 
 data model. This data model can be used by those desiring to integrate into EHR's via Redox and Java-based applications.
