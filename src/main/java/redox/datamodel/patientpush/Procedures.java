@@ -22,9 +22,9 @@ public class Procedures {
     @JsonProperty("Observations")
     private List<Observation> observations = null;
     @JsonProperty("Procedures")
-    private List<Procedure_> procedures = null;
+    private List<Procedure> procedures = null;
     @JsonProperty("Services")
-    private List<Service_> services = null;
+    private List<Service> services = null;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -39,22 +39,22 @@ public class Procedures {
     }
 
     @JsonProperty("Procedures")
-    public List<Procedure_> getProcedures() {
+    public List<Procedure> getProcedures() {
         return procedures;
     }
 
     @JsonProperty("Procedures")
-    public void setProcedures(List<Procedure_> procedures) {
+    public void setProcedures(List<Procedure> procedures) {
         this.procedures = procedures;
     }
 
     @JsonProperty("Services")
-    public List<Service_> getServices() {
+    public List<Service> getServices() {
         return services;
     }
 
     @JsonProperty("Services")
-    public void setServices(List<Service_> services) {
+    public void setServices(List<Service> services) {
         this.services = services;
     }
 

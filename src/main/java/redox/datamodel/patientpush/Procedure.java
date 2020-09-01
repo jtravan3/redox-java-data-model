@@ -19,7 +19,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "Name",
     "AltCodes",
     "Status",
-    "DateTime"
+    "DateTime",
+        "TargetSite"
 })
 public class Procedure {
 
@@ -37,6 +38,8 @@ public class Procedure {
     private String status;
     @JsonProperty("DateTime")
     private String dateTime;
+    @JsonProperty("TargetSite")
+    private TargetSite targetSite;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -108,6 +111,15 @@ public class Procedure {
     @JsonProperty("DateTime")
     public void setDateTime(String dateTime) {
         this.dateTime = dateTime;
+    }
+
+    @JsonProperty("TargetSite")
+    public TargetSite getTargetSite() {
+        return targetSite;
+    }
+    @JsonProperty("TargetSite")
+    public void setTargetSite(TargetSite targetSite) {
+        this.targetSite = targetSite;
     }
 
     @JsonAnyGetter

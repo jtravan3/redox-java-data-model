@@ -44,7 +44,7 @@ public class PCP {
     @JsonProperty("EmailAddresses")
     private List<Object> emailAddresses = null;
     @JsonProperty("PhoneNumber")
-    private PhoneNumber__ phoneNumber;
+    private PhoneNumber phoneNumber;
     @JsonProperty("Location")
     private Location location;
     @JsonIgnore
@@ -131,12 +131,12 @@ public class PCP {
     }
 
     @JsonProperty("PhoneNumber")
-    public PhoneNumber__ getPhoneNumber() {
+    public PhoneNumber getPhoneNumber() {
         return phoneNumber;
     }
 
     @JsonProperty("PhoneNumber")
-    public void setPhoneNumber(PhoneNumber__ phoneNumber) {
+    public void setPhoneNumber(PhoneNumber phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

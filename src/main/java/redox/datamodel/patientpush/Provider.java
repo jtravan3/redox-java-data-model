@@ -42,7 +42,7 @@ public class Provider {
     @JsonProperty("EmailAddresses")
     private List<Object> emailAddresses = null;
     @JsonProperty("PhoneNumber")
-    private PhoneNumber___ phoneNumber;
+    private PhoneNumber phoneNumber;
     @JsonProperty("Location")
     private Location location;
     @JsonProperty("Role")
@@ -121,12 +121,12 @@ public class Provider {
     }
 
     @JsonProperty("PhoneNumber")
-    public PhoneNumber___ getPhoneNumber() {
+    public PhoneNumber getPhoneNumber() {
         return phoneNumber;
     }
 
     @JsonProperty("PhoneNumber")
-    public void setPhoneNumber(PhoneNumber___ phoneNumber) {
+    public void setPhoneNumber(PhoneNumber phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

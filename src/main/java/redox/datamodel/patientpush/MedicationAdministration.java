@@ -28,9 +28,9 @@ public class MedicationAdministration {
     @JsonProperty("Dose")
     private Dose dose;
     @JsonProperty("Rate")
-    private Rate_ rate;
+    private Rate rate;
     @JsonProperty("Route")
-    private Route__ route;
+    private Route route;
     @JsonProperty("StartDate")
     private String startDate;
     @JsonProperty("EndDate")
@@ -38,7 +38,7 @@ public class MedicationAdministration {
     @JsonProperty("Frequency")
     private Frequency frequency;
     @JsonProperty("Product")
-    private Product___ product;
+    private Product product;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -63,22 +63,22 @@ public class MedicationAdministration {
     }
 
     @JsonProperty("Rate")
-    public Rate_ getRate() {
+    public Rate getRate() {
         return rate;
     }
 
     @JsonProperty("Rate")
-    public void setRate(Rate_ rate) {
+    public void setRate(Rate rate) {
         this.rate = rate;
     }
 
     @JsonProperty("Route")
-    public Route__ getRoute() {
+    public Route getRoute() {
         return route;
     }
 
     @JsonProperty("Route")
-    public void setRoute(Route__ route) {
+    public void setRoute(Route route) {
         this.route = route;
     }
 
@@ -113,12 +113,12 @@ public class MedicationAdministration {
     }
 
     @JsonProperty("Product")
-    public Product___ getProduct() {
+    public Product getProduct() {
         return product;
     }
 
     @JsonProperty("Product")
-    public void setProduct(Product___ product) {
+    public void setProduct(Product product) {
         this.product = product;
     }
 

@@ -26,7 +26,7 @@ public class MedicalEquipment {
     @JsonProperty("Quantity")
     private Object quantity;
     @JsonProperty("Product")
-    private Product_ product;
+    private Product product;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -61,12 +61,12 @@ public class MedicalEquipment {
     }
 
     @JsonProperty("Product")
-    public Product_ getProduct() {
+    public Product getProduct() {
         return product;
     }
 
     @JsonProperty("Product")
-    public void setProduct(Product_ product) {
+    public void setProduct(Product product) {
         this.product = product;
     }
 

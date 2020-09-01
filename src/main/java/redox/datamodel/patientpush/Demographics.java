@@ -43,7 +43,7 @@ public class Demographics {
     @JsonProperty("Address")
     private Address address;
     @JsonProperty("PhoneNumber")
-    private PhoneNumber_ phoneNumber;
+    private PhoneNumber phoneNumber;
     @JsonProperty("EmailAddresses")
     private List<EmailAddress> emailAddresses = null;
     @JsonProperty("Language")
@@ -120,12 +120,12 @@ public class Demographics {
     }
 
     @JsonProperty("PhoneNumber")
-    public PhoneNumber_ getPhoneNumber() {
+    public PhoneNumber getPhoneNumber() {
         return phoneNumber;
     }
 
     @JsonProperty("PhoneNumber")
-    public void setPhoneNumber(PhoneNumber_ phoneNumber) {
+    public void setPhoneNumber(PhoneNumber phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

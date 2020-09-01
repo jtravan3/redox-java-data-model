@@ -37,7 +37,7 @@ public class Encounter {
     @JsonProperty("Identifiers")
     private List<Identifier> identifiers = null;
     @JsonProperty("Type")
-    private Type__ type;
+    private Type type;
     @JsonProperty("DateTime")
     private String dateTime;
     @JsonProperty("EndDateTime")
@@ -76,12 +76,12 @@ public class Encounter {
     }
 
     @JsonProperty("Type")
-    public Type__ getType() {
+    public Type getType() {
         return type;
     }
 
     @JsonProperty("Type")
-    public void setType(Type__ type) {
+    public void setType(Type type) {
         this.type = type;
     }
 
