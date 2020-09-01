@@ -2,7 +2,6 @@
 package redox.datamodel.common;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
@@ -13,38 +12,49 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "Identifiers",
-        //patientpush, not patientquery
-    "Demographics"
+    "Low",
+    "High",
+    "Text"
 })
-public class Patient {
+public class ReferenceRange {
 
-    @JsonProperty("Identifiers")
-    private List<Identifier> identifiers = null;
-    //patientpush, not patientquery
-    @JsonProperty("Demographics")
-    private Demographics demographics;
+    @JsonProperty("Low")
+    private Object low;
+    @JsonProperty("High")
+    private Object high;
+    @JsonProperty("Text")
+    private Object text;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("Identifiers")
-    public List<Identifier> getIdentifiers() {
-        return identifiers;
+    @JsonProperty("Low")
+    public Object getLow() {
+        return low;
     }
 
-    @JsonProperty("Identifiers")
-    public void setIdentifiers(List<Identifier> identifiers) {
-        this.identifiers = identifiers;
-    }
-    //patientpush, not patientquery
-    @JsonProperty("Demographics")
-    public Demographics getDemographics() {
-        return demographics;
+    @JsonProperty("Low")
+    public void setLow(Object low) {
+        this.low = low;
     }
 
-    @JsonProperty("Demographics")
-    public void setDemographics(Demographics demographics) {
-        this.demographics = demographics;
+    @JsonProperty("High")
+    public Object getHigh() {
+        return high;
+    }
+
+    @JsonProperty("High")
+    public void setHigh(Object high) {
+        this.high = high;
+    }
+
+    @JsonProperty("Text")
+    public Object getText() {
+        return text;
+    }
+
+    @JsonProperty("Text")
+    public void setText(Object text) {
+        this.text = text;
     }
 
     @JsonAnyGetter

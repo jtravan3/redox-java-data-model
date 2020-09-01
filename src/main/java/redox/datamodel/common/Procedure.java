@@ -1,5 +1,5 @@
 
-package redox.datamodel.patientpush;
+package redox.datamodel.common;
 
 import java.util.HashMap;
 import java.util.List;
@@ -10,7 +10,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import redox.datamodel.common.Value;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -19,12 +18,11 @@ import redox.datamodel.common.Value;
     "CodeSystemName",
     "Name",
     "AltCodes",
-    "Value",
-    "ValueText",
-    "StartDate",
-    "EndDate"
+    "Status",
+    "DateTime",
+        "TargetSite"
 })
-public class Observation__ {
+public class Procedure {
 
     @JsonProperty("Code")
     private String code;
@@ -36,14 +34,12 @@ public class Observation__ {
     private String name;
     @JsonProperty("AltCodes")
     private List<Object> altCodes = null;
-    @JsonProperty("Value")
-    private Value value;
-    @JsonProperty("ValueText")
-    private String valueText;
-    @JsonProperty("StartDate")
-    private String startDate;
-    @JsonProperty("EndDate")
-    private Object endDate;
+    @JsonProperty("Status")
+    private String status;
+    @JsonProperty("DateTime")
+    private String dateTime;
+    @JsonProperty("TargetSite")
+    private TargetSite targetSite;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -97,44 +93,33 @@ public class Observation__ {
         this.altCodes = altCodes;
     }
 
-    @JsonProperty("Value")
-    public Value getValue() {
-        return value;
+    @JsonProperty("Status")
+    public String getStatus() {
+        return status;
     }
 
-    @JsonProperty("Value")
-    public void setValue(Value value) {
-        this.value = value;
+    @JsonProperty("Status")
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    @JsonProperty("ValueText")
-    public String getValueText() {
-        return valueText;
+    @JsonProperty("DateTime")
+    public String getDateTime() {
+        return dateTime;
     }
 
-    @JsonProperty("ValueText")
-    public void setValueText(String valueText) {
-        this.valueText = valueText;
+    @JsonProperty("DateTime")
+    public void setDateTime(String dateTime) {
+        this.dateTime = dateTime;
     }
 
-    @JsonProperty("StartDate")
-    public String getStartDate() {
-        return startDate;
+    @JsonProperty("TargetSite")
+    public TargetSite getTargetSite() {
+        return targetSite;
     }
-
-    @JsonProperty("StartDate")
-    public void setStartDate(String startDate) {
-        this.startDate = startDate;
-    }
-
-    @JsonProperty("EndDate")
-    public Object getEndDate() {
-        return endDate;
-    }
-
-    @JsonProperty("EndDate")
-    public void setEndDate(Object endDate) {
-        this.endDate = endDate;
+    @JsonProperty("TargetSite")
+    public void setTargetSite(TargetSite targetSite) {
+        this.targetSite = targetSite;
     }
 
     @JsonAnyGetter

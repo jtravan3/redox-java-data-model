@@ -15,21 +15,18 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "ID",
     "IDType",
     "Name",
-    "Address",
-    "PhoneNumber"
+    "Type"
 })
-public class Company {
+public class Plan {
 
     @JsonProperty("ID")
     private String iD;
     @JsonProperty("IDType")
-    private Object iDType;
+    private String iDType;
     @JsonProperty("Name")
     private String name;
-    @JsonProperty("Address")
-    private Address address;
-    @JsonProperty("PhoneNumber")
-    private String phoneNumber;
+    @JsonProperty("Type")
+    private Object type;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -44,12 +41,12 @@ public class Company {
     }
 
     @JsonProperty("IDType")
-    public Object getIDType() {
+    public String getIDType() {
         return iDType;
     }
 
     @JsonProperty("IDType")
-    public void setIDType(Object iDType) {
+    public void setIDType(String iDType) {
         this.iDType = iDType;
     }
 
@@ -63,24 +60,14 @@ public class Company {
         this.name = name;
     }
 
-    @JsonProperty("Address")
-    public Address getAddress() {
-        return address;
+    @JsonProperty("Type")
+    public Object getType() {
+        return type;
     }
 
-    @JsonProperty("Address")
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
-    @JsonProperty("PhoneNumber")
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    @JsonProperty("PhoneNumber")
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    @JsonProperty("Type")
+    public void setType(Object type) {
+        this.type = type;
     }
 
     @JsonAnyGetter

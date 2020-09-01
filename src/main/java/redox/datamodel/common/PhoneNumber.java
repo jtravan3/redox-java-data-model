@@ -2,7 +2,6 @@
 package redox.datamodel.common;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
@@ -13,38 +12,46 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "Identifiers",
-        //patientpush, not patientquery
-    "Demographics"
+    "Office",
+        "Home",
+        "Mobile"
 })
-public class Patient {
+public class PhoneNumber {
 
-    @JsonProperty("Identifiers")
-    private List<Identifier> identifiers = null;
-    //patientpush, not patientquery
-    @JsonProperty("Demographics")
-    private Demographics demographics;
+    @JsonProperty("Office")
+    private String office;
+    @JsonProperty("Home")
+    private String home;
+    @JsonProperty("Mobile")
+    private Object mobile;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("Identifiers")
-    public List<Identifier> getIdentifiers() {
-        return identifiers;
+    @JsonProperty("Office")
+    public String getOffice() {
+        return office;
     }
 
-    @JsonProperty("Identifiers")
-    public void setIdentifiers(List<Identifier> identifiers) {
-        this.identifiers = identifiers;
-    }
-    //patientpush, not patientquery
-    @JsonProperty("Demographics")
-    public Demographics getDemographics() {
-        return demographics;
+    @JsonProperty("Office")
+    public void setOffice(String office) {
+        this.office = office;
     }
 
-    @JsonProperty("Demographics")
-    public void setDemographics(Demographics demographics) {
-        this.demographics = demographics;
+    @JsonProperty("Home")
+    public String getHome() {
+        return home;
+    }
+    @JsonProperty("Home")
+    public void setHome(String home) {
+        this.home = home;
+    }
+    @JsonProperty("Mobile")
+    public Object getMobile() {
+        return mobile;
+    }
+    @JsonProperty("Mobile")
+    public void setMobile(Object mobile) {
+        this.mobile = mobile;
     }
 
     @JsonAnyGetter

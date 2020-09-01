@@ -12,45 +12,52 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "ID",
-    "IDType",
-    "Name",
-    "Address",
-    "PhoneNumber"
+    "Code",
+    "CodeSystem",
+    "CodeSystemName",
+    "Name"
 })
-public class Company {
+public class AltCode {
 
-    @JsonProperty("ID")
-    private String iD;
-    @JsonProperty("IDType")
-    private Object iDType;
+    @JsonProperty("Code")
+    private String code;
+    @JsonProperty("CodeSystem")
+    private String codeSystem;
+    @JsonProperty("CodeSystemName")
+    private String codeSystemName;
     @JsonProperty("Name")
     private String name;
-    @JsonProperty("Address")
-    private Address address;
-    @JsonProperty("PhoneNumber")
-    private String phoneNumber;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("ID")
-    public String getID() {
-        return iD;
+    @JsonProperty("Code")
+    public String getCode() {
+        return code;
     }
 
-    @JsonProperty("ID")
-    public void setID(String iD) {
-        this.iD = iD;
+    @JsonProperty("Code")
+    public void setCode(String code) {
+        this.code = code;
     }
 
-    @JsonProperty("IDType")
-    public Object getIDType() {
-        return iDType;
+    @JsonProperty("CodeSystem")
+    public String getCodeSystem() {
+        return codeSystem;
     }
 
-    @JsonProperty("IDType")
-    public void setIDType(Object iDType) {
-        this.iDType = iDType;
+    @JsonProperty("CodeSystem")
+    public void setCodeSystem(String codeSystem) {
+        this.codeSystem = codeSystem;
+    }
+
+    @JsonProperty("CodeSystemName")
+    public String getCodeSystemName() {
+        return codeSystemName;
+    }
+
+    @JsonProperty("CodeSystemName")
+    public void setCodeSystemName(String codeSystemName) {
+        this.codeSystemName = codeSystemName;
     }
 
     @JsonProperty("Name")
@@ -61,26 +68,6 @@ public class Company {
     @JsonProperty("Name")
     public void setName(String name) {
         this.name = name;
-    }
-
-    @JsonProperty("Address")
-    public Address getAddress() {
-        return address;
-    }
-
-    @JsonProperty("Address")
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
-    @JsonProperty("PhoneNumber")
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    @JsonProperty("PhoneNumber")
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
     }
 
     @JsonAnyGetter

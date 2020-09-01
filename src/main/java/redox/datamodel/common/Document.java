@@ -9,8 +9,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import redox.datamodel.common.Author;
-import redox.datamodel.patientpush.TypeCode;
 import redox.datamodel.patientpush.Visit;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)

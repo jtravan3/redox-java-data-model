@@ -1,5 +1,5 @@
 
-package redox.datamodel.patientpush;
+package redox.datamodel.common;
 
 import java.util.HashMap;
 import java.util.List;
@@ -10,7 +10,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import redox.datamodel.common.Value;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -18,72 +17,60 @@ import redox.datamodel.common.Value;
     "CodeSystem",
     "CodeSystemName",
     "Name",
-    "AltCodes",
-    "Value",
-    "ValueText",
-    "StartDate",
-    "EndDate"
+    "AltCodes"
 })
-public class Observation__ {
+public class Value {
 
     @JsonProperty("Code")
-    private String code;
+    private Object code;
     @JsonProperty("CodeSystem")
-    private String codeSystem;
+    private Object codeSystem;
     @JsonProperty("CodeSystemName")
-    private String codeSystemName;
+    private Object codeSystemName;
     @JsonProperty("Name")
-    private String name;
+    private Object name;
     @JsonProperty("AltCodes")
     private List<Object> altCodes = null;
-    @JsonProperty("Value")
-    private Value value;
-    @JsonProperty("ValueText")
-    private String valueText;
-    @JsonProperty("StartDate")
-    private String startDate;
-    @JsonProperty("EndDate")
-    private Object endDate;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("Code")
-    public String getCode() {
+    public Object getCode() {
         return code;
     }
 
     @JsonProperty("Code")
-    public void setCode(String code) {
+    public void setCode(Object code) {
         this.code = code;
     }
 
     @JsonProperty("CodeSystem")
-    public String getCodeSystem() {
+    public Object getCodeSystem() {
         return codeSystem;
     }
 
     @JsonProperty("CodeSystem")
-    public void setCodeSystem(String codeSystem) {
+    public void setCodeSystem(Object codeSystem) {
         this.codeSystem = codeSystem;
     }
 
     @JsonProperty("CodeSystemName")
-    public String getCodeSystemName() {
+    public Object getCodeSystemName() {
         return codeSystemName;
     }
 
     @JsonProperty("CodeSystemName")
-    public void setCodeSystemName(String codeSystemName) {
+    public void setCodeSystemName(Object codeSystemName) {
         this.codeSystemName = codeSystemName;
     }
 
     @JsonProperty("Name")
-    public String getName() {
+    public Object getName() {
         return name;
     }
 
     @JsonProperty("Name")
-    public void setName(String name) {
+    public void setName(Object name) {
         this.name = name;
     }
 
@@ -95,46 +82,6 @@ public class Observation__ {
     @JsonProperty("AltCodes")
     public void setAltCodes(List<Object> altCodes) {
         this.altCodes = altCodes;
-    }
-
-    @JsonProperty("Value")
-    public Value getValue() {
-        return value;
-    }
-
-    @JsonProperty("Value")
-    public void setValue(Value value) {
-        this.value = value;
-    }
-
-    @JsonProperty("ValueText")
-    public String getValueText() {
-        return valueText;
-    }
-
-    @JsonProperty("ValueText")
-    public void setValueText(String valueText) {
-        this.valueText = valueText;
-    }
-
-    @JsonProperty("StartDate")
-    public String getStartDate() {
-        return startDate;
-    }
-
-    @JsonProperty("StartDate")
-    public void setStartDate(String startDate) {
-        this.startDate = startDate;
-    }
-
-    @JsonProperty("EndDate")
-    public Object getEndDate() {
-        return endDate;
-    }
-
-    @JsonProperty("EndDate")
-    public void setEndDate(Object endDate) {
-        this.endDate = endDate;
     }
 
     @JsonAnyGetter

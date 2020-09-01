@@ -2,7 +2,6 @@
 package redox.datamodel.common;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
@@ -13,38 +12,36 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "Identifiers",
-        //patientpush, not patientquery
-    "Demographics"
+    "Period",
+    "Unit"
 })
-public class Patient {
+public class Frequency {
 
-    @JsonProperty("Identifiers")
-    private List<Identifier> identifiers = null;
-    //patientpush, not patientquery
-    @JsonProperty("Demographics")
-    private Demographics demographics;
+    @JsonProperty("Period")
+    private String period;
+    @JsonProperty("Unit")
+    private String unit;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("Identifiers")
-    public List<Identifier> getIdentifiers() {
-        return identifiers;
+    @JsonProperty("Period")
+    public String getPeriod() {
+        return period;
     }
 
-    @JsonProperty("Identifiers")
-    public void setIdentifiers(List<Identifier> identifiers) {
-        this.identifiers = identifiers;
-    }
-    //patientpush, not patientquery
-    @JsonProperty("Demographics")
-    public Demographics getDemographics() {
-        return demographics;
+    @JsonProperty("Period")
+    public void setPeriod(String period) {
+        this.period = period;
     }
 
-    @JsonProperty("Demographics")
-    public void setDemographics(Demographics demographics) {
-        this.demographics = demographics;
+    @JsonProperty("Unit")
+    public String getUnit() {
+        return unit;
+    }
+
+    @JsonProperty("Unit")
+    public void setUnit(String unit) {
+        this.unit = unit;
     }
 
     @JsonAnyGetter

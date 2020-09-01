@@ -10,41 +10,40 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import redox.datamodel.patientpush.Observation;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "Identifiers",
-        //patientpush, not patientquery
-    "Demographics"
+    "DateTime",
+    "Observations"
 })
-public class Patient {
+public class VitalSign {
 
-    @JsonProperty("Identifiers")
-    private List<Identifier> identifiers = null;
-    //patientpush, not patientquery
-    @JsonProperty("Demographics")
-    private Demographics demographics;
+    @JsonProperty("DateTime")
+    private String dateTime;
+    @JsonProperty("Observations")
+    private List<Observation> observations = null;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("Identifiers")
-    public List<Identifier> getIdentifiers() {
-        return identifiers;
+    @JsonProperty("DateTime")
+    public String getDateTime() {
+        return dateTime;
     }
 
-    @JsonProperty("Identifiers")
-    public void setIdentifiers(List<Identifier> identifiers) {
-        this.identifiers = identifiers;
-    }
-    //patientpush, not patientquery
-    @JsonProperty("Demographics")
-    public Demographics getDemographics() {
-        return demographics;
+    @JsonProperty("DateTime")
+    public void setDateTime(String dateTime) {
+        this.dateTime = dateTime;
     }
 
-    @JsonProperty("Demographics")
-    public void setDemographics(Demographics demographics) {
-        this.demographics = demographics;
+    @JsonProperty("Observations")
+    public List<Observation> getObservations() {
+        return observations;
+    }
+
+    @JsonProperty("Observations")
+    public void setObservations(List<Observation> observations) {
+        this.observations = observations;
     }
 
     @JsonAnyGetter

@@ -1,5 +1,5 @@
 
-package redox.datamodel.patientpush;
+package redox.datamodel.common;
 
 import java.util.HashMap;
 import java.util.List;
@@ -10,7 +10,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import redox.datamodel.common.Value;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -19,12 +18,10 @@ import redox.datamodel.common.Value;
     "CodeSystemName",
     "Name",
     "AltCodes",
-    "Value",
-    "ValueText",
-    "StartDate",
-    "EndDate"
+    "Severity",
+    "Text"
 })
-public class Observation__ {
+public class Reaction {
 
     @JsonProperty("Code")
     private String code;
@@ -36,14 +33,10 @@ public class Observation__ {
     private String name;
     @JsonProperty("AltCodes")
     private List<Object> altCodes = null;
-    @JsonProperty("Value")
-    private Value value;
-    @JsonProperty("ValueText")
-    private String valueText;
-    @JsonProperty("StartDate")
-    private String startDate;
-    @JsonProperty("EndDate")
-    private Object endDate;
+    @JsonProperty("Severity")
+    private Severity severity;
+    @JsonProperty("Text")
+    private Object text;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -97,44 +90,24 @@ public class Observation__ {
         this.altCodes = altCodes;
     }
 
-    @JsonProperty("Value")
-    public Value getValue() {
-        return value;
+    @JsonProperty("Severity")
+    public Severity getSeverity() {
+        return severity;
     }
 
-    @JsonProperty("Value")
-    public void setValue(Value value) {
-        this.value = value;
+    @JsonProperty("Severity")
+    public void setSeverity(Severity severity) {
+        this.severity = severity;
     }
 
-    @JsonProperty("ValueText")
-    public String getValueText() {
-        return valueText;
+    @JsonProperty("Text")
+    public Object getText() {
+        return text;
     }
 
-    @JsonProperty("ValueText")
-    public void setValueText(String valueText) {
-        this.valueText = valueText;
-    }
-
-    @JsonProperty("StartDate")
-    public String getStartDate() {
-        return startDate;
-    }
-
-    @JsonProperty("StartDate")
-    public void setStartDate(String startDate) {
-        this.startDate = startDate;
-    }
-
-    @JsonProperty("EndDate")
-    public Object getEndDate() {
-        return endDate;
-    }
-
-    @JsonProperty("EndDate")
-    public void setEndDate(Object endDate) {
-        this.endDate = endDate;
+    @JsonProperty("Text")
+    public void setText(Object text) {
+        this.text = text;
     }
 
     @JsonAnyGetter

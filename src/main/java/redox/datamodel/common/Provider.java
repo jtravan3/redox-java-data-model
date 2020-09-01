@@ -15,29 +15,27 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({
     "ID",
     "IDType",
-    "Type",
     "FirstName",
     "LastName",
     "Credentials",
     "Address",
     "EmailAddresses",
     "PhoneNumber",
-    "Location"
+    "Location",
+    "Role"
 })
-public class Author {
+public class Provider {
 
     @JsonProperty("ID")
-    private String iD;
+    private Object iD;
     @JsonProperty("IDType")
-    private String iDType;
-    @JsonProperty("Type")
-    private Object type;
+    private Object iDType;
     @JsonProperty("FirstName")
-    private String firstName;
+    private Object firstName;
     @JsonProperty("LastName")
-    private String lastName;
+    private Object lastName;
     @JsonProperty("Credentials")
-    private List<String> credentials = null;
+    private List<Object> credentials = null;
     @JsonProperty("Address")
     private Address address;
     @JsonProperty("EmailAddresses")
@@ -46,66 +44,58 @@ public class Author {
     private PhoneNumber phoneNumber;
     @JsonProperty("Location")
     private Location location;
+    @JsonProperty("Role")
+    private Role role;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("ID")
-    public String getID() {
+    public Object getID() {
         return iD;
     }
 
     @JsonProperty("ID")
-    public void setID(String iD) {
+    public void setID(Object iD) {
         this.iD = iD;
     }
 
     @JsonProperty("IDType")
-    public String getIDType() {
+    public Object getIDType() {
         return iDType;
     }
 
     @JsonProperty("IDType")
-    public void setIDType(String iDType) {
+    public void setIDType(Object iDType) {
         this.iDType = iDType;
     }
 
-    @JsonProperty("Type")
-    public Object getType() {
-        return type;
-    }
-
-    @JsonProperty("Type")
-    public void setType(Object type) {
-        this.type = type;
-    }
-
     @JsonProperty("FirstName")
-    public String getFirstName() {
+    public Object getFirstName() {
         return firstName;
     }
 
     @JsonProperty("FirstName")
-    public void setFirstName(String firstName) {
+    public void setFirstName(Object firstName) {
         this.firstName = firstName;
     }
 
     @JsonProperty("LastName")
-    public String getLastName() {
+    public Object getLastName() {
         return lastName;
     }
 
     @JsonProperty("LastName")
-    public void setLastName(String lastName) {
+    public void setLastName(Object lastName) {
         this.lastName = lastName;
     }
 
     @JsonProperty("Credentials")
-    public List<String> getCredentials() {
+    public List<Object> getCredentials() {
         return credentials;
     }
 
     @JsonProperty("Credentials")
-    public void setCredentials(List<String> credentials) {
+    public void setCredentials(List<Object> credentials) {
         this.credentials = credentials;
     }
 
@@ -147,6 +137,16 @@ public class Author {
     @JsonProperty("Location")
     public void setLocation(Location location) {
         this.location = location;
+    }
+
+    @JsonProperty("Role")
+    public Role getRole() {
+        return role;
+    }
+
+    @JsonProperty("Role")
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     @JsonAnyGetter
