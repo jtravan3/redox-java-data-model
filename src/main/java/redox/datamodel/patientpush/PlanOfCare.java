@@ -27,7 +27,7 @@ public class PlanOfCare {
     @JsonProperty("Procedures")
     private List<Procedure> procedures = null;
     @JsonProperty("Encounters")
-    private List<Encounter_> encounters = null;
+    private List<Encounter> encounters = null;
     @JsonProperty("MedicationAdministration")
     private List<MedicationAdministration> medicationAdministration = null;
     @JsonProperty("Supplies")
@@ -58,12 +58,12 @@ public class PlanOfCare {
     }
 
     @JsonProperty("Encounters")
-    public List<Encounter_> getEncounters() {
+    public List<Encounter> getEncounters() {
         return encounters;
     }
 
     @JsonProperty("Encounters")
-    public void setEncounters(List<Encounter_> encounters) {
+    public void setEncounters(List<Encounter> encounters) {
         this.encounters = encounters;
     }
 

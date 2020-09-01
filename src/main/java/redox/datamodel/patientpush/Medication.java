@@ -30,7 +30,7 @@ public class Medication {
     @JsonProperty("FreeTextSig")
     private Object freeTextSig;
     @JsonProperty("Dose")
-    private Dose_ dose;
+    private Dose dose;
     @JsonProperty("Rate")
     private Rate rate;
     @JsonProperty("Route")
@@ -69,12 +69,12 @@ public class Medication {
     }
 
     @JsonProperty("Dose")
-    public Dose_ getDose() {
+    public Dose getDose() {
         return dose;
     }
 
     @JsonProperty("Dose")
-    public void setDose(Dose_ dose) {
+    public void setDose(Dose dose) {
         this.dose = dose;
     }
 

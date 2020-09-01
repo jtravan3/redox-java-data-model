@@ -40,7 +40,7 @@ public class PCP {
     @JsonProperty("Credentials")
     private List<Object> credentials = null;
     @JsonProperty("Address")
-    private Address__ address;
+    private Address address;
     @JsonProperty("EmailAddresses")
     private List<Object> emailAddresses = null;
     @JsonProperty("PhoneNumber")
@@ -111,12 +111,12 @@ public class PCP {
     }
 
     @JsonProperty("Address")
-    public Address__ getAddress() {
+    public Address getAddress() {
         return address;
     }
 
     @JsonProperty("Address")
-    public void setAddress(Address__ address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 

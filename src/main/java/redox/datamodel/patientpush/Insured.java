@@ -42,7 +42,7 @@ public class Insured {
     @JsonProperty("Sex")
     private Object sex;
     @JsonProperty("Address")
-    private Address_______ address;
+    private Address address;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -127,12 +127,12 @@ public class Insured {
     }
 
     @JsonProperty("Address")
-    public Address_______ getAddress() {
+    public Address getAddress() {
         return address;
     }
 
     @JsonProperty("Address")
-    public void setAddress(Address_______ address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 

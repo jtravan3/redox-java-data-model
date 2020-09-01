@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import redox.datamodel.patientpush.Address___;
+import redox.datamodel.patientpush.Address;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -27,7 +27,7 @@ public class Custodian {
     @JsonProperty("Credentials")
     private String credentials;
     @JsonProperty("Address")
-    private Address___ address;
+    private Address address;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -62,12 +62,12 @@ public class Custodian {
     }
 
     @JsonProperty("Address")
-    public Address___ getAddress() {
+    public Address getAddress() {
         return address;
     }
 
     @JsonProperty("Address")
-    public void setAddress(Address___ address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 

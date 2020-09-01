@@ -41,7 +41,7 @@ public class Demographics {
     @JsonProperty("Sex")
     private String sex;
     @JsonProperty("Address")
-    private Address_ address;
+    private Address address;
     @JsonProperty("PhoneNumber")
     private PhoneNumber_ phoneNumber;
     @JsonProperty("EmailAddresses")
@@ -110,12 +110,12 @@ public class Demographics {
     }
 
     @JsonProperty("Address")
-    public Address_ getAddress() {
+    public Address getAddress() {
         return address;
     }
 
     @JsonProperty("Address")
-    public void setAddress(Address_ address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 

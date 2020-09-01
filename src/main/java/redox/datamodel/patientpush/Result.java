@@ -39,7 +39,7 @@ public class Result {
     @JsonProperty("Producer")
     private Producer producer;
     @JsonProperty("Observations")
-    private List<Observation_> observations = null;
+    private List<Observation> observations = null;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -114,12 +114,12 @@ public class Result {
     }
 
     @JsonProperty("Observations")
-    public List<Observation_> getObservations() {
+    public List<Observation> getObservations() {
         return observations;
     }
 
     @JsonProperty("Observations")
-    public void setObservations(List<Observation_> observations) {
+    public void setObservations(List<Observation> observations) {
         this.observations = observations;
     }
 

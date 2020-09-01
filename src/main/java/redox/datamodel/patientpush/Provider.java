@@ -38,7 +38,7 @@ public class Provider {
     @JsonProperty("Credentials")
     private List<Object> credentials = null;
     @JsonProperty("Address")
-    private Address____ address;
+    private Address address;
     @JsonProperty("EmailAddresses")
     private List<Object> emailAddresses = null;
     @JsonProperty("PhoneNumber")
@@ -101,12 +101,12 @@ public class Provider {
     }
 
     @JsonProperty("Address")
-    public Address____ getAddress() {
+    public Address getAddress() {
         return address;
     }
 
     @JsonProperty("Address")
-    public void setAddress(Address____ address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 

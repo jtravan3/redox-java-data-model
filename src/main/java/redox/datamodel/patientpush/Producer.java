@@ -26,7 +26,7 @@ public class Producer {
     @JsonProperty("IDType")
     private Object iDType;
     @JsonProperty("Address")
-    private Address________ address;
+    private Address address;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -61,12 +61,12 @@ public class Producer {
     }
 
     @JsonProperty("Address")
-    public Address________ getAddress() {
+    public Address getAddress() {
         return address;
     }
 
     @JsonProperty("Address")
-    public void setAddress(Address________ address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 

@@ -26,7 +26,7 @@ public class MedicationAdministration {
     @JsonProperty("Status")
     private String status;
     @JsonProperty("Dose")
-    private Dose__ dose;
+    private Dose dose;
     @JsonProperty("Rate")
     private Rate_ rate;
     @JsonProperty("Route")
@@ -36,7 +36,7 @@ public class MedicationAdministration {
     @JsonProperty("EndDate")
     private String endDate;
     @JsonProperty("Frequency")
-    private Frequency_ frequency;
+    private Frequency frequency;
     @JsonProperty("Product")
     private Product___ product;
     @JsonIgnore
@@ -53,12 +53,12 @@ public class MedicationAdministration {
     }
 
     @JsonProperty("Dose")
-    public Dose__ getDose() {
+    public Dose getDose() {
         return dose;
     }
 
     @JsonProperty("Dose")
-    public void setDose(Dose__ dose) {
+    public void setDose(Dose dose) {
         this.dose = dose;
     }
 
@@ -103,12 +103,12 @@ public class MedicationAdministration {
     }
 
     @JsonProperty("Frequency")
-    public Frequency_ getFrequency() {
+    public Frequency getFrequency() {
         return frequency;
     }
 
     @JsonProperty("Frequency")
-    public void setFrequency(Frequency_ frequency) {
+    public void setFrequency(Frequency frequency) {
         this.frequency = frequency;
     }
 
