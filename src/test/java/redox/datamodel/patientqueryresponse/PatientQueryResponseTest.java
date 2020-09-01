@@ -21,7 +21,7 @@ public class PatientQueryResponseTest {
 
     @Before
     public void initialize() throws IOException {
-        Path filePath = ResourceUtils.getFile("classpath:clinicalsummary-patientqueryresponse.json").toPath();
+        Path filePath = ResourceUtils.getFile("classpath:patient_query_response/clinicalsummary-patientqueryresponse.json").toPath();
         String content = Files.readString(filePath, StandardCharsets.UTF_8);
 
         ObjectMapper mapper = new ObjectMapper();
