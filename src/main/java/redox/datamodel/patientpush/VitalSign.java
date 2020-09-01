@@ -21,7 +21,7 @@ public class VitalSign {
     @JsonProperty("DateTime")
     private String dateTime;
     @JsonProperty("Observations")
-    private List<Observation___> observations = null;
+    private List<Observation> observations = null;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -36,12 +36,12 @@ public class VitalSign {
     }
 
     @JsonProperty("Observations")
-    public List<Observation___> getObservations() {
+    public List<Observation> getObservations() {
         return observations;
     }
 
     @JsonProperty("Observations")
-    public void setObservations(List<Observation___> observations) {
+    public void setObservations(List<Observation> observations) {
         this.observations = observations;
     }
 

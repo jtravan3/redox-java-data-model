@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import redox.datamodel.common.CodedValue;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -18,9 +19,18 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "CodeSystemName",
     "Name",
     "AltCodes",
-    "DateTime",
     "Status",
-    "TargetSite"
+    "Interpretation",
+    "DateTime",
+    "CodedValue",
+    "Value",
+    "ValueType",
+    "Units",
+    "ReferenceRange",
+        "TargetSite",
+        "ValueText",
+        "StartDate",
+        "EndDate"
 })
 public class Observation {
 
@@ -34,12 +44,30 @@ public class Observation {
     private String name;
     @JsonProperty("AltCodes")
     private List<Object> altCodes = null;
-    @JsonProperty("DateTime")
-    private String dateTime;
     @JsonProperty("Status")
     private String status;
+    @JsonProperty("Interpretation")
+    private Object interpretation;
+    @JsonProperty("DateTime")
+    private String dateTime;
+    @JsonProperty("CodedValue")
+    private CodedValue codedValue;
+    @JsonProperty("Value")
+    private String value;
+    @JsonProperty("ValueType")
+    private String valueType;
+    @JsonProperty("Units")
+    private Object units;
+    @JsonProperty("ReferenceRange")
+    private ReferenceRange referenceRange;
     @JsonProperty("TargetSite")
     private TargetSite targetSite;
+    @JsonProperty("ValueText")
+    private String valueText;
+    @JsonProperty("StartDate")
+    private String startDate;
+    @JsonProperty("EndDate")
+    private Object endDate;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -93,16 +121,6 @@ public class Observation {
         this.altCodes = altCodes;
     }
 
-    @JsonProperty("DateTime")
-    public String getDateTime() {
-        return dateTime;
-    }
-
-    @JsonProperty("DateTime")
-    public void setDateTime(String dateTime) {
-        this.dateTime = dateTime;
-    }
-
     @JsonProperty("Status")
     public String getStatus() {
         return status;
@@ -113,14 +131,108 @@ public class Observation {
         this.status = status;
     }
 
+    @JsonProperty("Interpretation")
+    public Object getInterpretation() {
+        return interpretation;
+    }
+
+    @JsonProperty("Interpretation")
+    public void setInterpretation(Object interpretation) {
+        this.interpretation = interpretation;
+    }
+
+    @JsonProperty("DateTime")
+    public String getDateTime() {
+        return dateTime;
+    }
+
+    @JsonProperty("DateTime")
+    public void setDateTime(String dateTime) {
+        this.dateTime = dateTime;
+    }
+
+    @JsonProperty("CodedValue")
+    public CodedValue getCodedValue() {
+        return codedValue;
+    }
+
+    @JsonProperty("CodedValue")
+    public void setCodedValue(CodedValue codedValue) {
+        this.codedValue = codedValue;
+    }
+
+    @JsonProperty("Value")
+    public String getValue() {
+        return value;
+    }
+
+    @JsonProperty("Value")
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    @JsonProperty("ValueType")
+    public String getValueType() {
+        return valueType;
+    }
+
+    @JsonProperty("ValueType")
+    public void setValueType(String valueType) {
+        this.valueType = valueType;
+    }
+
+    @JsonProperty("Units")
+    public Object getUnits() {
+        return units;
+    }
+
+    @JsonProperty("Units")
+    public void setUnits(Object units) {
+        this.units = units;
+    }
+
+    @JsonProperty("ReferenceRange")
+    public ReferenceRange getReferenceRange() {
+        return referenceRange;
+    }
+
+    @JsonProperty("ReferenceRange")
+    public void setReferenceRange(ReferenceRange referenceRange) {
+        this.referenceRange = referenceRange;
+    }
+
     @JsonProperty("TargetSite")
     public TargetSite getTargetSite() {
         return targetSite;
     }
-
     @JsonProperty("TargetSite")
     public void setTargetSite(TargetSite targetSite) {
         this.targetSite = targetSite;
+    }
+
+    @JsonProperty("ValueText")
+    public String getValueText() {
+        return valueText;
+    }
+    @JsonProperty("ValueText")
+    public void setValueText(String valueText) {
+        this.valueText = valueText;
+    }
+    @JsonProperty("StartDate")
+    public String getStartDate() {
+        return startDate;
+    }
+    @JsonProperty("StartDate")
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+    @JsonProperty("EndDate")
+    public Object getEndDate() {
+        return endDate;
+    }
+    @JsonProperty("EndDate")
+    public void setEndDate(Object endDate) {
+        this.endDate = endDate;
     }
 
     @JsonAnyGetter
