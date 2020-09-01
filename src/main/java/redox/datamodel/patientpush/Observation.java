@@ -10,9 +10,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import redox.datamodel.common.CodedValue;
-import redox.datamodel.common.ReferenceRange;
-import redox.datamodel.common.TargetSite;
+import redox.datamodel.common.*;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -55,7 +53,7 @@ public class Observation {
     @JsonProperty("CodedValue")
     private CodedValue codedValue;
     @JsonProperty("Value")
-    private String value;
+    private Object value;
     @JsonProperty("ValueType")
     private String valueType;
     @JsonProperty("Units")
@@ -164,12 +162,20 @@ public class Observation {
     }
 
     @JsonProperty("Value")
-    public String getValue() {
-        return value;
+    public ValueWrapper getValue() {
+        ValueWrapper valueWrapper = new ValueWrapper();
+        if (value instanceof Value) {
+            Value valueTmp = (Value)value;
+            valueWrapper.setValue(valueTmp);
+            valueWrapper.setValueString((String)valueTmp.getName());
+        } else {
+            valueWrapper.setValueString((String)value);
+        }
+        return valueWrapper;
     }
 
     @JsonProperty("Value")
-    public void setValue(String value) {
+    public void setValue(Object value) {
         this.value = value;
     }
 

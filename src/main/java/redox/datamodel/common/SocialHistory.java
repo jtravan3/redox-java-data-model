@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import redox.datamodel.patientpush.Observation__;
+import redox.datamodel.patientpush.Observation;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -21,7 +21,7 @@ import redox.datamodel.patientpush.Observation__;
 public class SocialHistory {
 
     @JsonProperty("Observations")
-    private List<Observation__> observations = null;
+    private List<Observation> observations = null;
     @JsonProperty("Pregnancy")
     private List<Object> pregnancy = null;
     @JsonProperty("TobaccoUse")
@@ -30,12 +30,12 @@ public class SocialHistory {
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("Observations")
-    public List<Observation__> getObservations() {
+    public List<Observation> getObservations() {
         return observations;
     }
 
     @JsonProperty("Observations")
-    public void setObservations(List<Observation__> observations) {
+    public void setObservations(List<Observation> observations) {
         this.observations = observations;
     }
 

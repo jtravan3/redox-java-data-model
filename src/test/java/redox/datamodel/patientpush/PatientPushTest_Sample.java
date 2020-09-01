@@ -16,13 +16,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 @RunWith(SpringRunner.class)
-public class PatientPushTest {
+public class PatientPushTest_Sample {
 
     private PatientPush patientPush;
 
     @Before
     public void initialize() throws IOException {
-        Path filePath = ResourceUtils.getFile("classpath:clinicalsummary-patientpush.json").toPath();
+        Path filePath = ResourceUtils.getFile("classpath:patient_push/clinicalsummary-patientpush.json").toPath();
         String content = Files.readString(filePath, StandardCharsets.UTF_8);
 
         ObjectMapper mapper = new ObjectMapper();
@@ -174,6 +174,9 @@ public class PatientPushTest {
     @Test
     public void testPatientPush_SocialHistory() {
         Assert.notNull(patientPush.getSocialHistory(), "SocialHistory object not successfully created");
+        patientPush.getSocialHistory().getObservations().forEach(observation -> {
+            Assert.notNull(observation, "Observations were not set correctly");
+        });
     }
 
     @Test
