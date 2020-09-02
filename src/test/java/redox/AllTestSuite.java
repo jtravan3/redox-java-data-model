@@ -7,6 +7,7 @@ import redox.clinicalsummary.patientquery.PatientQueryTestSuite;
 import redox.clinicalsummary.patientqueryresponse.PatientQueryResponseTestSuite;
 import redox.media.newmedia.NewMediaTestSuite;
 import redox.media.replace.ReplaceTestSuite;
+import redox.services.RedoxDataModelFactoryTest;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
@@ -14,6 +15,7 @@ import redox.media.replace.ReplaceTestSuite;
         PatientQueryTestSuite.class,
         PatientQueryResponseTestSuite.class,
         ReplaceTestSuite.class,
-        NewMediaTestSuite.class})
+        NewMediaTestSuite.class,
+        RedoxDataModelFactoryTest.class})
 public class AllTestSuite {
 }

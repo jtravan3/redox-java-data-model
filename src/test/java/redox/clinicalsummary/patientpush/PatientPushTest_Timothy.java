@@ -185,4 +185,9 @@ public class PatientPushTest_Timothy {
     public void testPatientPush_VitalSigns() {
         Assert.notNull(patientPush.getVitalSigns(), "VitalSigns object not successfully created");
     }
+
+    @Test
+    public void testPatientQuery_AdditionalProperties() {
+        Assert.isTrue(patientPush.getAdditionalProperties().isEmpty(), "Additional Properties object was created when it should not have been");
+    }
 }

@@ -187,4 +187,9 @@ public class PatientQueryResponseTest_Myra {
     public void testPatientQueryResponse_VitalSigns() {
         Assert.notNull(patientQueryResponse.getVitalSigns(), "VitalSigns object not successfully created");
     }
+
+    @Test
+    public void testPatientQuery_AdditionalProperties() {
+        Assert.isTrue(!patientQueryResponse.getAdditionalProperties().isEmpty(), "Additional Properties object was created when it should not have been");
+    }
 }

@@ -44,5 +44,8 @@ public class PatientQueryTest_Walter {
         Assert.notNull(patientQuery.getPatient(), "Patient object not successfully created");
     }
 
-
+    @Test
+    public void testPatientQuery_AdditionalProperties() {
+        Assert.isTrue(patientQuery.getAdditionalProperties().isEmpty(), "Additional Properties object was created when it should not have been");
+    }
 }
