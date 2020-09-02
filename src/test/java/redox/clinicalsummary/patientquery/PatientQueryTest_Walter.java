@@ -7,8 +7,6 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.Assert;
 import org.springframework.util.ResourceUtils;
-//import redox.datamodel.patientpush.Encounter;
-//import redox.datamodel.patientpush.PatientPush;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -16,13 +14,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 @RunWith(SpringRunner.class)
-public class PatientQueryTest {
+public class PatientQueryTest_Walter {
 
     private PatientQuery patientQuery;
 
     @Before
     public void initialize() throws IOException {
-        Path filePath = ResourceUtils.getFile("classpath:patient_query/clinicalsummary-patientquery.json").toPath();
+        Path filePath = ResourceUtils.getFile("classpath:clinicalsummary/patient_query/redox-example-patientquery-walter.json").toPath();
         String content = Files.readString(filePath, StandardCharsets.UTF_8);
 
         ObjectMapper mapper = new ObjectMapper();

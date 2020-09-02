@@ -1,5 +1,5 @@
 
-package redox.media.newmedia.new;
+package redox.media.newmedia;
 
 import java.util.HashMap;
 import java.util.List;

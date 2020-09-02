@@ -15,13 +15,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 @RunWith(SpringRunner.class)
-public class PatientQueryResponseTest {
+public class PatientQueryResponseTest_Sample {
 
     private PatientQueryResponse patientQueryResponse;
 
     @Before
     public void initialize() throws IOException {
-        Path filePath = ResourceUtils.getFile("classpath:patient_query_response/clinicalsummary-patientqueryresponse.json").toPath();
+        Path filePath = ResourceUtils.getFile("classpath:clinicalsummary/patient_query_response/clinicalsummary-patientqueryresponse.json").toPath();
         String content = Files.readString(filePath, StandardCharsets.UTF_8);
 
         ObjectMapper mapper = new ObjectMapper();

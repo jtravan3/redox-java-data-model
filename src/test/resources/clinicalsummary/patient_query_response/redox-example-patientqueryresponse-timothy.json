@@ -554,7 +554,7 @@
       }
     }
   ],
-  "InsurancesText": null,
+  "InsurancesText": "foo",
   "Insurances": [
     {
       "Plan": {

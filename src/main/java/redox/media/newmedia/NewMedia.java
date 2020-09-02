@@ -1,5 +1,5 @@
 
-package redox.media.newmedia.new;
+package redox.media.newmedia;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "Visit",
     "Media"
 })
-public class New {
+public class NewMedia {
 
     @JsonProperty("Meta")
     private Meta meta;

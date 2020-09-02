@@ -19,7 +19,7 @@ public class PatientPushTest_Timothy {
 
     @Before
     public void initialize() throws IOException {
-        Path filePath = ResourceUtils.getFile("classpath:patient_push/redox-example-patientpush-timothy.json").toPath();
+        Path filePath = ResourceUtils.getFile("classpath:clinicalsummary/patient_push/redox-example-patientpush-timothy.json").toPath();
         String content = Files.readString(filePath, StandardCharsets.UTF_8);
 
         ObjectMapper mapper = new ObjectMapper();
