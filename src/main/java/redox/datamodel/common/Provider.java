@@ -1,5 +1,5 @@
 
-package redox.datamodel.media.common;
+package redox.datamodel.common;
 
 import java.util.HashMap;
 import java.util.List;
@@ -10,9 +10,10 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import redox.datamodel.media.common.Address;
-import redox.datamodel.media.common.Location;
-import redox.datamodel.media.common.PhoneNumber;
+import redox.datamodel.clinicalsummary.common.Role;
+import redox.datamodel.common.Address;
+import redox.datamodel.common.Location;
+import redox.datamodel.common.PhoneNumber;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -24,20 +25,21 @@ import redox.datamodel.media.common.PhoneNumber;
     "Address",
     "EmailAddresses",
     "PhoneNumber",
-    "Location"
+    "Location",
+    "Role"
 })
 public class Provider {
 
     @JsonProperty("ID")
-    private String iD;
+    private Object iD;
     @JsonProperty("IDType")
-    private String iDType;
+    private Object iDType;
     @JsonProperty("FirstName")
-    private String firstName;
+    private Object firstName;
     @JsonProperty("LastName")
-    private String lastName;
+    private Object lastName;
     @JsonProperty("Credentials")
-    private List<String> credentials = null;
+    private List<Object> credentials = null;
     @JsonProperty("Address")
     private Address address;
     @JsonProperty("EmailAddresses")
@@ -46,56 +48,58 @@ public class Provider {
     private PhoneNumber phoneNumber;
     @JsonProperty("Location")
     private Location location;
+    @JsonProperty("Role")
+    private Role role;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("ID")
-    public String getID() {
+    public Object getID() {
         return iD;
     }
 
     @JsonProperty("ID")
-    public void setID(String iD) {
+    public void setID(Object iD) {
         this.iD = iD;
     }
 
     @JsonProperty("IDType")
-    public String getIDType() {
+    public Object getIDType() {
         return iDType;
     }
 
     @JsonProperty("IDType")
-    public void setIDType(String iDType) {
+    public void setIDType(Object iDType) {
         this.iDType = iDType;
     }
 
     @JsonProperty("FirstName")
-    public String getFirstName() {
+    public Object getFirstName() {
         return firstName;
     }
 
     @JsonProperty("FirstName")
-    public void setFirstName(String firstName) {
+    public void setFirstName(Object firstName) {
         this.firstName = firstName;
     }
 
     @JsonProperty("LastName")
-    public String getLastName() {
+    public Object getLastName() {
         return lastName;
     }
 
     @JsonProperty("LastName")
-    public void setLastName(String lastName) {
+    public void setLastName(Object lastName) {
         this.lastName = lastName;
     }
 
     @JsonProperty("Credentials")
-    public List<String> getCredentials() {
+    public List<Object> getCredentials() {
         return credentials;
     }
 
     @JsonProperty("Credentials")
-    public void setCredentials(List<String> credentials) {
+    public void setCredentials(List<Object> credentials) {
         this.credentials = credentials;
     }
 
@@ -137,6 +141,16 @@ public class Provider {
     @JsonProperty("Location")
     public void setLocation(Location location) {
         this.location = location;
+    }
+
+    @JsonProperty("Role")
+    public Role getRole() {
+        return role;
+    }
+
+    @JsonProperty("Role")
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     @JsonAnyGetter

@@ -1,5 +1,5 @@
 
-package redox.datamodel.clinicalsummary.common;
+package redox.datamodel.common;
 
 import java.util.HashMap;
 import java.util.List;
@@ -13,24 +13,31 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "FirstName",
-    "LastName",
-    "DOB",
-    "SSN",
-    "Sex",
-    "Address",
-    "PhoneNumber",
-    "EmailAddresses",
-    "Language",
-    "Race",
-    "Ethnicity",
-    "Religion",
-    "MaritalStatus"
+        "FirstName",
+        "MiddleName",
+        "LastName",
+        "DOB",
+        "SSN",
+        "Sex",
+        "Race",
+        "IsHispanic",
+        "MaritalStatus",
+        "IsDeceased",
+        "DeathDateTime",
+        "PhoneNumber",
+        "EmailAddresses",
+        "Language",
+        "Citizenship",
+        "Address",
+        "Ethnicity",
+        "Religion"
 })
 public class Demographics {
 
     @JsonProperty("FirstName")
     private String firstName;
+    @JsonProperty("MiddleName")
+    private String middleName;
     @JsonProperty("LastName")
     private String lastName;
     @JsonProperty("DOB")
@@ -39,22 +46,30 @@ public class Demographics {
     private String sSN;
     @JsonProperty("Sex")
     private String sex;
-    @JsonProperty("Address")
-    private Address address;
+    @JsonProperty("Race")
+    private String race;
+    @JsonProperty("IsHispanic")
+    private Object isHispanic;
+    @JsonProperty("MaritalStatus")
+    private String maritalStatus;
+    @JsonProperty("IsDeceased")
+    private Object isDeceased;
+    @JsonProperty("DeathDateTime")
+    private Object deathDateTime;
     @JsonProperty("PhoneNumber")
     private PhoneNumber phoneNumber;
     @JsonProperty("EmailAddresses")
-    private List<EmailAddress> emailAddresses = null;
+    private List<Object> emailAddresses = null;
     @JsonProperty("Language")
-    private Object language;
-    @JsonProperty("Race")
-    private String race;
+    private String language;
+    @JsonProperty("Citizenship")
+    private List<Object> citizenship = null;
+    @JsonProperty("Address")
+    private Address address;
     @JsonProperty("Ethnicity")
     private String ethnicity;
     @JsonProperty("Religion")
     private String religion;
-    @JsonProperty("MaritalStatus")
-    private String maritalStatus;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -66,6 +81,16 @@ public class Demographics {
     @JsonProperty("FirstName")
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+
+    @JsonProperty("MiddleName")
+    public String getMiddleName() {
+        return middleName;
+    }
+
+    @JsonProperty("MiddleName")
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
     }
 
     @JsonProperty("LastName")
@@ -108,14 +133,54 @@ public class Demographics {
         this.sex = sex;
     }
 
-    @JsonProperty("Address")
-    public Address getAddress() {
-        return address;
+    @JsonProperty("Race")
+    public String getRace() {
+        return race;
     }
 
-    @JsonProperty("Address")
-    public void setAddress(Address address) {
-        this.address = address;
+    @JsonProperty("Race")
+    public void setRace(String race) {
+        this.race = race;
+    }
+
+    @JsonProperty("IsHispanic")
+    public Object getIsHispanic() {
+        return isHispanic;
+    }
+
+    @JsonProperty("IsHispanic")
+    public void setIsHispanic(Object isHispanic) {
+        this.isHispanic = isHispanic;
+    }
+
+    @JsonProperty("MaritalStatus")
+    public String getMaritalStatus() {
+        return maritalStatus;
+    }
+
+    @JsonProperty("MaritalStatus")
+    public void setMaritalStatus(String maritalStatus) {
+        this.maritalStatus = maritalStatus;
+    }
+
+    @JsonProperty("IsDeceased")
+    public Object getIsDeceased() {
+        return isDeceased;
+    }
+
+    @JsonProperty("IsDeceased")
+    public void setIsDeceased(Object isDeceased) {
+        this.isDeceased = isDeceased;
+    }
+
+    @JsonProperty("DeathDateTime")
+    public Object getDeathDateTime() {
+        return deathDateTime;
+    }
+
+    @JsonProperty("DeathDateTime")
+    public void setDeathDateTime(Object deathDateTime) {
+        this.deathDateTime = deathDateTime;
     }
 
     @JsonProperty("PhoneNumber")
@@ -129,63 +194,56 @@ public class Demographics {
     }
 
     @JsonProperty("EmailAddresses")
-    public List<EmailAddress> getEmailAddresses() {
+    public List<Object> getEmailAddresses() {
         return emailAddresses;
     }
 
     @JsonProperty("EmailAddresses")
-    public void setEmailAddresses(List<EmailAddress> emailAddresses) {
+    public void setEmailAddresses(List<Object> emailAddresses) {
         this.emailAddresses = emailAddresses;
     }
 
     @JsonProperty("Language")
-    public Object getLanguage() {
+    public String getLanguage() {
         return language;
     }
 
     @JsonProperty("Language")
-    public void setLanguage(Object language) {
+    public void setLanguage(String language) {
         this.language = language;
     }
 
-    @JsonProperty("Race")
-    public String getRace() {
-        return race;
+    @JsonProperty("Citizenship")
+    public List<Object> getCitizenship() {
+        return citizenship;
     }
 
-    @JsonProperty("Race")
-    public void setRace(String race) {
-        this.race = race;
+    @JsonProperty("Citizenship")
+    public void setCitizenship(List<Object> citizenship) {
+        this.citizenship = citizenship;
     }
 
-    @JsonProperty("Ethnicity")
-    public String getEthnicity() {
-        return ethnicity;
+    @JsonProperty("Address")
+    public Address getAddress() {
+        return address;
+    }
+
+    @JsonProperty("Address")
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     @JsonProperty("Ethnicity")
     public void setEthnicity(String ethnicity) {
         this.ethnicity = ethnicity;
     }
-
     @JsonProperty("Religion")
     public String getReligion() {
         return religion;
     }
-
     @JsonProperty("Religion")
     public void setReligion(String religion) {
         this.religion = religion;
-    }
-
-    @JsonProperty("MaritalStatus")
-    public String getMaritalStatus() {
-        return maritalStatus;
-    }
-
-    @JsonProperty("MaritalStatus")
-    public void setMaritalStatus(String maritalStatus) {
-        this.maritalStatus = maritalStatus;
     }
 
     @JsonAnyGetter

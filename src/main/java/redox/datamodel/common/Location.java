@@ -1,5 +1,5 @@
 
-package redox.datamodel.media.common;
+package redox.datamodel.common;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import redox.datamodel.common.Address;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -27,6 +28,10 @@ public class Location {
     private Object department;
     @JsonProperty("Room")
     private Object room;
+    @JsonProperty("Address")
+    private Address address;
+    @JsonProperty("Name")
+    private String name;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -68,6 +73,26 @@ public class Location {
     @JsonProperty("Room")
     public void setRoom(Object room) {
         this.room = room;
+    }
+
+    @JsonProperty("Address")
+    public Address getAddress() {
+        return address;
+    }
+
+    @JsonProperty("Address")
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    @JsonProperty("Name")
+    public String getName() {
+        return name;
+    }
+
+    @JsonProperty("Name")
+    public void setName(String name) {
+        this.name = name;
     }
 
     @JsonAnyGetter

@@ -1,5 +1,5 @@
 
-package redox.datamodel.media.common;
+package redox.datamodel.common;
 
 import java.util.HashMap;
 import java.util.List;
@@ -17,9 +17,12 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "EventType",
     "EventDateTime",
     "Test",
+        //patientpush, not patientquery
     "Source",
     "Destinations",
+        //patientpush, not patientquery
     "Message",
+        //patientpush, not patientquery
     "Transmission",
     "FacilityCode"
 })
@@ -33,12 +36,15 @@ public class Meta {
     private String eventDateTime;
     @JsonProperty("Test")
     private Boolean test;
+    //patientpush, not patientquery
     @JsonProperty("Source")
     private Source source;
     @JsonProperty("Destinations")
     private List<Destination> destinations = null;
+    //patientpush, not patientquery
     @JsonProperty("Message")
     private Message message;
+    //patientpush, not patientquery
     @JsonProperty("Transmission")
     private Transmission transmission;
     @JsonProperty("FacilityCode")
@@ -86,6 +92,7 @@ public class Meta {
         this.test = test;
     }
 
+    //patientpush, not patientquery
     @JsonProperty("Source")
     public Source getSource() {
         return source;
@@ -106,6 +113,7 @@ public class Meta {
         this.destinations = destinations;
     }
 
+    //patientpush, not patientquery
     @JsonProperty("Message")
     public Message getMessage() {
         return message;
@@ -116,6 +124,7 @@ public class Meta {
         this.message = message;
     }
 
+    //patientpush, not patientquery
     @JsonProperty("Transmission")
     public Transmission getTransmission() {
         return transmission;

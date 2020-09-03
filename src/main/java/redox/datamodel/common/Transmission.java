@@ -1,5 +1,5 @@
 
-package redox.datamodel.media.common;
+package redox.datamodel.common;
 
 import java.util.HashMap;
 import java.util.Map;
