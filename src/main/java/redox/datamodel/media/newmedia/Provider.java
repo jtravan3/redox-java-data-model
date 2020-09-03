@@ -36,11 +36,11 @@ public class Provider {
     @JsonProperty("Credentials")
     private List<String> credentials = null;
     @JsonProperty("Address")
-    private Address_ address;
+    private Address address;
     @JsonProperty("EmailAddresses")
     private List<Object> emailAddresses = null;
     @JsonProperty("PhoneNumber")
-    private PhoneNumber_ phoneNumber;
+    private PhoneNumber phoneNumber;
     @JsonProperty("Location")
     private Location location;
     @JsonIgnore
@@ -97,12 +97,12 @@ public class Provider {
     }
 
     @JsonProperty("Address")
-    public Address_ getAddress() {
+    public Address getAddress() {
         return address;
     }
 
     @JsonProperty("Address")
-    public void setAddress(Address_ address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 
@@ -117,12 +117,12 @@ public class Provider {
     }
 
     @JsonProperty("PhoneNumber")
-    public PhoneNumber_ getPhoneNumber() {
+    public PhoneNumber getPhoneNumber() {
         return phoneNumber;
     }
 
     @JsonProperty("PhoneNumber")
-    public void setPhoneNumber(PhoneNumber_ phoneNumber) {
+    public void setPhoneNumber(PhoneNumber phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

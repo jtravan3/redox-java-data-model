@@ -36,13 +36,13 @@ public class Authenticator {
     @JsonProperty("Credentials")
     private List<Object> credentials = null;
     @JsonProperty("Address")
-    private Address__ address;
+    private Address address;
     @JsonProperty("EmailAddresses")
     private List<Object> emailAddresses = null;
     @JsonProperty("PhoneNumber")
-    private PhoneNumber__ phoneNumber;
+    private PhoneNumber phoneNumber;
     @JsonProperty("Location")
-    private Location_ location;
+    private Location location;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -97,12 +97,12 @@ public class Authenticator {
     }
 
     @JsonProperty("Address")
-    public Address__ getAddress() {
+    public Address getAddress() {
         return address;
     }
 
     @JsonProperty("Address")
-    public void setAddress(Address__ address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 
@@ -117,22 +117,22 @@ public class Authenticator {
     }
 
     @JsonProperty("PhoneNumber")
-    public PhoneNumber__ getPhoneNumber() {
+    public PhoneNumber getPhoneNumber() {
         return phoneNumber;
     }
 
     @JsonProperty("PhoneNumber")
-    public void setPhoneNumber(PhoneNumber__ phoneNumber) {
+    public void setPhoneNumber(PhoneNumber phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
     @JsonProperty("Location")
-    public Location_ getLocation() {
+    public Location getLocation() {
         return location;
     }
 
     @JsonProperty("Location")
-    public void setLocation(Location_ location) {
+    public void setLocation(Location location) {
         this.location = location;
     }
 

@@ -36,13 +36,13 @@ public class Notification {
     @JsonProperty("Credentials")
     private List<String> credentials = null;
     @JsonProperty("Address")
-    private Address___ address;
+    private Address address;
     @JsonProperty("EmailAddresses")
     private List<Object> emailAddresses = null;
     @JsonProperty("PhoneNumber")
-    private PhoneNumber___ phoneNumber;
+    private PhoneNumber phoneNumber;
     @JsonProperty("Location")
-    private Location__ location;
+    private Location location;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -97,12 +97,12 @@ public class Notification {
     }
 
     @JsonProperty("Address")
-    public Address___ getAddress() {
+    public Address getAddress() {
         return address;
     }
 
     @JsonProperty("Address")
-    public void setAddress(Address___ address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 
@@ -117,22 +117,22 @@ public class Notification {
     }
 
     @JsonProperty("PhoneNumber")
-    public PhoneNumber___ getPhoneNumber() {
+    public PhoneNumber getPhoneNumber() {
         return phoneNumber;
     }
 
     @JsonProperty("PhoneNumber")
-    public void setPhoneNumber(PhoneNumber___ phoneNumber) {
+    public void setPhoneNumber(PhoneNumber phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
     @JsonProperty("Location")
-    public Location__ getLocation() {
+    public Location getLocation() {
         return location;
     }
 
     @JsonProperty("Location")
-    public void setLocation(Location__ location) {
+    public void setLocation(Location location) {
         this.location = location;
     }
 
