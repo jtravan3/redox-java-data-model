@@ -1,5 +1,5 @@
 
-package redox.datamodel.media.newmedia;
+package redox.datamodel.media.common;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,49 +12,36 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "Home",
-    "Office",
-    "Mobile"
+    "ID",
+    "Name"
 })
-public class PhoneNumber {
+public class Source {
 
-    @JsonProperty("Home")
-    private String home;
-    @JsonProperty("Office")
-    private Object office;
-    @JsonProperty("Mobile")
-    private Object mobile;
+    @JsonProperty("ID")
+    private String iD;
+    @JsonProperty("Name")
+    private String name;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("Home")
-    public String getHome() {
-        return home;
+    @JsonProperty("ID")
+    public String getID() {
+        return iD;
     }
 
-    @JsonProperty("Home")
-    public void setHome(String home) {
-        this.home = home;
+    @JsonProperty("ID")
+    public void setID(String iD) {
+        this.iD = iD;
     }
 
-    @JsonProperty("Office")
-    public Object getOffice() {
-        return office;
+    @JsonProperty("Name")
+    public String getName() {
+        return name;
     }
 
-    @JsonProperty("Office")
-    public void setOffice(Object office) {
-        this.office = office;
-    }
-
-    @JsonProperty("Mobile")
-    public Object getMobile() {
-        return mobile;
-    }
-
-    @JsonProperty("Mobile")
-    public void setMobile(Object mobile) {
-        this.mobile = mobile;
+    @JsonProperty("Name")
+    public void setName(String name) {
+        this.name = name;
     }
 
     @JsonAnyGetter

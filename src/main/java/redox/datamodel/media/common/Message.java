@@ -1,5 +1,5 @@
 
-package redox.datamodel.media.newmedia;
+package redox.datamodel.media.common;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({
     "ID"
 })
-public class Transmission {
+public class Message {
 
     @JsonProperty("ID")
     private Integer iD;

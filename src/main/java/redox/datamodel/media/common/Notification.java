@@ -1,5 +1,5 @@
 
-package redox.datamodel.media.newmedia;
+package redox.datamodel.media.common;
 
 import java.util.HashMap;
 import java.util.List;
@@ -23,7 +23,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "PhoneNumber",
     "Location"
 })
-public class Provider {
+public class Notification {
 
     @JsonProperty("ID")
     private String iD;

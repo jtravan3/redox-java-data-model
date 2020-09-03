@@ -1,5 +1,5 @@
 
-package redox.datamodel.media.newmedia;
+package redox.datamodel.media.common;
 
 import java.util.HashMap;
 import java.util.List;
@@ -10,6 +10,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import redox.datamodel.media.common.Demographics;
+import redox.datamodel.media.common.Identifier;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({

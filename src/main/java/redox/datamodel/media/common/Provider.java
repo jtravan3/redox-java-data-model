@@ -1,5 +1,5 @@
 
-package redox.datamodel.media.newmedia;
+package redox.datamodel.media.common;
 
 import java.util.HashMap;
 import java.util.List;
@@ -10,6 +10,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import redox.datamodel.media.common.Address;
+import redox.datamodel.media.common.Location;
+import redox.datamodel.media.common.PhoneNumber;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -23,18 +26,18 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "PhoneNumber",
     "Location"
 })
-public class Authenticator {
+public class Provider {
 
     @JsonProperty("ID")
-    private Object iD;
+    private String iD;
     @JsonProperty("IDType")
-    private Object iDType;
+    private String iDType;
     @JsonProperty("FirstName")
-    private Object firstName;
+    private String firstName;
     @JsonProperty("LastName")
-    private Object lastName;
+    private String lastName;
     @JsonProperty("Credentials")
-    private List<Object> credentials = null;
+    private List<String> credentials = null;
     @JsonProperty("Address")
     private Address address;
     @JsonProperty("EmailAddresses")
@@ -47,52 +50,52 @@ public class Authenticator {
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("ID")
-    public Object getID() {
+    public String getID() {
         return iD;
     }
 
     @JsonProperty("ID")
-    public void setID(Object iD) {
+    public void setID(String iD) {
         this.iD = iD;
     }
 
     @JsonProperty("IDType")
-    public Object getIDType() {
+    public String getIDType() {
         return iDType;
     }
 
     @JsonProperty("IDType")
-    public void setIDType(Object iDType) {
+    public void setIDType(String iDType) {
         this.iDType = iDType;
     }
 
     @JsonProperty("FirstName")
-    public Object getFirstName() {
+    public String getFirstName() {
         return firstName;
     }
 
     @JsonProperty("FirstName")
-    public void setFirstName(Object firstName) {
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
     @JsonProperty("LastName")
-    public Object getLastName() {
+    public String getLastName() {
         return lastName;
     }
 
     @JsonProperty("LastName")
-    public void setLastName(Object lastName) {
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
     @JsonProperty("Credentials")
-    public List<Object> getCredentials() {
+    public List<String> getCredentials() {
         return credentials;
     }
 
     @JsonProperty("Credentials")
-    public void setCredentials(List<Object> credentials) {
+    public void setCredentials(List<String> credentials) {
         this.credentials = credentials;
     }
 

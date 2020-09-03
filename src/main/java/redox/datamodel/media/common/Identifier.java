@@ -1,5 +1,5 @@
 
-package redox.datamodel.media.newmedia;
+package redox.datamodel.media.common;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,14 +13,14 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "ID",
-    "Name"
+    "IDType"
 })
-public class Destination {
+public class Identifier {
 
     @JsonProperty("ID")
     private String iD;
-    @JsonProperty("Name")
-    private String name;
+    @JsonProperty("IDType")
+    private String iDType;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -34,14 +34,14 @@ public class Destination {
         this.iD = iD;
     }
 
-    @JsonProperty("Name")
-    public String getName() {
-        return name;
+    @JsonProperty("IDType")
+    public String getIDType() {
+        return iDType;
     }
 
-    @JsonProperty("Name")
-    public void setName(String name) {
-        this.name = name;
+    @JsonProperty("IDType")
+    public void setIDType(String iDType) {
+        this.iDType = iDType;
     }
 
     @JsonAnyGetter
