@@ -1,0 +1,199 @@
+{
+  "Meta": {
+    "DataModel": "Media",
+    "EventType": "Replace",
+    "EventDateTime": "2020-09-02T17:52:25.180Z",
+    "Test": true,
+    "Source": {
+      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
+      "Name": "Redox Dev Tools"
+    },
+    "Destinations": [
+      {
+        "ID": "af394f14-b34a-464f-8d24-895f370af4c9",
+        "Name": "Redox EMR"
+      }
+    ],
+    "Message": {
+      "ID": 5565
+    },
+    "Transmission": {
+      "ID": 12414
+    },
+    "FacilityCode": null
+  },
+  "Patient": {
+    "Identifiers": [
+      {
+        "ID": "0000000002",
+        "IDType": "MR"
+      },
+      {
+        "ID": "81ac9647-3a07-46b7-85b4-c5d09099fb3b",
+        "IDType": "EHRID"
+      },
+      {
+        "ID": "ffc486eff2b04b8^^^&1.3.6.1.4.1.21367.2005.13.20.1000&ISO",
+        "IDType": "NIST"
+      }
+    ],
+    "Demographics": {
+      "FirstName": "Barbara",
+      "MiddleName": null,
+      "LastName": "Bixby",
+      "DOB": "1982-07-24",
+      "SSN": "202-02-0002",
+      "Sex": "Female",
+      "Race": "White",
+      "IsHispanic": null,
+      "MaritalStatus": "Married",
+      "IsDeceased": null,
+      "DeathDateTime": null,
+      "PhoneNumber": {
+        "Home": "+18088675303",
+        "Office": "+17077543758",
+        "Mobile": "+19189368865"
+      },
+      "EmailAddresses": [
+        "barb.bixby@test.net"
+      ],
+      "Language": "en",
+      "Citizenship": [],
+      "Address": {
+        "StreetAddress": "4762 Hickory Street",
+        "City": "Monroe",
+        "State": "WI",
+        "ZIP": "53566",
+        "County": "Green",
+        "Country": "US"
+      }
+    },
+    "Notes": []
+  },
+  "Visit": {
+    "VisitNumber": "1234",
+    "AccountNumber": null
+  },
+  "Media": {
+    "FileType": "PDF",
+    "FileName": "SamplePDF",
+    "FileContents": "JVBERi0xLjQKCjEgMCBvYmoKPDwKIC9UeXBlIC9DYXRhbG9nCiAvUGFnZXMgMiAwIFIKPj4KZW5kb2JqCgoyIDAgb2JqCjw8CiAvVHlwZSAvUGFnZXMKIC9LaWRzIFszIDAgUl0KIC9Db3VudCAxCj4+CmVuZG9iagoKMyAwIG9iago8PAogL1R5cGUgL1BhZ2UKIC9QYXJlbnQgMiAwIFIKIC9NZWRpYUJveCBbMCAwIDM1MCAyMDBdCiAvQ29udGVudHMgNCAwIFIKIC9SZXNvdXJjZXMgPDwKICAvUHJvY1NldCA1IDAgUgogIC9Gb250IDw8CiAgIC9GMSA2IDAgUgogID4+CiA+Pgo+PgplbmRvYmoKCjQgMCBvYmoKPDwgL0xlbmd0aCA3MyA+PgpzdHJlYW0KIEJUCiAgL0YxIDI0IFRmCiAgMTAwIDEwMCBUZAogIChIZWxsbyBmcm9tIFJlZG94KSBUagogRVQKZW5kc3RyZWFtCmVuZG9iagoKNSAwIG9iagogWy9QREYgL1RleHRdCmVuZG9iagoKNiAwIG9iago8PAogL1R5cGUgL0ZvbnQKIC9TdWJ0eXBlIC9UeXBlMQogL05hbWUgL0YxCiAvQmFzZUZvbnQgL0hlbHZldGljYQogL0VuY29kaW5nIC9NYWNSb21hbkVuY29kaW5nCj4+CmVuZG9iagoKeHJlZgowIDkKMDAwMDAwMDAwMCA2NTUzNSBmCjAwMDAwMDAwMDkgMDAwMDAgbgowMDAwMDAwMDc0IDAwMDAwIG4KMDAwMDAwMDEyMCAwMDAwMCBuCjAwMDAwMDAxNzkgMDAwMDAgbgowMDAwMDAwMzY0IDAwMDAwIG4KMDAwMDAwMDQ2NiAwMDAwMCBuCjAwMDAwMDA0OTYgMDAwMDAgbgoKdHJhaWxlcgo8PAovU2l6ZSA4Ci9Sb290IDEgMCBSCj4+CnN0YXJ0eHJlZgo2MjUKJSVFT0Y=",
+    "DocumentType": "Sample Document",
+    "OriginalDocumentID": "2cdba2d2-792b-4ed2-99cd-34e7eb0ad0dc",
+    "DocumentID": "e52180fb-75a2-41ea-9fcd-661a996de53f",
+    "DocumentDescription": null,
+    "CreationDateTime": "2017-06-22T19:30:04.387Z",
+    "ServiceDateTime": "2017-06-22T17:00:00.387Z",
+    "Provider": {
+      "ID": "4356789876",
+      "IDType": "NPI",
+      "FirstName": "Pat",
+      "LastName": "Granite",
+      "Credentials": [
+        "MD"
+      ],
+      "Address": {
+        "StreetAddress": "123 Main St.",
+        "City": "Madison",
+        "State": "WI",
+        "ZIP": "53703",
+        "County": "Dane",
+        "Country": "USA"
+      },
+      "EmailAddresses": [],
+      "PhoneNumber": {
+        "Office": "+16085551234"
+      },
+      "Location": {
+        "Type": null,
+        "Facility": null,
+        "Department": null,
+        "Room": null
+      }
+    },
+    "Authenticated": "False",
+    "Authenticator": {
+      "ID": null,
+      "IDType": null,
+      "FirstName": null,
+      "LastName": null,
+      "Credentials": [],
+      "Address": {
+        "StreetAddress": null,
+        "City": null,
+        "State": null,
+        "ZIP": null,
+        "County": null,
+        "Country": null
+      },
+      "EmailAddresses": [],
+      "PhoneNumber": {
+        "Office": null
+      },
+      "Location": {
+        "Type": null,
+        "Facility": null,
+        "Department": null,
+        "Room": null
+      }
+    },
+    "Availability": "Unavailable",
+    "Notifications": [
+      {
+        "ID": "2434534567",
+        "IDType": "NPI",
+        "FirstName": "Sharon",
+        "LastName": "Chalk",
+        "Credentials": [
+          "MD",
+          "PhD"
+        ],
+        "Address": {
+          "StreetAddress": "312 Maple Dr. Suite 400",
+          "City": "Verona",
+          "State": "WI",
+          "ZIP": "53593",
+          "County": "Dane",
+          "Country": "USA"
+        },
+        "EmailAddresses": [],
+        "PhoneNumber": {
+          "Office": "+16085559999"
+        },
+        "Location": {
+          "Type": null,
+          "Facility": null,
+          "Department": null,
+          "Room": null
+        }
+      },
+      {
+        "ID": "8263749385",
+        "IDType": "NPI",
+        "FirstName": "Jim",
+        "LastName": "Mica",
+        "Credentials": [
+          "RN"
+        ],
+        "Address": {
+          "StreetAddress": "5235 Kennedy Ave.",
+          "City": "Creve Cour",
+          "State": "MO",
+          "ZIP": "63141",
+          "County": "Saint Louis",
+          "Country": "USA"
+        },
+        "EmailAddresses": [],
+        "PhoneNumber": {
+          "Office": "+13145557777"
+        },
+        "Location": {
+          "Type": null,
+          "Facility": null,
+          "Department": null,
+          "Room": null
+        }
+      }
+    ]
+  }
+}
