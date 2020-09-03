@@ -1,0 +1,34 @@
+{
+  "Meta": {
+    "DataModel": "Clinical Summary",
+    "EventType": "PatientQuery",
+    "EventDateTime": "2020-08-13T16:45:41.217Z",
+    "Test": true,
+    "Destinations": [
+      {
+        "ID": "ef9e7448-7f65-4432-aa96-059647e9b357",
+        "Name": "Patient Query Endpoint"
+      }
+    ],
+    "FacilityCode": null
+  },
+  "Patient": {
+    "Identifiers": [
+      {
+        "ID": "0000000001",
+        "IDType": "MR"
+      },
+      {
+        "ID": "e167267c-16c9-4fe3-96ae-9cff5703e90a",
+        "IDType": "EHRID"
+      },
+      {
+        "ID": "a1d4ee8aba494ca",
+        "IDType": "NIST"
+      }
+    ]
+  },
+  "Location": {
+    "Department": null
+  }
+}
