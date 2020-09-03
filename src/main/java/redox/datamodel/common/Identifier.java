@@ -1,5 +1,5 @@
 
-package redox.datamodel.clinicalsummary.common;
+package redox.datamodel.common;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,25 +9,23 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import redox.datamodel.common.Address;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "ID",
-    "Name",
     "IDType",
-    "Address"
+        //type is optional for patientpush, never present for patientquery
+        "Type"
 })
-public class Producer {
+public class Identifier {
 
     @JsonProperty("ID")
     private String iD;
-    @JsonProperty("Name")
-    private String name;
     @JsonProperty("IDType")
-    private Object iDType;
-    @JsonProperty("Address")
-    private Address address;
+    private String iDType;
+    // type is optional
+    @JsonProperty("Type")
+    private Object type;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -41,34 +39,25 @@ public class Producer {
         this.iD = iD;
     }
 
-    @JsonProperty("Name")
-    public String getName() {
-        return name;
-    }
-
-    @JsonProperty("Name")
-    public void setName(String name) {
-        this.name = name;
-    }
-
     @JsonProperty("IDType")
-    public Object getIDType() {
+    public String getIDType() {
         return iDType;
     }
 
     @JsonProperty("IDType")
-    public void setIDType(Object iDType) {
+    public void setIDType(String iDType) {
         this.iDType = iDType;
     }
 
-    @JsonProperty("Address")
-    public Address getAddress() {
-        return address;
+    //optional
+    @JsonProperty("Type")
+    public Object getType() {
+        return type;
     }
-
-    @JsonProperty("Address")
-    public void setAddress(Address address) {
-        this.address = address;
+    //optional
+    @JsonProperty("Type")
+    public void setType(Object type) {
+        this.type = type;
     }
 
     @JsonAnyGetter

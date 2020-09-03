@@ -1,5 +1,5 @@
 
-package redox.datamodel.clinicalsummary.common;
+package redox.datamodel.media.common;
 
 import java.util.HashMap;
 import java.util.List;
@@ -18,7 +18,6 @@ import redox.datamodel.common.PhoneNumber;
 @JsonPropertyOrder({
     "ID",
     "IDType",
-    "Type",
     "FirstName",
     "LastName",
     "Credentials",
@@ -27,14 +26,12 @@ import redox.datamodel.common.PhoneNumber;
     "PhoneNumber",
     "Location"
 })
-public class PCP {
+public class Authenticator {
 
     @JsonProperty("ID")
     private Object iD;
     @JsonProperty("IDType")
     private Object iDType;
-    @JsonProperty("Type")
-    private Object type;
     @JsonProperty("FirstName")
     private Object firstName;
     @JsonProperty("LastName")
@@ -70,16 +67,6 @@ public class PCP {
     @JsonProperty("IDType")
     public void setIDType(Object iDType) {
         this.iDType = iDType;
-    }
-
-    @JsonProperty("Type")
-    public Object getType() {
-        return type;
-    }
-
-    @JsonProperty("Type")
-    public void setType(Object type) {
-        this.type = type;
     }
 
     @JsonProperty("FirstName")

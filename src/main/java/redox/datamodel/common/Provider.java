@@ -1,5 +1,5 @@
 
-package redox.datamodel.clinicalsummary.common;
+package redox.datamodel.common;
 
 import java.util.HashMap;
 import java.util.List;
@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import redox.datamodel.clinicalsummary.common.Role;
 import redox.datamodel.common.Address;
 import redox.datamodel.common.Location;
 import redox.datamodel.common.PhoneNumber;
@@ -18,23 +19,21 @@ import redox.datamodel.common.PhoneNumber;
 @JsonPropertyOrder({
     "ID",
     "IDType",
-    "Type",
     "FirstName",
     "LastName",
     "Credentials",
     "Address",
     "EmailAddresses",
     "PhoneNumber",
-    "Location"
+    "Location",
+    "Role"
 })
-public class PCP {
+public class Provider {
 
     @JsonProperty("ID")
     private Object iD;
     @JsonProperty("IDType")
     private Object iDType;
-    @JsonProperty("Type")
-    private Object type;
     @JsonProperty("FirstName")
     private Object firstName;
     @JsonProperty("LastName")
@@ -49,6 +48,8 @@ public class PCP {
     private PhoneNumber phoneNumber;
     @JsonProperty("Location")
     private Location location;
+    @JsonProperty("Role")
+    private Role role;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -70,16 +71,6 @@ public class PCP {
     @JsonProperty("IDType")
     public void setIDType(Object iDType) {
         this.iDType = iDType;
-    }
-
-    @JsonProperty("Type")
-    public Object getType() {
-        return type;
-    }
-
-    @JsonProperty("Type")
-    public void setType(Object type) {
-        this.type = type;
     }
 
     @JsonProperty("FirstName")
@@ -150,6 +141,16 @@ public class PCP {
     @JsonProperty("Location")
     public void setLocation(Location location) {
         this.location = location;
+    }
+
+    @JsonProperty("Role")
+    public Role getRole() {
+        return role;
+    }
+
+    @JsonProperty("Role")
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     @JsonAnyGetter

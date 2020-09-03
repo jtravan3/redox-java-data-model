@@ -1,7 +1,8 @@
 
-package redox.datamodel.clinicalsummary.common;
+package redox.datamodel.media.common;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
@@ -10,26 +11,63 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import redox.datamodel.common.Address;
+import redox.datamodel.common.Location;
+import redox.datamodel.common.PhoneNumber;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
+    "ID",
+    "IDType",
     "FirstName",
     "LastName",
     "Credentials",
-    "Address"
+    "Address",
+    "EmailAddresses",
+    "PhoneNumber",
+    "Location"
 })
-public class Custodian {
+public class Notification {
 
+    @JsonProperty("ID")
+    private String iD;
+    @JsonProperty("IDType")
+    private String iDType;
     @JsonProperty("FirstName")
     private String firstName;
     @JsonProperty("LastName")
     private String lastName;
     @JsonProperty("Credentials")
-    private String credentials;
+    private List<String> credentials = null;
     @JsonProperty("Address")
     private Address address;
+    @JsonProperty("EmailAddresses")
+    private List<Object> emailAddresses = null;
+    @JsonProperty("PhoneNumber")
+    private PhoneNumber phoneNumber;
+    @JsonProperty("Location")
+    private Location location;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
+    @JsonProperty("ID")
+    public String getID() {
+        return iD;
+    }
+
+    @JsonProperty("ID")
+    public void setID(String iD) {
+        this.iD = iD;
+    }
+
+    @JsonProperty("IDType")
+    public String getIDType() {
+        return iDType;
+    }
+
+    @JsonProperty("IDType")
+    public void setIDType(String iDType) {
+        this.iDType = iDType;
+    }
 
     @JsonProperty("FirstName")
     public String getFirstName() {
@@ -52,12 +90,12 @@ public class Custodian {
     }
 
     @JsonProperty("Credentials")
-    public String getCredentials() {
+    public List<String> getCredentials() {
         return credentials;
     }
 
     @JsonProperty("Credentials")
-    public void setCredentials(String credentials) {
+    public void setCredentials(List<String> credentials) {
         this.credentials = credentials;
     }
 
@@ -69,6 +107,36 @@ public class Custodian {
     @JsonProperty("Address")
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    @JsonProperty("EmailAddresses")
+    public List<Object> getEmailAddresses() {
+        return emailAddresses;
+    }
+
+    @JsonProperty("EmailAddresses")
+    public void setEmailAddresses(List<Object> emailAddresses) {
+        this.emailAddresses = emailAddresses;
+    }
+
+    @JsonProperty("PhoneNumber")
+    public PhoneNumber getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    @JsonProperty("PhoneNumber")
+    public void setPhoneNumber(PhoneNumber phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    @JsonProperty("Location")
+    public Location getLocation() {
+        return location;
+    }
+
+    @JsonProperty("Location")
+    public void setLocation(Location location) {
+        this.location = location;
     }
 
     @JsonAnyGetter
