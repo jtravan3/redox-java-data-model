@@ -48,7 +48,7 @@ public class Encounter {
     @JsonProperty("Locations")
     private List<Location> locations = null;
     @JsonProperty("Diagnosis")
-    private List<Diagnosi> diagnosis = null;
+    private List<Diagnosis> diagnosis = null;
     @JsonProperty("ReasonForVisit")
     private List<ReasonForVisit> reasonForVisit = null;
     @JsonProperty("Code")
@@ -127,12 +127,12 @@ public class Encounter {
     }
 
     @JsonProperty("Diagnosis")
-    public List<Diagnosi> getDiagnosis() {
+    public List<Diagnosis> getDiagnosis() {
         return diagnosis;
     }
 
     @JsonProperty("Diagnosis")
-    public void setDiagnosis(List<Diagnosi> diagnosis) {
+    public void setDiagnosis(List<Diagnosis> diagnosis) {
         this.diagnosis = diagnosis;
     }
 
