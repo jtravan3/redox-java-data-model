@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "Name",
     "AltCodes"
 })
-public class Diagnosi {
+public class Diagnosis {
 
     @JsonProperty("Code")
     private String code;
