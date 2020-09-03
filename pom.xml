@@ -54,6 +54,7 @@
 		<maven.source.plugin.version>3.2.1</maven.source.plugin.version>
 		<maven.gpg.plugin.version>1.6</maven.gpg.plugin.version>
 		<maven.release.plugin.version>2.5.3</maven.release.plugin.version>
+		<openpojo.version>0.8.13</openpojo.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring-boot.repackage.skip>true</spring-boot.repackage.skip>
 	</properties>
@@ -91,6 +92,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.openpojo</groupId>
+			<artifactId>openpojo</artifactId>
+			<version>${openpojo.version}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>

@@ -2,6 +2,7 @@
 
 # Redox Java Data Model
 
+![Maven Central](https://img.shields.io/maven-central/v/com.jtravan3/redox-java-data-model)
 ![Java CI](https://github.com/jtravan3/redox-java-data-model/workflows/Java%20CI/badge.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
