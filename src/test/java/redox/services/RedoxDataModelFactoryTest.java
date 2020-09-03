@@ -8,9 +8,9 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.Assert;
 import org.springframework.util.ResourceUtils;
-import redox.clinicalsummary.patientpush.PatientPush;
-import redox.clinicalsummary.patientquery.PatientQuery;
-import redox.clinicalsummary.patientqueryresponse.PatientQueryResponse;
+import redox.datamodel.clinicalsummary.patientpush.PatientPush;
+import redox.datamodel.clinicalsummary.patientquery.PatientQuery;
+import redox.datamodel.clinicalsummary.patientqueryresponse.PatientQueryResponse;
 
 import java.io.IOException;
 import java.nio.file.Path;
