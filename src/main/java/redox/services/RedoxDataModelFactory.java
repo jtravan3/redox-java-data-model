@@ -14,7 +14,6 @@ import java.nio.file.Path;
  * This acts as a factory for creating Redox Java POJOs
  * from the raw JSON or file path
  */
-@Component
 public class RedoxDataModelFactory {
 
     /**
@@ -25,7 +24,7 @@ public class RedoxDataModelFactory {
      * @return an object of the class type passed in
      * @throws JsonProcessingException
      */
-    public <T> T parseRedoxJson(String json, Class<T> classType) throws JsonProcessingException {
+    public static <T> T parseRedoxJson(String json, Class<T> classType) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
         return mapper.readValue(json, classType);
     }
@@ -38,7 +37,7 @@ public class RedoxDataModelFactory {
      * @return an object of the class type passed in
      * @throws IOException
      */
-    public <T> T parseRedoxJson(Path filePath, Class<T> classType) throws IOException {
+    public static <T> T parseRedoxJson(Path filePath, Class<T> classType) throws IOException {
         return parseRedoxJson(filePath, StandardCharsets.UTF_8, classType);
     }
 
@@ -52,7 +51,7 @@ public class RedoxDataModelFactory {
      * @return an object of the class type passed in
      * @throws IOException
      */
-    public <T> T parseRedoxJson(Path filePath, Charset charset, Class<T> classType) throws IOException {
+    public static <T> T parseRedoxJson(Path filePath, Charset charset, Class<T> classType) throws IOException {
         String json = Files.readString(filePath, charset);
         return parseRedoxJson(json, classType);
     }
