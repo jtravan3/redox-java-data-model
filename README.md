@@ -6,7 +6,7 @@
 ![Java CI](https://github.com/jtravan3/redox-java-data-model/workflows/Java%20CI/badge.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[![Gitter](https://badges.gitter.im/jtravan3/community.svg)](https://gitter.im/jtravan3/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Gitter](https://badges.gitter.im/jtravan3/redox-java-data-model.svg)](https://gitter.im/jtravan3/redox-java-data-model?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![codecov](https://codecov.io/gh/jtravan3/redox-java-data-model/branch/develop/graph/badge.svg)](https://codecov.io/gh/jtravan3/redox-java-data-model)
 
 This project serves as a repository for Java POJOs that represent the Redox API Data Model.
