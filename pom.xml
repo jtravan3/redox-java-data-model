@@ -11,7 +11,7 @@
 
 	<groupId>com.jtravan3</groupId>
 	<artifactId>redox-java-data-model</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>redox-java-data-model</name>
