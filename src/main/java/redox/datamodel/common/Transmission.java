@@ -17,17 +17,17 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class Transmission {
 
     @JsonProperty("ID")
-    private Integer iD;
+    private Long iD;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("ID")
-    public Integer getID() {
+    public Long getID() {
         return iD;
     }
 
     @JsonProperty("ID")
-    public void setID(Integer iD) {
+    public void setID(Long iD) {
         this.iD = iD;
     }
 
