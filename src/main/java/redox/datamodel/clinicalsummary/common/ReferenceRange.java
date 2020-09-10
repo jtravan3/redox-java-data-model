@@ -19,31 +19,31 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class ReferenceRange {
 
     @JsonProperty("Low")
-    private Object low;
+    private Long low;
     @JsonProperty("High")
-    private Object high;
+    private Long high;
     @JsonProperty("Text")
     private Object text;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("Low")
-    public Object getLow() {
+    public Long getLow() {
         return low;
     }
 
     @JsonProperty("Low")
-    public void setLow(Object low) {
+    public void setLow(Long low) {
         this.low = low;
     }
 
     @JsonProperty("High")
-    public Object getHigh() {
+    public Long getHigh() {
         return high;
     }
 
     @JsonProperty("High")
-    public void setHigh(Object high) {
+    public void setHigh(Long high) {
         this.high = high;
     }
 
