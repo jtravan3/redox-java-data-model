@@ -10,14 +10,14 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import redox.datamodel.common.Demographics;
-import redox.datamodel.common.Identifier;
+import redox.datamodel.results.common.Contact;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
         "Identifiers",
         "Demographics",
-        "Notes"
+        "Notes",
+        "Contacts"
 })
 public class Patient {
 
@@ -28,6 +28,8 @@ public class Patient {
     private Demographics demographics;
     @JsonProperty("Notes")
     private List<Object> notes = null;
+    @JsonProperty("Contacts")
+    private List<Contact> contacts = null;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -59,6 +61,16 @@ public class Patient {
     @JsonProperty("Notes")
     public void setNotes(List<Object> notes) {
         this.notes = notes;
+    }
+
+    @JsonProperty("Contacts")
+    public List<Contact> getContacts() {
+        return contacts;
+    }
+
+    @JsonProperty("Contacts")
+    public void setContacts(List<Contact> contacts) {
+        this.contacts = contacts;
     }
 
     @JsonAnyGetter

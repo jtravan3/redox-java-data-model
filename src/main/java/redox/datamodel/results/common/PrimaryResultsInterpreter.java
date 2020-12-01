@@ -1,5 +1,5 @@
 
-package redox.datamodel.common;
+package redox.datamodel.results.common;
 
 import java.util.HashMap;
 import java.util.List;
@@ -10,13 +10,13 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import redox.datamodel.clinicalsummary.common.Role;
 import redox.datamodel.common.Address;
-import redox.datamodel.common.Location;
 import redox.datamodel.common.PhoneNumber;
+import redox.datamodel.common.Location;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
+    "NPI",
     "ID",
     "IDType",
     "FirstName",
@@ -25,12 +25,12 @@ import redox.datamodel.common.PhoneNumber;
     "Address",
     "EmailAddresses",
     "PhoneNumber",
-    "Location",
-    "Role",
-        "NPI",
+    "Location"
 })
-public class Provider {
+public class PrimaryResultsInterpreter {
 
+    @JsonProperty("NPI")
+    private Object nPI;
     @JsonProperty("ID")
     private Object iD;
     @JsonProperty("IDType")
@@ -49,12 +49,18 @@ public class Provider {
     private PhoneNumber phoneNumber;
     @JsonProperty("Location")
     private Location location;
-    @JsonProperty("Role")
-    private Role role;
-    @JsonProperty("NPI")
-    private String nPI;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
+    @JsonProperty("NPI")
+    public Object getNPI() {
+        return nPI;
+    }
+
+    @JsonProperty("NPI")
+    public void setNPI(Object nPI) {
+        this.nPI = nPI;
+    }
 
     @JsonProperty("ID")
     public Object getID() {
@@ -144,26 +150,6 @@ public class Provider {
     @JsonProperty("Location")
     public void setLocation(Location location) {
         this.location = location;
-    }
-
-    @JsonProperty("Role")
-    public Role getRole() {
-        return role;
-    }
-
-    @JsonProperty("Role")
-    public void setRole(Role role) {
-        this.role = role;
-    }
-
-    @JsonProperty("NPI")
-    public String getNPI() {
-        return nPI;
-    }
-
-    @JsonProperty("NPI")
-    public void setNPI(String nPI) {
-        this.nPI = nPI;
     }
 
     @JsonAnyGetter
