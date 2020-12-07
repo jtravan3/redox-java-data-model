@@ -1,5 +1,5 @@
 
-package redox.datamodel.common;
+package redox.datamodel.results.common;
 
 import java.util.HashMap;
 import java.util.List;
@@ -10,10 +10,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import redox.datamodel.clinicalsummary.common.Role;
 import redox.datamodel.common.Address;
-import redox.datamodel.common.Location;
 import redox.datamodel.common.PhoneNumber;
+import redox.datamodel.common.Location;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -25,11 +24,9 @@ import redox.datamodel.common.PhoneNumber;
     "Address",
     "EmailAddresses",
     "PhoneNumber",
-    "Location",
-    "Role",
-        "NPI",
+    "Location"
 })
-public class Provider {
+public class ReferringProvider {
 
     @JsonProperty("ID")
     private Object iD;
@@ -49,10 +46,6 @@ public class Provider {
     private PhoneNumber phoneNumber;
     @JsonProperty("Location")
     private Location location;
-    @JsonProperty("Role")
-    private Role role;
-    @JsonProperty("NPI")
-    private String nPI;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -144,26 +137,6 @@ public class Provider {
     @JsonProperty("Location")
     public void setLocation(Location location) {
         this.location = location;
-    }
-
-    @JsonProperty("Role")
-    public Role getRole() {
-        return role;
-    }
-
-    @JsonProperty("Role")
-    public void setRole(Role role) {
-        this.role = role;
-    }
-
-    @JsonProperty("NPI")
-    public String getNPI() {
-        return nPI;
-    }
-
-    @JsonProperty("NPI")
-    public void setNPI(String nPI) {
-        this.nPI = nPI;
     }
 
     @JsonAnyGetter

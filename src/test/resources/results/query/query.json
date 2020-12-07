@@ -1,0 +1,38 @@
+{
+  "Meta": {
+    "DataModel": "Results",
+    "EventType": "Query",
+    "EventDateTime": "2020-11-05T19:32:15.691Z",
+    "Test": true,
+    "Destinations": [
+      {
+        "ID": "af394f14-b34a-464f-8d24-895f370af4c9",
+        "Name": "Redox EMR"
+      }
+    ],
+    "FacilityCode": null
+  },
+  "Patients": [
+    {
+      "Identifiers": [
+        {
+          "ID": "000000001",
+          "IDType": "MRN"
+        }
+      ]
+    }
+  ],
+  "Completion": {
+    "StartDateTime": "2015-05-06T06:00:00.000Z",
+    "EndDateTime": "2015-05-06T07:00:00.000Z"
+  },
+  "ResultStatuses": [
+    "Final"
+  ],
+  "OrderIDs": [
+    "123",
+    "456",
+    "789"
+  ],
+  "Procedures": []
+}
