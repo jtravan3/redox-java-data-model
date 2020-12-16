@@ -44,7 +44,7 @@ public class Author {
     @JsonProperty("Address")
     private Address address;
     @JsonProperty("EmailAddresses")
-    private List<Object> emailAddresses = null;
+    private List<EmailAddress> emailAddresses = null;
     @JsonProperty("PhoneNumber")
     private PhoneNumber phoneNumber;
     @JsonProperty("Location")
@@ -123,12 +123,12 @@ public class Author {
     }
 
     @JsonProperty("EmailAddresses")
-    public List<Object> getEmailAddresses() {
+    public List<EmailAddress> getEmailAddresses() {
         return emailAddresses;
     }
 
     @JsonProperty("EmailAddresses")
-    public void setEmailAddresses(List<Object> emailAddresses) {
+    public void setEmailAddresses(List<EmailAddress> emailAddresses) {
         this.emailAddresses = emailAddresses;
     }
 
