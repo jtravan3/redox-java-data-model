@@ -22,7 +22,7 @@ Install the dependency using [Maven](https://maven.apache.org/guides/getting-sta
 <dependency>
   <groupId>com.jtravan3</groupId>
   <artifactId>redox-java-data-model</artifactId>
-  <version>1.0.4</version>
+  <version>1.0.5</version>
 </dependency>
 ```
 
