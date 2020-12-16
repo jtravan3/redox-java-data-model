@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import redox.datamodel.clinicalsummary.common.EmailAddress;
 import redox.datamodel.common.Address;
 import redox.datamodel.common.PhoneNumber;
 import redox.datamodel.common.Location;
@@ -44,7 +45,7 @@ public class PrimaryResultsInterpreter {
     @JsonProperty("Address")
     private Address address;
     @JsonProperty("EmailAddresses")
-    private List<Object> emailAddresses = null;
+    private List<EmailAddress> emailAddresses = null;
     @JsonProperty("PhoneNumber")
     private PhoneNumber phoneNumber;
     @JsonProperty("Location")
@@ -123,12 +124,12 @@ public class PrimaryResultsInterpreter {
     }
 
     @JsonProperty("EmailAddresses")
-    public List<Object> getEmailAddresses() {
+    public List<EmailAddress> getEmailAddresses() {
         return emailAddresses;
     }
 
     @JsonProperty("EmailAddresses")
-    public void setEmailAddresses(List<Object> emailAddresses) {
+    public void setEmailAddresses(List<EmailAddress> emailAddresses) {
         this.emailAddresses = emailAddresses;
     }
 

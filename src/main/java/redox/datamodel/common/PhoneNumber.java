@@ -23,7 +23,7 @@ public class PhoneNumber {
     @JsonProperty("Home")
     private String home;
     @JsonProperty("Mobile")
-    private Object mobile;
+    private String mobile;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -46,11 +46,11 @@ public class PhoneNumber {
         this.home = home;
     }
     @JsonProperty("Mobile")
-    public Object getMobile() {
+    public String getMobile() {
         return mobile;
     }
     @JsonProperty("Mobile")
-    public void setMobile(Object mobile) {
+    public void setMobile(String mobile) {
         this.mobile = mobile;
     }
 
