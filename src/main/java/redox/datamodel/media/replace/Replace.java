@@ -10,7 +10,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import redox.datamodel.common.Meta;
-import redox.datamodel.common.Patient;
 import redox.datamodel.media.common.Visit;
 import redox.datamodel.media.common.Media;
 

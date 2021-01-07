@@ -1,5 +1,5 @@
 
-package redox.datamodel.clinicalsummary.common;
+package redox.datamodel.common;
 
 import java.util.HashMap;
 import java.util.List;
@@ -13,6 +13,11 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
+    "Code",
+    "CodeSystem",
+    "CodeSystemName",
+    "Name",
+    "AltCodes",
     "Type",
     "Substance",
     "Reaction",
@@ -25,6 +30,16 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 })
 public class Allergy {
 
+    @JsonProperty("Code")
+    private String code;
+    @JsonProperty("CodeSystem")
+    private Object codeSystem;
+    @JsonProperty("CodeSystemName")
+    private Object codeSystemName;
+    @JsonProperty("Name")
+    private String name;
+    @JsonProperty("AltCodes")
+    private List<Object> altCodes = null;
     @JsonProperty("Type")
     private Type type;
     @JsonProperty("Substance")
@@ -45,6 +60,56 @@ public class Allergy {
     private Object comment;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
+    @JsonProperty("Code")
+    public String getCode() {
+        return code;
+    }
+
+    @JsonProperty("Code")
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    @JsonProperty("CodeSystem")
+    public Object getCodeSystem() {
+        return codeSystem;
+    }
+
+    @JsonProperty("CodeSystem")
+    public void setCodeSystem(Object codeSystem) {
+        this.codeSystem = codeSystem;
+    }
+
+    @JsonProperty("CodeSystemName")
+    public Object getCodeSystemName() {
+        return codeSystemName;
+    }
+
+    @JsonProperty("CodeSystemName")
+    public void setCodeSystemName(Object codeSystemName) {
+        this.codeSystemName = codeSystemName;
+    }
+
+    @JsonProperty("Name")
+    public String getName() {
+        return name;
+    }
+
+    @JsonProperty("Name")
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @JsonProperty("AltCodes")
+    public List<Object> getAltCodes() {
+        return altCodes;
+    }
+
+    @JsonProperty("AltCodes")
+    public void setAltCodes(List<Object> altCodes) {
+        this.altCodes = altCodes;
+    }
 
     @JsonProperty("Type")
     public Type getType() {

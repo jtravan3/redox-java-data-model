@@ -1,7 +1,8 @@
 
-package redox.datamodel.clinicalsummary.common;
+package redox.datamodel.common;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
@@ -15,9 +16,10 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "Code",
     "CodeSystem",
     "CodeSystemName",
-    "Name"
+    "Name",
+    "AltCodes"
 })
-public class AltCode {
+public class Route {
 
     @JsonProperty("Code")
     private String code;
@@ -27,6 +29,8 @@ public class AltCode {
     private String codeSystemName;
     @JsonProperty("Name")
     private String name;
+    @JsonProperty("AltCodes")
+    private List<Object> altCodes = null;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -68,6 +72,16 @@ public class AltCode {
     @JsonProperty("Name")
     public void setName(String name) {
         this.name = name;
+    }
+
+    @JsonProperty("AltCodes")
+    public List<Object> getAltCodes() {
+        return altCodes;
+    }
+
+    @JsonProperty("AltCodes")
+    public void setAltCodes(List<Object> altCodes) {
+        this.altCodes = altCodes;
     }
 
     @JsonAnyGetter

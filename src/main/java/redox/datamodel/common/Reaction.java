@@ -1,5 +1,5 @@
 
-package redox.datamodel.clinicalsummary.common;
+package redox.datamodel.common;
 
 import java.util.HashMap;
 import java.util.List;

@@ -14,7 +14,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({
     "ID",
     "IDType",
-        //type is optional for patientpush, never present for patientquery
         "Type"
 })
 public class Identifier {
@@ -23,7 +22,6 @@ public class Identifier {
     private String iD;
     @JsonProperty("IDType")
     private String iDType;
-    // type is optional
     @JsonProperty("Type")
     private Object type;
     @JsonIgnore
@@ -49,12 +47,11 @@ public class Identifier {
         this.iDType = iDType;
     }
 
-    //optional
     @JsonProperty("Type")
     public Object getType() {
         return type;
     }
-    //optional
+
     @JsonProperty("Type")
     public void setType(Object type) {
         this.type = type;

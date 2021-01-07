@@ -1,5 +1,5 @@
 
-package redox.datamodel.clinicalsummary.common;
+package redox.datamodel.common;
 
 import java.util.HashMap;
 import java.util.List;
@@ -13,18 +13,14 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "Manufacturer",
     "Code",
     "CodeSystem",
     "CodeSystemName",
     "Name",
-    "AltCodes",
-    "LotNumber"
+    "AltCodes"
 })
-public class Product {
+public class Role {
 
-    @JsonProperty("Manufacturer")
-    private String manufacturer;
     @JsonProperty("Code")
     private String code;
     @JsonProperty("CodeSystem")
@@ -35,20 +31,8 @@ public class Product {
     private String name;
     @JsonProperty("AltCodes")
     private List<Object> altCodes = null;
-    @JsonProperty("LotNumber")
-    private Object lotNumber;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-
-    @JsonProperty("Manufacturer")
-    public String getManufacturer() {
-        return manufacturer;
-    }
-
-    @JsonProperty("Manufacturer")
-    public void setManufacturer(String manufacturer) {
-        this.manufacturer = manufacturer;
-    }
 
     @JsonProperty("Code")
     public String getCode() {
@@ -98,16 +82,6 @@ public class Product {
     @JsonProperty("AltCodes")
     public void setAltCodes(List<Object> altCodes) {
         this.altCodes = altCodes;
-    }
-
-    @JsonProperty("LotNumber")
-    public Object getLotNumber() {
-        return lotNumber;
-    }
-
-    @JsonProperty("LotNumber")
-    public void setLotNumber(Object lotNumber) {
-        this.lotNumber = lotNumber;
     }
 
     @JsonAnyGetter

@@ -1,5 +1,5 @@
 
-package redox.datamodel.clinicalsummary.common;
+package redox.datamodel.common;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,36 +12,36 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "Period",
-    "Unit"
+    "Amount",
+    "Units"
 })
-public class Frequency {
+public class Dispense {
 
-    @JsonProperty("Period")
-    private String period;
-    @JsonProperty("Unit")
-    private String unit;
+    @JsonProperty("Amount")
+    private Object amount;
+    @JsonProperty("Units")
+    private Object units;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("Period")
-    public String getPeriod() {
-        return period;
+    @JsonProperty("Amount")
+    public Object getAmount() {
+        return amount;
     }
 
-    @JsonProperty("Period")
-    public void setPeriod(String period) {
-        this.period = period;
+    @JsonProperty("Amount")
+    public void setAmount(Object amount) {
+        this.amount = amount;
     }
 
-    @JsonProperty("Unit")
-    public String getUnit() {
-        return unit;
+    @JsonProperty("Units")
+    public Object getUnits() {
+        return units;
     }
 
-    @JsonProperty("Unit")
-    public void setUnit(String unit) {
-        this.unit = unit;
+    @JsonProperty("Units")
+    public void setUnits(Object units) {
+        this.units = units;
     }
 
     @JsonAnyGetter

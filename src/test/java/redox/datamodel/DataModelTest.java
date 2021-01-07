@@ -29,7 +29,7 @@ public class DataModelTest {
 
     @Test
     public void ensureExpectedPojoCount_ClinicalSummary_Common() {
-        Affirm.affirmEquals("Classes added / removed?", 124, pojoClasses.size());
+        Affirm.affirmEquals("Classes added / removed?", 145, pojoClasses.size());
     }
 
     @Test

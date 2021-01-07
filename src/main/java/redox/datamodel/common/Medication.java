@@ -1,5 +1,5 @@
 
-package redox.datamodel.clinicalsummary.common;
+package redox.datamodel.common;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,7 +21,11 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "EndDate",
     "Frequency",
     "IsPRN",
-    "Product"
+    "Product",
+    "Dispense",
+    "NumberOfRefillsRemaining",
+    "Order",
+    "LotNumber"
 })
 public class Medication {
 
@@ -45,6 +49,14 @@ public class Medication {
     private Boolean isPRN;
     @JsonProperty("Product")
     private Product product;
+    @JsonProperty("Dispense")
+    private Dispense dispense;
+    @JsonProperty("NumberOfRefillsRemaining")
+    private Object numberOfRefillsRemaining;
+    @JsonProperty("Order")
+    private Order order;
+    @JsonProperty("LotNumber")
+    private Object lotNumber;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -146,6 +158,46 @@ public class Medication {
     @JsonProperty("Product")
     public void setProduct(Product product) {
         this.product = product;
+    }
+
+    @JsonProperty("Dispense")
+    public Dispense getDispense() {
+        return dispense;
+    }
+
+    @JsonProperty("Dispense")
+    public void setDispense(Dispense dispense) {
+        this.dispense = dispense;
+    }
+
+    @JsonProperty("NumberOfRefillsRemaining")
+    public Object getNumberOfRefillsRemaining() {
+        return numberOfRefillsRemaining;
+    }
+
+    @JsonProperty("NumberOfRefillsRemaining")
+    public void setNumberOfRefillsRemaining(Object numberOfRefillsRemaining) {
+        this.numberOfRefillsRemaining = numberOfRefillsRemaining;
+    }
+
+    @JsonProperty("Order")
+    public Order getOrder() {
+        return order;
+    }
+
+    @JsonProperty("Order")
+    public void setOrder(Order order) {
+        this.order = order;
+    }
+
+    @JsonProperty("LotNumber")
+    public Object getLotNumber() {
+        return lotNumber;
+    }
+
+    @JsonProperty("LotNumber")
+    public void setLotNumber(Object lotNumber) {
+        this.lotNumber = lotNumber;
     }
 
     @JsonAnyGetter
