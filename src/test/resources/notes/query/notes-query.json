@@ -1,0 +1,44 @@
+{
+  "Meta": {
+    "DataModel": "Notes",
+    "EventType": "Query",
+    "EventDateTime": "2021-01-08T13:40:46.051Z",
+    "Test": true,
+    "Destinations": [
+      {
+        "ID": "af394f14-b34a-464f-8d24-895f370af4c9",
+        "Name": "Redox EMR"
+      }
+    ],
+    "FacilityCode": null
+  },
+  "Patients": [
+    {
+      "Identifiers": [
+        {
+          "ID": "0000000001",
+          "IDType": "MR"
+        },
+        {
+          "ID": "e167267c-16c9-4fe3-96ae-9cff5703e90a",
+          "IDType": "EHRID"
+        },
+        {
+          "ID": "a1d4ee8aba494ca",
+          "IDType": "NIST"
+        }
+      ]
+    }
+  ],
+  "VisitNumbers": [
+    "1234",
+    "5678"
+  ],
+  "DocumentTypes": [
+    "Sample Clinical Note in PDF",
+    "Clinical Note"
+  ],
+  "DocumentIDs": [
+    "b169923c-42g9-4fe3-91hg-8ckf1094e90l"
+  ]
+}

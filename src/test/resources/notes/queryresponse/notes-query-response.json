@@ -1,0 +1,55 @@
+{
+  "Meta": {
+    "DataModel": "Notes",
+    "EventType": "QueryResponse",
+    "EventDateTime": "2021-01-08T13:40:46.051Z",
+    "Test": true,
+    "Source": {
+      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
+      "Name": "Redox Dev Tools"
+    },
+    "Destinations": [
+      {
+        "ID": "af394f14-b34a-464f-8d24-895f370af4c9",
+        "Name": "Redox EMR"
+      }
+    ],
+    "Message": {
+      "ID": 5565
+    },
+    "Transmission": {
+      "ID": 12414
+    },
+    "FacilityCode": null
+  },
+  "Notes": [
+    {
+      "Patient": {
+        "Identifiers": [
+          {
+            "ID": "0000000001",
+            "IDType": "MR"
+          },
+          {
+            "ID": "e167267c-16c9-4fe3-96ae-9cff5703e90a",
+            "IDType": "EHRID"
+          },
+          {
+            "ID": "a1d4ee8aba494ca",
+            "IDType": "NIST"
+          }
+        ]
+      },
+      "Visit": {
+        "VisitNumber": "1234"
+      },
+      "ContentType": "Base64 Encoded",
+      "FileName": "SamplePDF",
+      "FileContents": "JVBERi0xLjQKCjEgMCBvYmoKPDwKIC9UeXBlIC9DYXRhbG9nCiAvUGFnZXMgMiAwIFIKPj4KZW5kb2JqCgoyIDAgb2JqCjw8CiAvVHlwZSAvUGFnZXMKIC9LaWRzIFszIDAgUl0KIC9Db3VudCAxCj4+CmVuZG9iagoKMyAwIG9iago8PAogL1R5cGUgL1BhZ2UKIC9QYXJlbnQgMiAwIFIKIC9NZWRpYUJveCBbMCAwIDM1MCAyMDBdCiAvQ29udGVudHMgNCAwIFIKIC9SZXNvdXJjZXMgPDwKICAvUHJvY1NldCA1IDAgUgogIC9Gb250IDw8CiAgIC9GMSA2IDAgUgogID4+CiA+Pgo+PgplbmRvYmoKCjQgMCBvYmoKPDwgL0xlbmd0aCA3MyA+PgpzdHJlYW0KIEJUCiAgL0YxIDI0IFRmCiAgMTAwIDEwMCBUZAogIChIZWxsbyBmcm9tIFJlZG94KSBUagogRVQKZW5kc3RyZWFtCmVuZG9iagoKNSAwIG9iagogWy9QREYgL1RleHRdCmVuZG9iagoKNiAwIG9iago8PAogL1R5cGUgL0ZvbnQKIC9TdWJ0eXBlIC9UeXBlMQogL05hbWUgL0YxCiAvQmFzZUZvbnQgL0hlbHZldGljYQogL0VuY29kaW5nIC9NYWNSb21hbkVuY29kaW5nCj4+CmVuZG9iagoKeHJlZgowIDkKMDAwMDAwMDAwMCA2NTUzNSBmCjAwMDAwMDAwMDkgMDAwMDAgbgowMDAwMDAwMDc0IDAwMDAwIG4KMDAwMDAwMDEyMCAwMDAwMCBuCjAwMDAwMDAxNzkgMDAwMDAgbgowMDAwMDAwMzY0IDAwMDAwIG4KMDAwMDAwMDQ2NiAwMDAwMCBuCjAwMDAwMDA0OTYgMDAwMDAgbgoKdHJhaWxlcgo8PAovU2l6ZSA4Ci9Sb290IDEgMCBSCj4+CnN0YXJ0eHJlZgo2MjUKJSVFT0Y=",
+      "DocumentType": "Sample Clinical Note in PDF",
+      "DocumentID": "e52180fb-75a2-41ea-9fcd-661a996de53f",
+      "ServiceDateTime": "2015-05-06T06:00:58.872Z",
+      "DocumentationDateTime": "2015-05-06T06:00:58.872Z"
+    }
+  ]
+}

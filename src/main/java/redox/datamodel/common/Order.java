@@ -21,7 +21,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "EnteredBy",
     "VerifiedBy",
     "Priority",
-    "Pharmacy"
+    "Pharmacy",
+        "Name"
 })
 public class Order {
 
@@ -43,6 +44,8 @@ public class Order {
     private Object priority;
     @JsonProperty("Pharmacy")
     private Pharmacy pharmacy;
+    @JsonProperty("Name")
+    private String name;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -134,6 +137,16 @@ public class Order {
     @JsonProperty("Pharmacy")
     public void setPharmacy(Pharmacy pharmacy) {
         this.pharmacy = pharmacy;
+    }
+
+    @JsonProperty("Name")
+    public String getName() {
+        return name;
+    }
+
+    @JsonProperty("Name")
+    public void setName(String name) {
+        this.name = name;
     }
 
     @JsonAnyGetter
