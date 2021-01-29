@@ -1,5 +1,5 @@
 
-package redox.datamodel.common;
+package redox.datamodel.vaccination.common;
 
 import java.util.HashMap;
 import java.util.List;
@@ -10,27 +10,27 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import redox.datamodel.common.Address;
+import redox.datamodel.common.PhoneNumber;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "FirstName",
-        "MiddleName",
-        "LastName",
-        "DOB",
-        "SSN",
-        "Sex",
-        "Race",
-        "IsHispanic",
-        "MaritalStatus",
-        "IsDeceased",
-        "DeathDateTime",
-        "PhoneNumber",
-        "EmailAddresses",
-        "Language",
-        "Citizenship",
-        "Address",
-        "Ethnicity",
-        "Religion"
+    "FirstName",
+    "MiddleName",
+    "LastName",
+    "DOB",
+    "SSN",
+    "Sex",
+    "Race",
+    "IsHispanic",
+    "MaritalStatus",
+    "IsDeceased",
+    "DeathDateTime",
+    "PhoneNumber",
+    "EmailAddresses",
+    "Language",
+    "Citizenship",
+    "Address"
 })
 public class Demographics {
 
@@ -59,17 +59,13 @@ public class Demographics {
     @JsonProperty("PhoneNumber")
     private PhoneNumber phoneNumber;
     @JsonProperty("EmailAddresses")
-    private List<EmailAddress> emailAddresses = null;
+    private List<Object> emailAddresses = null;
     @JsonProperty("Language")
     private String language;
     @JsonProperty("Citizenship")
     private List<Object> citizenship = null;
     @JsonProperty("Address")
     private Address address;
-    @JsonProperty("Ethnicity")
-    private String ethnicity;
-    @JsonProperty("Religion")
-    private String religion;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -194,12 +190,12 @@ public class Demographics {
     }
 
     @JsonProperty("EmailAddresses")
-    public List<EmailAddress> getEmailAddresses() {
+    public List<Object> getEmailAddresses() {
         return emailAddresses;
     }
 
     @JsonProperty("EmailAddresses")
-    public void setEmailAddresses(List<EmailAddress> emailAddresses) {
+    public void setEmailAddresses(List<Object> emailAddresses) {
         this.emailAddresses = emailAddresses;
     }
 
@@ -231,24 +227,6 @@ public class Demographics {
     @JsonProperty("Address")
     public void setAddress(Address address) {
         this.address = address;
-    }
-
-    @JsonProperty("Ethnicity")
-    public String getEthnicity() {
-        return ethnicity;
-    }
-
-    @JsonProperty("Ethnicity")
-    public void setEthnicity(String ethnicity) {
-        this.ethnicity = ethnicity;
-    }
-    @JsonProperty("Religion")
-    public String getReligion() {
-        return religion;
-    }
-    @JsonProperty("Religion")
-    public void setReligion(String religion) {
-        this.religion = religion;
     }
 
     @JsonAnyGetter

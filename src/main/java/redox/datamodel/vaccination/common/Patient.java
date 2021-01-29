@@ -1,5 +1,5 @@
 
-package redox.datamodel.common;
+package redox.datamodel.vaccination.common;
 
 import java.util.HashMap;
 import java.util.List;
@@ -10,15 +10,19 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import redox.datamodel.common.Identifier;
+import redox.datamodel.common.Consent;
+import redox.datamodel.common.Contact;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "Identifiers",
-        "Demographics",
-        "Notes",
-        "Contacts",
-        "Allergies",
-        "Consent"
+    "Identifiers",
+    "Demographics",
+    "Notes",
+    "Consent",
+    "Contacts",
+    "PCP",
+    "Vaccinations"
 })
 public class Patient {
 
@@ -28,12 +32,14 @@ public class Patient {
     private Demographics demographics;
     @JsonProperty("Notes")
     private List<Object> notes = null;
-    @JsonProperty("Contacts")
-    private List<Contact> contacts = null;
-    @JsonProperty("Allergies")
-    private List<Allergy> allergies = null;
     @JsonProperty("Consent")
     private Consent consent;
+    @JsonProperty("Contacts")
+    private List<Contact> contacts = null;
+    @JsonProperty("PCP")
+    private PCP pCP;
+    @JsonProperty("Vaccinations")
+    private List<Vaccination> vaccinations = null;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -67,6 +73,16 @@ public class Patient {
         this.notes = notes;
     }
 
+    @JsonProperty("Consent")
+    public Consent getConsent() {
+        return consent;
+    }
+
+    @JsonProperty("Consent")
+    public void setConsent(Consent consent) {
+        this.consent = consent;
+    }
+
     @JsonProperty("Contacts")
     public List<Contact> getContacts() {
         return contacts;
@@ -77,24 +93,24 @@ public class Patient {
         this.contacts = contacts;
     }
 
-    @JsonProperty("Allergies")
-    public List<Allergy> getAllergies() {
-        return allergies;
+    @JsonProperty("PCP")
+    public PCP getPCP() {
+        return pCP;
     }
 
-    @JsonProperty("Allergies")
-    public void setAllergies(List<Allergy> allergies) {
-        this.allergies = allergies;
+    @JsonProperty("PCP")
+    public void setPCP(PCP pCP) {
+        this.pCP = pCP;
     }
 
-    @JsonProperty("Consent")
-    public Consent getConsent() {
-        return consent;
+    @JsonProperty("Vaccinations")
+    public List<Vaccination> getVaccinations() {
+        return vaccinations;
     }
 
-    @JsonProperty("Consent")
-    public void setConsent(Consent consent) {
-        this.consent = consent;
+    @JsonProperty("Vaccinations")
+    public void setVaccinations(List<Vaccination> vaccinations) {
+        this.vaccinations = vaccinations;
     }
 
     @JsonAnyGetter
