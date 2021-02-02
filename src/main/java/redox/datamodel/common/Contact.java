@@ -27,7 +27,7 @@ public class Contact {
     @JsonProperty("FirstName")
     private String firstName;
     @JsonProperty("MiddleName")
-    private Object middleName;
+    private String middleName;
     @JsonProperty("LastName")
     private String lastName;
     @JsonProperty("Address")
@@ -54,12 +54,12 @@ public class Contact {
     }
 
     @JsonProperty("MiddleName")
-    public Object getMiddleName() {
+    public String getMiddleName() {
         return middleName;
     }
 
     @JsonProperty("MiddleName")
-    public void setMiddleName(Object middleName) {
+    public void setMiddleName(String middleName) {
         this.middleName = middleName;
     }
 

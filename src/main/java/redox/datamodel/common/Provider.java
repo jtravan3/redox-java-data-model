@@ -32,9 +32,9 @@ public class Provider {
     @JsonProperty("IDType")
     private Object iDType;
     @JsonProperty("FirstName")
-    private Object firstName;
+    private String firstName;
     @JsonProperty("LastName")
-    private Object lastName;
+    private String lastName;
     @JsonProperty("Credentials")
     private List<Object> credentials = null;
     @JsonProperty("Address")
@@ -73,22 +73,22 @@ public class Provider {
     }
 
     @JsonProperty("FirstName")
-    public Object getFirstName() {
+    public String getFirstName() {
         return firstName;
     }
 
     @JsonProperty("FirstName")
-    public void setFirstName(Object firstName) {
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
     @JsonProperty("LastName")
-    public Object getLastName() {
+    public String getLastName() {
         return lastName;
     }
 
     @JsonProperty("LastName")
-    public void setLastName(Object lastName) {
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
