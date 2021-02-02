@@ -11,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import redox.datamodel.clinicalsummary.common.*;
+import redox.datamodel.common.Allergy;
+import redox.datamodel.common.Medication;
 import redox.datamodel.common.Meta;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)

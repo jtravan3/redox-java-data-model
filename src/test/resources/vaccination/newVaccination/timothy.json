@@ -1,0 +1,177 @@
+{
+  "Meta": {
+    "DataModel": "Vaccination",
+    "EventType": "New",
+    "EventDateTime": "2021-01-25T18:58:12.830Z",
+    "Test": true,
+    "Source": {
+      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
+      "Name": "Redox Dev Tools"
+    },
+    "Destinations": [
+      {
+        "ID": "af394f14-b34a-464f-8d24-895f370af4c9",
+        "Name": "Redox EMR"
+      }
+    ],
+    "Message": {
+      "ID": 5565
+    },
+    "Transmission": {
+      "ID": 12414
+    },
+    "FacilityCode": null
+  },
+  "Patient": {
+    "Identifiers": [
+      {
+        "ID": "0000000001",
+        "IDType": "MR"
+      },
+      {
+        "ID": "e167267c-16c9-4fe3-96ae-9cff5703e90a",
+        "IDType": "EHRID"
+      },
+      {
+        "ID": "a1d4ee8aba494ca",
+        "IDType": "NIST"
+      }
+    ],
+    "Demographics": {
+      "FirstName": "Timothy",
+      "MiddleName": "Paul",
+      "LastName": "Bixby",
+      "DOB": "2008-01-06",
+      "SSN": "101-01-0001",
+      "Sex": "Male",
+      "Race": "White",
+      "IsHispanic": null,
+      "MaritalStatus": "Married",
+      "IsDeceased": null,
+      "DeathDateTime": null,
+      "PhoneNumber": {
+        "Home": "+18088675301",
+        "Office": null,
+        "Mobile": null
+      },
+      "EmailAddresses": [],
+      "Language": "en",
+      "Citizenship": [],
+      "Address": {
+        "StreetAddress": "4762 Hickory Street",
+        "City": "Monroe",
+        "State": "WI",
+        "ZIP": "53566",
+        "County": "Green",
+        "Country": "US"
+      }
+    },
+    "Notes": [],
+    "Consent": {
+      "Status": null,
+      "EffectiveDate": null,
+      "Notification": null
+    }
+  },
+  "Visit": {
+    "VisitNumber": "98765",
+    "AccountNumber": null
+  },
+  "Vaccinations": [
+    {
+      "DateTime": "2015-08-13T21:08:57.581Z",
+      "Product": {
+        "Code": "20",
+        "Codeset": "CVX",
+        "Description": null,
+        "LotNumber": "123456789",
+        "ExpirationDate": null,
+        "Manufacturer": {
+          "Code": null,
+          "Codeset": null,
+          "Name": null
+        }
+      },
+      "Route": {
+        "Code": "Intramuscular",
+        "Codeset": null,
+        "Name": null
+      },
+      "Site": {
+        "Code": "Left arm",
+        "Codeset": null,
+        "Name": null
+      },
+      "Dose": {
+        "Quantity": "0.5",
+        "Units": null
+      },
+      "Order": {
+        "ID": "123",
+        "EHRID": "456",
+        "Provider": {
+          "NPI": null,
+          "ID": null,
+          "IDType": null,
+          "FirstName": null,
+          "LastName": null,
+          "Credentials": [],
+          "Address": {
+            "StreetAddress": null,
+            "City": null,
+            "State": null,
+            "ZIP": null,
+            "County": null,
+            "Country": null
+          },
+          "EmailAddresses": [],
+          "PhoneNumber": {
+            "Office": null
+          },
+          "Location": {
+            "Type": null,
+            "Facility": null,
+            "Department": null,
+            "Room": null
+          }
+        }
+      },
+      "ClinicalInfo": [],
+      "Notes": [
+        "VIS date: May 17 2007"
+      ],
+      "RefusalReason": null,
+      "Provider": {
+        "ID": "4356789876",
+        "IDType": "NPI",
+        "FirstName": "Pat",
+        "LastName": "Granite",
+        "Credentials": [],
+        "Address": {
+          "StreetAddress": null,
+          "City": null,
+          "State": null,
+          "ZIP": null,
+          "County": null,
+          "Country": null
+        },
+        "EmailAddresses": [],
+        "PhoneNumber": {
+          "Office": null
+        },
+        "Location": {
+          "Type": null,
+          "Facility": null,
+          "Department": null,
+          "Room": null
+        }
+      },
+      "Location": {
+        "Type": "Clinic",
+        "Facility": "Rolling Oaks Outpatient Center",
+        "Department": "Rolling Oaks Pediatrics",
+        "Room": null
+      }
+    }
+  ]
+}

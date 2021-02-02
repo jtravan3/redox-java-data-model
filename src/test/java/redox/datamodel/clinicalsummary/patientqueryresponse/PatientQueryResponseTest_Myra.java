@@ -7,8 +7,8 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.Assert;
 import org.springframework.util.ResourceUtils;
-import redox.datamodel.clinicalsummary.common.Allergy;
 import redox.datamodel.clinicalsummary.common.FamilyHistory;
+import redox.datamodel.common.Allergy;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;

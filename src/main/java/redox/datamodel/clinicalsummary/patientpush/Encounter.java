@@ -15,6 +15,7 @@ import redox.datamodel.clinicalsummary.common.*;
 import redox.datamodel.common.Identifier;
 import redox.datamodel.common.Location;
 import redox.datamodel.common.Provider;
+import redox.datamodel.common.Type;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({

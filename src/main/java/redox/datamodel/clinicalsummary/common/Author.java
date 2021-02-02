@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import redox.datamodel.common.Address;
+import redox.datamodel.common.EmailAddress;
 import redox.datamodel.common.Location;
 import redox.datamodel.common.PhoneNumber;
 

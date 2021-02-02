@@ -9,14 +9,16 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import redox.datamodel.common.Address;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "Type",
     "Facility",
     "Department",
-    "Room"
+    "Room",
+    "Bed",
+    "Address",
+    "Name"
 })
 public class Location {
 
@@ -28,6 +30,8 @@ public class Location {
     private Object department;
     @JsonProperty("Room")
     private Object room;
+    @JsonProperty("Bed")
+    private Object bed;
     @JsonProperty("Address")
     private Address address;
     @JsonProperty("Name")
@@ -73,6 +77,16 @@ public class Location {
     @JsonProperty("Room")
     public void setRoom(Object room) {
         this.room = room;
+    }
+
+    @JsonProperty("Bed")
+    public Object getBed() {
+        return bed;
+    }
+
+    @JsonProperty("Bed")
+    public void setBed(Object bed) {
+        this.bed = bed;
     }
 
     @JsonProperty("Address")

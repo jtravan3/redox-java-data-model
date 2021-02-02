@@ -6,12 +6,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.util.Assert;
 import org.springframework.util.ResourceUtils;
-import redox.datamodel.common.Demographics;
-import redox.datamodel.common.Identifier;
-import redox.datamodel.common.Patient;
-import redox.datamodel.common.Provider;
+import redox.datamodel.common.*;
 import redox.datamodel.results.common.*;
-import redox.datamodel.results.newResults.Results;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -109,7 +105,7 @@ public class Results_new_unsolicited {
     @Test
     public void testResults_Orders() {
         Assert.notNull(results.getOrders(), "Orders object not successfully created");
-        Order order = results.getOrders().get(0);
+        redox.datamodel.results.common.Order order = results.getOrders().get(0);
         Assert.isNull(order.getID(), "Order ID is correct");
         Assert.isTrue(order.getApplicationOrderID().equals("1234"), "Application Order ID is correct");
         Assert.isTrue(order.getTransactionDateTime().equals("2015-05-06T06:00:58.872Z"), "TransactionDateTime is correct");

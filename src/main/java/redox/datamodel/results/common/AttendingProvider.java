@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import redox.datamodel.clinicalsummary.common.EmailAddress;
+import redox.datamodel.common.EmailAddress;
 import redox.datamodel.common.Address;
 import redox.datamodel.common.PhoneNumber;
 import redox.datamodel.common.Location;
@@ -34,9 +34,9 @@ public class AttendingProvider {
     @JsonProperty("IDType")
     private Object iDType;
     @JsonProperty("FirstName")
-    private Object firstName;
+    private String firstName;
     @JsonProperty("LastName")
-    private Object lastName;
+    private String lastName;
     @JsonProperty("Credentials")
     private List<Object> credentials = null;
     @JsonProperty("Address")
@@ -71,22 +71,22 @@ public class AttendingProvider {
     }
 
     @JsonProperty("FirstName")
-    public Object getFirstName() {
+    public String getFirstName() {
         return firstName;
     }
 
     @JsonProperty("FirstName")
-    public void setFirstName(Object firstName) {
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
     @JsonProperty("LastName")
-    public Object getLastName() {
+    public String getLastName() {
         return lastName;
     }
 
     @JsonProperty("LastName")
-    public void setLastName(Object lastName) {
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 

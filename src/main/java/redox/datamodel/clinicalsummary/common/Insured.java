@@ -29,11 +29,11 @@ public class Insured {
     @JsonProperty("Identifiers")
     private List<Object> identifiers = null;
     @JsonProperty("LastName")
-    private Object lastName;
+    private String lastName;
     @JsonProperty("MiddleName")
-    private Object middleName;
+    private String middleName;
     @JsonProperty("FirstName")
-    private Object firstName;
+    private String firstName;
     @JsonProperty("SSN")
     private Object sSN;
     @JsonProperty("Relationship")
@@ -58,32 +58,32 @@ public class Insured {
     }
 
     @JsonProperty("LastName")
-    public Object getLastName() {
+    public String getLastName() {
         return lastName;
     }
 
     @JsonProperty("LastName")
-    public void setLastName(Object lastName) {
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
     @JsonProperty("MiddleName")
-    public Object getMiddleName() {
+    public String getMiddleName() {
         return middleName;
     }
 
     @JsonProperty("MiddleName")
-    public void setMiddleName(Object middleName) {
+    public void setMiddleName(String middleName) {
         this.middleName = middleName;
     }
 
     @JsonProperty("FirstName")
-    public Object getFirstName() {
+    public String getFirstName() {
         return firstName;
     }
 
     @JsonProperty("FirstName")
-    public void setFirstName(Object firstName) {
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
