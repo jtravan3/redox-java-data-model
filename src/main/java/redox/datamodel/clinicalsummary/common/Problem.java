@@ -55,7 +55,7 @@ public class Problem {
     @JsonProperty("Status")
     private Status status;
     @JsonProperty("Comment")
-    private Object comment;
+    private String comment;
     @JsonProperty("Type")
     private Type type;
     @JsonProperty("DateTime")
@@ -63,7 +63,7 @@ public class Problem {
     @JsonProperty("AgeAtOnset")
     private String ageAtOnset;
     @JsonProperty("IsCauseOfDeath")
-    private Object isCauseOfDeath;
+    private Boolean isCauseOfDeath;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -168,12 +168,12 @@ public class Problem {
     }
 
     @JsonProperty("Comment")
-    public Object getComment() {
+    public String getComment() {
         return comment;
     }
 
     @JsonProperty("Comment")
-    public void setComment(Object comment) {
+    public void setComment(String comment) {
         this.comment = comment;
     }
 
@@ -202,11 +202,11 @@ public class Problem {
         this.ageAtOnset = ageAtOnset;
     }
     @JsonProperty("IsCauseOfDeath")
-    public Object getIsCauseOfDeath() {
+    public Boolean getIsCauseOfDeath() {
         return isCauseOfDeath;
     }
     @JsonProperty("IsCauseOfDeath")
-    public void setIsCauseOfDeath(Object isCauseOfDeath) {
+    public void setIsCauseOfDeath(Boolean isCauseOfDeath) {
         this.isCauseOfDeath = isCauseOfDeath;
     }
 

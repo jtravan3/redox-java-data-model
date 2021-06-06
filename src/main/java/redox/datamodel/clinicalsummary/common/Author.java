@@ -35,7 +35,7 @@ public class Author {
     @JsonProperty("IDType")
     private String iDType;
     @JsonProperty("Type")
-    private Object type;
+    private String type;
     @JsonProperty("FirstName")
     private String firstName;
     @JsonProperty("LastName")
@@ -74,12 +74,12 @@ public class Author {
     }
 
     @JsonProperty("Type")
-    public Object getType() {
+    public String getType() {
         return type;
     }
 
     @JsonProperty("Type")
-    public void setType(Object type) {
+    public void setType(String type) {
         this.type = type;
     }
 

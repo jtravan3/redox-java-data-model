@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import redox.datamodel.common.Type;
+import redox.datamodel.common.AltCode;
 
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -40,11 +41,11 @@ public class AdvanceDirective {
     @JsonProperty("Name")
     private String name;
     @JsonProperty("AltCodes")
-    private List<Object> altCodes = null;
+    private List<AltCode> altCodes = null;
     @JsonProperty("StartDate")
     private String startDate;
     @JsonProperty("EndDate")
-    private Object endDate;
+    private String endDate;
     @JsonProperty("ExternalReference")
     private String externalReference;
     @JsonProperty("VerifiedBy")
@@ -105,12 +106,12 @@ public class AdvanceDirective {
     }
 
     @JsonProperty("AltCodes")
-    public List<Object> getAltCodes() {
+    public List<AltCode> getAltCodes() {
         return altCodes;
     }
 
     @JsonProperty("AltCodes")
-    public void setAltCodes(List<Object> altCodes) {
+    public void setAltCodes(List<AltCode> altCodes) {
         this.altCodes = altCodes;
     }
 
@@ -125,12 +126,12 @@ public class AdvanceDirective {
     }
 
     @JsonProperty("EndDate")
-    public Object getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
     @JsonProperty("EndDate")
-    public void setEndDate(Object endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 

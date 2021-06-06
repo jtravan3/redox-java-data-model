@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import redox.datamodel.common.AltCode;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -22,65 +23,65 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class Value {
 
     @JsonProperty("Code")
-    private Object code;
+    private String code;
     @JsonProperty("CodeSystem")
-    private Object codeSystem;
+    private String codeSystem;
     @JsonProperty("CodeSystemName")
-    private Object codeSystemName;
+    private String codeSystemName;
     @JsonProperty("Name")
-    private Object name;
+    private String name;
     @JsonProperty("AltCodes")
-    private List<Object> altCodes = null;
+    private List<AltCode> altCodes = null;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("Code")
-    public Object getCode() {
+    public String getCode() {
         return code;
     }
 
     @JsonProperty("Code")
-    public void setCode(Object code) {
+    public void setCode(String code) {
         this.code = code;
     }
 
     @JsonProperty("CodeSystem")
-    public Object getCodeSystem() {
+    public String getCodeSystem() {
         return codeSystem;
     }
 
     @JsonProperty("CodeSystem")
-    public void setCodeSystem(Object codeSystem) {
+    public void setCodeSystem(String codeSystem) {
         this.codeSystem = codeSystem;
     }
 
     @JsonProperty("CodeSystemName")
-    public Object getCodeSystemName() {
+    public String getCodeSystemName() {
         return codeSystemName;
     }
 
     @JsonProperty("CodeSystemName")
-    public void setCodeSystemName(Object codeSystemName) {
+    public void setCodeSystemName(String codeSystemName) {
         this.codeSystemName = codeSystemName;
     }
 
     @JsonProperty("Name")
-    public Object getName() {
+    public String getName() {
         return name;
     }
 
     @JsonProperty("Name")
-    public void setName(Object name) {
+    public void setName(String name) {
         this.name = name;
     }
 
     @JsonProperty("AltCodes")
-    public List<Object> getAltCodes() {
+    public List<AltCode> getAltCodes() {
         return altCodes;
     }
 
     @JsonProperty("AltCodes")
-    public void setAltCodes(List<Object> altCodes) {
+    public void setAltCodes(List<AltCode> altCodes) {
         this.altCodes = altCodes;
     }
 

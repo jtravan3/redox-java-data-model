@@ -26,7 +26,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "Status",
     "StartDate",
     "EndDate",
-    "Comment"
+    "Comment",
+    "Codeset",
+    "OnsetDateTime"
 })
 public class Allergy {
 
@@ -58,6 +60,10 @@ public class Allergy {
     private Object endDate;
     @JsonProperty("Comment")
     private Object comment;
+    @JsonProperty("Codeset")
+    private String codeset;
+    @JsonProperty("OnsetDateTime")
+    private Object onsetDateTime;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -199,6 +205,26 @@ public class Allergy {
     @JsonProperty("Comment")
     public void setComment(Object comment) {
         this.comment = comment;
+    }
+
+    @JsonProperty("Codeset")
+    public String getCodeset() {
+        return codeset;
+    }
+
+    @JsonProperty("Codeset")
+    public void setCodeset(String codeset) {
+        this.codeset = codeset;
+    }
+
+    @JsonProperty("OnsetDateTime")
+    public Object getOnsetDateTime() {
+        return onsetDateTime;
+    }
+
+    @JsonProperty("OnsetDateTime")
+    public void setOnsetDateTime(Object onsetDateTime) {
+        this.onsetDateTime = onsetDateTime;
     }
 
     @JsonAnyGetter

@@ -1,5 +1,5 @@
 
-package redox.datamodel.clinicalsummary.patientpush;
+package redox.datamodel.clinicalsummary.common;
 
 
 import java.util.HashMap;
@@ -11,11 +11,11 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import redox.datamodel.clinicalsummary.common.*;
 import redox.datamodel.common.Identifier;
 import redox.datamodel.common.Location;
 import redox.datamodel.common.Provider;
 import redox.datamodel.common.Type;
+import redox.datamodel.common.AltCode;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -43,7 +43,7 @@ public class Encounter {
     @JsonProperty("DateTime")
     private String dateTime;
     @JsonProperty("EndDateTime")
-    private Object endDateTime;
+    private String endDateTime;
     @JsonProperty("Providers")
     private List<Provider> providers = null;
     @JsonProperty("Locations")
@@ -61,7 +61,7 @@ public class Encounter {
     @JsonProperty("Name")
     private String name;
     @JsonProperty("AltCodes")
-    private List<Object> altCodes = null;
+    private List<AltCode> altCodes = null;
     @JsonProperty("Status")
     private String status;
     @JsonIgnore
@@ -98,12 +98,12 @@ public class Encounter {
     }
 
     @JsonProperty("EndDateTime")
-    public Object getEndDateTime() {
+    public String getEndDateTime() {
         return endDateTime;
     }
 
     @JsonProperty("EndDateTime")
-    public void setEndDateTime(Object endDateTime) {
+    public void setEndDateTime(String endDateTime) {
         this.endDateTime = endDateTime;
     }
 
@@ -179,11 +179,11 @@ public class Encounter {
         this.name = name;
     }
     @JsonProperty("AltCodes")
-    public List<Object> getAltCodes() {
+    public List<AltCode> getAltCodes() {
         return altCodes;
     }
     @JsonProperty("AltCodes")
-    public void setAltCodes(List<Object> altCodes) {
+    public void setAltCodes(List<AltCode> altCodes) {
         this.altCodes = altCodes;
     }
     @JsonProperty("Status")

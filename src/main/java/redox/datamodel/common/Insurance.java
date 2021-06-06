@@ -1,5 +1,5 @@
 
-package redox.datamodel.clinicalsummary.common;
+package redox.datamodel.common;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -20,6 +20,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "EffectiveDate",
     "ExpirationDate",
     "PolicyNumber",
+    "Priority",
     "AgreementType",
     "CoverageType",
     "Insured"
@@ -42,6 +43,8 @@ public class Insurance {
     private String expirationDate;
     @JsonProperty("PolicyNumber")
     private String policyNumber;
+    @JsonProperty("Priority")
+    private Object priority;
     @JsonProperty("AgreementType")
     private Object agreementType;
     @JsonProperty("CoverageType")
@@ -129,6 +132,16 @@ public class Insurance {
     @JsonProperty("PolicyNumber")
     public void setPolicyNumber(String policyNumber) {
         this.policyNumber = policyNumber;
+    }
+
+    @JsonProperty("Priority")
+    public Object getPriority() {
+        return priority;
+    }
+
+    @JsonProperty("Priority")
+    public void setPriority(Object priority) {
+        this.priority = priority;
     }
 
     @JsonProperty("AgreementType")

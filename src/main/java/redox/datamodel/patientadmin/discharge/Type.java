@@ -1,8 +1,9 @@
 
-package redox.datamodel.clinicalsummary.common;
+package redox.datamodel.patientadmin.discharge;
 
 import java.util.HashMap;
 import java.util.Map;
+import javax.annotation.Generated;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -12,62 +13,50 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "ID",
-    "IDType",
-    "Name",
-    "Type"
+    "Code",
+    "Codeset",
+    "Name"
 })
-public class Plan {
+@Generated("jsonschema2pojo")
+public class Type {
 
-    @JsonProperty("ID")
-    private String iD;
-    @JsonProperty("IDType")
-    private String iDType;
+    @JsonProperty("Code")
+    private Object code;
+    @JsonProperty("Codeset")
+    private Object codeset;
     @JsonProperty("Name")
-    private String name;
-    @JsonProperty("Type")
-    private Object type;
+    private Object name;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("ID")
-    public String getID() {
-        return iD;
+    @JsonProperty("Code")
+    public Object getCode() {
+        return code;
     }
 
-    @JsonProperty("ID")
-    public void setID(String iD) {
-        this.iD = iD;
+    @JsonProperty("Code")
+    public void setCode(Object code) {
+        this.code = code;
     }
 
-    @JsonProperty("IDType")
-    public String getIDType() {
-        return iDType;
+    @JsonProperty("Codeset")
+    public Object getCodeset() {
+        return codeset;
     }
 
-    @JsonProperty("IDType")
-    public void setIDType(String iDType) {
-        this.iDType = iDType;
+    @JsonProperty("Codeset")
+    public void setCodeset(Object codeset) {
+        this.codeset = codeset;
     }
 
     @JsonProperty("Name")
-    public String getName() {
+    public Object getName() {
         return name;
     }
 
     @JsonProperty("Name")
-    public void setName(String name) {
+    public void setName(Object name) {
         this.name = name;
-    }
-
-    @JsonProperty("Type")
-    public Object getType() {
-        return type;
-    }
-
-    @JsonProperty("Type")
-    public void setType(Object type) {
-        this.type = type;
     }
 
     @JsonAnyGetter

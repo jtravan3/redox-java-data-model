@@ -20,7 +20,6 @@ import redox.datamodel.clinicalsummary.patientpush.Visit;
     "DateTime",
     "Type",
     "TypeCode",
-        // required for patientpush, not patientqueryresponse
     "Visit"
 })
 public class Document {
@@ -39,7 +38,6 @@ public class Document {
     private String type;
     @JsonProperty("TypeCode")
     private TypeCode typeCode;
-    // required for patientpush, not patientqueryresponse
     @JsonProperty("Visit")
     private Visit visit;
     @JsonIgnore

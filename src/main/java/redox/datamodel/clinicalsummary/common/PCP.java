@@ -25,60 +25,63 @@ import redox.datamodel.common.PhoneNumber;
     "Address",
     "EmailAddresses",
     "PhoneNumber",
-    "Location"
+    "Location",
+    "NPI"
 })
 public class PCP {
 
     @JsonProperty("ID")
-    private Object iD;
+    private String iD;
     @JsonProperty("IDType")
-    private Object iDType;
+    private String iDType;
     @JsonProperty("Type")
-    private Object type;
+    private String type;
     @JsonProperty("FirstName")
     private String firstName;
     @JsonProperty("LastName")
     private String lastName;
     @JsonProperty("Credentials")
-    private List<Object> credentials = null;
+    private List<String> credentials = null;
     @JsonProperty("Address")
     private Address address;
     @JsonProperty("EmailAddresses")
-    private List<Object> emailAddresses = null;
+    private List<String> emailAddresses = null;
     @JsonProperty("PhoneNumber")
     private PhoneNumber phoneNumber;
     @JsonProperty("Location")
     private Location location;
+    @JsonProperty("NPI")
+    private String npi;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("ID")
-    public Object getID() {
+    public String getID() {
         return iD;
     }
 
     @JsonProperty("ID")
-    public void setID(Object iD) {
+    public void setID(String iD) {
         this.iD = iD;
     }
 
     @JsonProperty("IDType")
-    public Object getIDType() {
+    public String getIDType() {
         return iDType;
     }
 
     @JsonProperty("IDType")
-    public void setIDType(Object iDType) {
+    public void setIDType(String iDType) {
         this.iDType = iDType;
     }
 
     @JsonProperty("Type")
-    public Object getType() {
+    public String getType() {
         return type;
     }
 
     @JsonProperty("Type")
-    public void setType(Object type) {
+    public void setType(String type) {
         this.type = type;
     }
 
@@ -103,12 +106,12 @@ public class PCP {
     }
 
     @JsonProperty("Credentials")
-    public List<Object> getCredentials() {
+    public List<String> getCredentials() {
         return credentials;
     }
 
     @JsonProperty("Credentials")
-    public void setCredentials(List<Object> credentials) {
+    public void setCredentials(List<String> credentials) {
         this.credentials = credentials;
     }
 
@@ -123,12 +126,12 @@ public class PCP {
     }
 
     @JsonProperty("EmailAddresses")
-    public List<Object> getEmailAddresses() {
+    public List<String> getEmailAddresses() {
         return emailAddresses;
     }
 
     @JsonProperty("EmailAddresses")
-    public void setEmailAddresses(List<Object> emailAddresses) {
+    public void setEmailAddresses(List<String> emailAddresses) {
         this.emailAddresses = emailAddresses;
     }
 
@@ -150,6 +153,16 @@ public class PCP {
     @JsonProperty("Location")
     public void setLocation(Location location) {
         this.location = location;
+    }
+
+    @JsonProperty("NPI")
+    public String getNpi() {
+        return npi;
+    }
+
+    @JsonProperty("NPI")
+    public void setNpi(String npi) {
+        this.npi = npi;
     }
 
     @JsonAnyGetter

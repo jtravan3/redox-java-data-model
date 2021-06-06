@@ -25,7 +25,7 @@ public class MedicalEquipment {
     @JsonProperty("StartDate")
     private String startDate;
     @JsonProperty("Quantity")
-    private Object quantity;
+    private String quantity;
     @JsonProperty("Product")
     private Product product;
     @JsonIgnore
@@ -52,12 +52,12 @@ public class MedicalEquipment {
     }
 
     @JsonProperty("Quantity")
-    public Object getQuantity() {
+    public String getQuantity() {
         return quantity;
     }
 
     @JsonProperty("Quantity")
-    public void setQuantity(Object quantity) {
+    public void setQuantity(String quantity) {
         this.quantity = quantity;
     }
 

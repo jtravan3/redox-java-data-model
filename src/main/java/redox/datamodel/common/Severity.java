@@ -15,7 +15,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "Code",
     "CodeSystem",
     "CodeSystemName",
-    "Name"
+    "Name",
+    "Codeset"
 })
 public class Severity {
 
@@ -27,6 +28,8 @@ public class Severity {
     private String codeSystemName;
     @JsonProperty("Name")
     private String name;
+    @JsonProperty("Codeset")
+    private Object codeset;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -68,6 +71,16 @@ public class Severity {
     @JsonProperty("Name")
     public void setName(String name) {
         this.name = name;
+    }
+
+    @JsonProperty("Codeset")
+    public Object getCodeset() {
+        return codeset;
+    }
+
+    @JsonProperty("Codeset")
+    public void setCodeset(Object codeset) {
+        this.codeset = codeset;
     }
 
     @JsonAnyGetter

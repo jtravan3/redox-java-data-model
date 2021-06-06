@@ -13,9 +13,7 @@ import redox.datamodel.common.Patient;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        //patientpush, not patientqueryresponse
     "DirectAddressFrom",
-        //patientpush, not patientqueryresponse
     "DirectAddressTo",
     "Document",
     "Patient",
@@ -35,7 +33,6 @@ public class Header {
     private PCP pCP;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    //patientpush, not patientqueryresponse
     @JsonProperty("DirectAddressFrom")
     public String getDirectAddressFrom() {
         return directAddressFrom;
@@ -45,7 +42,6 @@ public class Header {
     public void setDirectAddressFrom(String directAddressFrom) {
         this.directAddressFrom = directAddressFrom;
     }
-    //patientpush, not patientqueryresponse
     @JsonProperty("DirectAddressTo")
     public String getDirectAddressTo() {
         return directAddressTo;

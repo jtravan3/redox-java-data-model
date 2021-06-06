@@ -10,7 +10,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import redox.datamodel.clinicalsummary.patientpush.Observation;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -23,7 +22,7 @@ public class SocialHistory {
     @JsonProperty("Observations")
     private List<Observation> observations = null;
     @JsonProperty("Pregnancy")
-    private List<Object> pregnancy = null;
+    private List<Pregnancy> pregnancy = null;
     @JsonProperty("TobaccoUse")
     private List<TobaccoUse> tobaccoUse = null;
     @JsonIgnore
@@ -40,12 +39,12 @@ public class SocialHistory {
     }
 
     @JsonProperty("Pregnancy")
-    public List<Object> getPregnancy() {
+    public List<Pregnancy> getPregnancy() {
         return pregnancy;
     }
 
     @JsonProperty("Pregnancy")
-    public void setPregnancy(List<Object> pregnancy) {
+    public void setPregnancy(List<Pregnancy> pregnancy) {
         this.pregnancy = pregnancy;
     }
 

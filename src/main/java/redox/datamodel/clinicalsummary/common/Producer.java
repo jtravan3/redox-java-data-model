@@ -25,7 +25,7 @@ public class Producer {
     @JsonProperty("Name")
     private String name;
     @JsonProperty("IDType")
-    private Object iDType;
+    private String iDType;
     @JsonProperty("Address")
     private Address address;
     @JsonIgnore
@@ -52,12 +52,12 @@ public class Producer {
     }
 
     @JsonProperty("IDType")
-    public Object getIDType() {
+    public String getIDType() {
         return iDType;
     }
 
     @JsonProperty("IDType")
-    public void setIDType(Object iDType) {
+    public void setIDType(String iDType) {
         this.iDType = iDType;
     }
 

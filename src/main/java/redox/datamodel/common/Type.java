@@ -30,7 +30,7 @@ public class Type {
     @JsonProperty("Name")
     private String name;
     @JsonProperty("AltCodes")
-    private List<Object> altCodes = null;
+    private List<AltCode> altCodes = null;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -75,12 +75,12 @@ public class Type {
     }
 
     @JsonProperty("AltCodes")
-    public List<Object> getAltCodes() {
+    public List<AltCode> getAltCodes() {
         return altCodes;
     }
 
     @JsonProperty("AltCodes")
-    public void setAltCodes(List<Object> altCodes) {
+    public void setAltCodes(List<AltCode> altCodes) {
         this.altCodes = altCodes;
     }
 

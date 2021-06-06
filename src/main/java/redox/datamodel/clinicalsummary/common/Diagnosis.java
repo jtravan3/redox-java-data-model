@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import redox.datamodel.common.AltCode;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -17,7 +18,10 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "CodeSystem",
     "CodeSystemName",
     "Name",
-    "AltCodes"
+    "AltCodes",
+    "Codeset",
+    "Type",
+    "DocumentedDateTime"
 })
 public class Diagnosis {
 
@@ -30,7 +34,13 @@ public class Diagnosis {
     @JsonProperty("Name")
     private String name;
     @JsonProperty("AltCodes")
-    private List<Object> altCodes = null;
+    private List<AltCode> altCodes = null;
+    @JsonProperty("Codeset")
+    private String codeset;
+    @JsonProperty("Type")
+    private String type;
+    @JsonProperty("DocumentedDateTime")
+    private String documentedDateTime;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -75,13 +85,43 @@ public class Diagnosis {
     }
 
     @JsonProperty("AltCodes")
-    public List<Object> getAltCodes() {
+    public List<AltCode> getAltCodes() {
         return altCodes;
     }
 
     @JsonProperty("AltCodes")
-    public void setAltCodes(List<Object> altCodes) {
+    public void setAltCodes(List<AltCode> altCodes) {
         this.altCodes = altCodes;
+    }
+
+    @JsonProperty("Codeset")
+    public String getCodeset() {
+        return codeset;
+    }
+
+    @JsonProperty("Codeset")
+    public void setCodeset(String codeset) {
+        this.codeset = codeset;
+    }
+
+    @JsonProperty("Type")
+    public String getType() {
+        return type;
+    }
+
+    @JsonProperty("Type")
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    @JsonProperty("DocumentedDateTime")
+    public String getDocumentedDateTime() {
+        return documentedDateTime;
+    }
+
+    @JsonProperty("DocumentedDateTime")
+    public void setDocumentedDateTime(String documentedDateTime) {
+        this.documentedDateTime = documentedDateTime;
     }
 
     @JsonAnyGetter

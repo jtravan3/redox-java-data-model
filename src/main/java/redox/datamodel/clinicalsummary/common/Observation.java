@@ -1,5 +1,5 @@
 
-package redox.datamodel.clinicalsummary.patientpush;
+package redox.datamodel.clinicalsummary.common;
 
 import java.util.HashMap;
 import java.util.List;
@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import redox.datamodel.clinicalsummary.common.*;
+import redox.datamodel.common.AltCode;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -27,10 +27,10 @@ import redox.datamodel.clinicalsummary.common.*;
     "ValueType",
     "Units",
     "ReferenceRange",
-        "TargetSite",
-        "ValueText",
-        "StartDate",
-        "EndDate"
+    "TargetSite",
+    "ValueText",
+    "StartDate",
+    "EndDate"
 })
 public class Observation {
 
@@ -43,7 +43,7 @@ public class Observation {
     @JsonProperty("Name")
     private String name;
     @JsonProperty("AltCodes")
-    private List<Object> altCodes = null;
+    private List<AltCode> altCodes = null;
     @JsonProperty("Status")
     private String status;
     @JsonProperty("Interpretation")
@@ -57,7 +57,7 @@ public class Observation {
     @JsonProperty("ValueType")
     private String valueType;
     @JsonProperty("Units")
-    private Object units;
+    private String units;
     @JsonProperty("ReferenceRange")
     private ReferenceRange referenceRange;
     @JsonProperty("TargetSite")
@@ -112,12 +112,12 @@ public class Observation {
     }
 
     @JsonProperty("AltCodes")
-    public List<Object> getAltCodes() {
+    public List<AltCode> getAltCodes() {
         return altCodes;
     }
 
     @JsonProperty("AltCodes")
-    public void setAltCodes(List<Object> altCodes) {
+    public void setAltCodes(List<AltCode> altCodes) {
         this.altCodes = altCodes;
     }
 
@@ -190,12 +190,12 @@ public class Observation {
     }
 
     @JsonProperty("Units")
-    public Object getUnits() {
+    public String getUnits() {
         return units;
     }
 
     @JsonProperty("Units")
-    public void setUnits(Object units) {
+    public void setUnits(String units) {
         this.units = units;
     }
 

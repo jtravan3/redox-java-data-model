@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.util.Assert;
 import org.springframework.util.ResourceUtils;
+import redox.datamodel.clinicalsummary.common.Encounter;
 import redox.datamodel.clinicalsummary.common.FamilyHistory;
 import redox.datamodel.common.Allergy;
 

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import redox.datamodel.common.AltCode;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -28,11 +29,11 @@ public class Order {
     @JsonProperty("CodeSystem")
     private String codeSystem;
     @JsonProperty("CodeSystemName")
-    private Object codeSystemName;
+    private String codeSystemName;
     @JsonProperty("Name")
     private String name;
     @JsonProperty("AltCodes")
-    private List<Object> altCodes = null;
+    private List<AltCode> altCodes = null;
     @JsonProperty("Status")
     private String status;
     @JsonProperty("DateTime")
@@ -61,12 +62,12 @@ public class Order {
     }
 
     @JsonProperty("CodeSystemName")
-    public Object getCodeSystemName() {
+    public String getCodeSystemName() {
         return codeSystemName;
     }
 
     @JsonProperty("CodeSystemName")
-    public void setCodeSystemName(Object codeSystemName) {
+    public void setCodeSystemName(String codeSystemName) {
         this.codeSystemName = codeSystemName;
     }
 
@@ -81,12 +82,12 @@ public class Order {
     }
 
     @JsonProperty("AltCodes")
-    public List<Object> getAltCodes() {
+    public List<AltCode> getAltCodes() {
         return altCodes;
     }
 
     @JsonProperty("AltCodes")
-    public void setAltCodes(List<Object> altCodes) {
+    public void setAltCodes(List<AltCode> altCodes) {
         this.altCodes = altCodes;
     }
 

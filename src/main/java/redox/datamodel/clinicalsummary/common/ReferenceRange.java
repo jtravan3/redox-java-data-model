@@ -23,7 +23,7 @@ public class ReferenceRange {
     @JsonProperty("High")
     private Long high;
     @JsonProperty("Text")
-    private Object text;
+    private String text;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -48,12 +48,12 @@ public class ReferenceRange {
     }
 
     @JsonProperty("Text")
-    public Object getText() {
+    public String getText() {
         return text;
     }
 
     @JsonProperty("Text")
-    public void setText(Object text) {
+    public void setText(String text) {
         this.text = text;
     }
 

@@ -19,7 +19,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "Name",
     "AltCodes",
     "Severity",
-    "Text"
+    "Text",
+    "Codeset"
 })
 public class Reaction {
 
@@ -37,6 +38,8 @@ public class Reaction {
     private Severity severity;
     @JsonProperty("Text")
     private Object text;
+    @JsonProperty("Codeset")
+    private String codeset;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -108,6 +111,16 @@ public class Reaction {
     @JsonProperty("Text")
     public void setText(Object text) {
         this.text = text;
+    }
+
+    @JsonProperty("Codeset")
+    public String getCodeset() {
+        return codeset;
+    }
+
+    @JsonProperty("Codeset")
+    public void setCodeset(String codeset) {
+        this.codeset = codeset;
     }
 
     @JsonAnyGetter

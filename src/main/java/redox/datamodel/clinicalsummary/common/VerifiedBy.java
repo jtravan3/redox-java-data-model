@@ -26,9 +26,9 @@ import java.util.Map;
 public class VerifiedBy {
 
     @JsonProperty("ID")
-    private Object iD;
+    private String iD;
     @JsonProperty("IDType")
-    private Object iDType;
+    private String iDType;
     @JsonProperty("FirstName")
     private String firstName;
     @JsonProperty("LastName")
@@ -38,33 +38,33 @@ public class VerifiedBy {
     @JsonProperty("Address")
     private Address address;
     @JsonProperty("EmailAddresses")
-    private List<Object> emailAddresses = null;
+    private List<String> emailAddresses = null;
     @JsonProperty("PhoneNumber")
     private PhoneNumber phoneNumber;
     @JsonProperty("Location")
     private Location location;
     @JsonProperty("DateTime")
-    private Object dateTime;
+    private String dateTime;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("ID")
-    public Object getID() {
+    public String getID() {
         return iD;
     }
 
     @JsonProperty("ID")
-    public void setID(Object iD) {
+    public void setID(String iD) {
         this.iD = iD;
     }
 
     @JsonProperty("IDType")
-    public Object getIDType() {
+    public String getIDType() {
         return iDType;
     }
 
     @JsonProperty("IDType")
-    public void setIDType(Object iDType) {
+    public void setIDType(String iDType) {
         this.iDType = iDType;
     }
 
@@ -109,12 +109,12 @@ public class VerifiedBy {
     }
 
     @JsonProperty("EmailAddresses")
-    public List<Object> getEmailAddresses() {
+    public List<String> getEmailAddresses() {
         return emailAddresses;
     }
 
     @JsonProperty("EmailAddresses")
-    public void setEmailAddresses(List<Object> emailAddresses) {
+    public void setEmailAddresses(List<String> emailAddresses) {
         this.emailAddresses = emailAddresses;
     }
 
@@ -139,12 +139,12 @@ public class VerifiedBy {
     }
 
     @JsonProperty("DateTime")
-    public Object getDateTime() {
+    public String getDateTime() {
         return dateTime;
     }
 
     @JsonProperty("DateTime")
-    public void setDateTime(Object dateTime) {
+    public void setDateTime(String dateTime) {
         this.dateTime = dateTime;
     }
 
